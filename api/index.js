@@ -8,11 +8,25 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Sanitize DATABASE_URL - remove channel_binding which pg doesn't support
+let dbUrl = process.env.DATABASE_URL || '';
+dbUrl = dbUrl.replace(/[&?]channel_binding=[^&]*/g, '');
+
 // Database Setup (Neon PostgreSQL)
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: dbUrl,
     ssl: {
         rejectUnauthorized: false
+    }
+});
+
+// Health check - debug endpoint
+app.get('/api/health', async (req, res) => {
+    try {
+        const result = await pool.query('SELECT NOW()');
+        res.json({ status: 'ok', time: result.rows[0].now, dbUrl: dbUrl ? 'SET' : 'NOT SET' });
+    } catch (err) {
+        res.status(500).json({ status: 'error', message: err.message, dbUrl: dbUrl ? 'SET' : 'NOT SET' });
     }
 });
 
