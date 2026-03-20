@@ -1,0 +1,13 @@
+{
+  "name": "angc-synapse",
+  "version": "1.0.0",
+  "description": "ANGC Synapse Website and Backend",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "cd server && npm install && node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

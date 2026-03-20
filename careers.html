@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | ANGC Synapse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <script>(function(){const t=localStorage.getItem('theme');if(t==='light')document.body.classList.add('light-mode');})();</script>
+    <header id="main-header" class="scrolled">
+        <nav class="container header-grid">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="index.html" class="logo-text">ANGC <span class="accent">Synapse</span></a>
+                </div>
+                <div class="search-bar">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
+                    <span class="search-key">⌘ K</span>
+                    <div id="search-results" class="search-results"></div>
+                </div>
+            </div>
+            
+            <div class="header-center">
+                <ul class="nav-links">
+                    <li><a href="index.html#hero">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#process">Process</a></li>
+                </ul>
+            </div>
+
+            <div class="header-right">
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                        <span class="icon-moon">🌙</span>
+                        <span class="icon-sun">☀️</span>
+                    </button>
+                    <a href="auth.html" class="btn btn-primary">Join Us</a>
+                    <div class="mobile-menu-btn" id="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding-top: 150px;">
+        <section class="container">
+            <div class="section-header">
+                <h1>Work at <span class="gradient-text">ANGC Synapse</span></h1>
+                <p>Join our mission to reshape global IT infrastructure.</p>
+            </div>
+            
+            <div class="services-grid" style="margin-top: 4rem;">
+                <div class="service-card">
+                    <h3>Infrastructure Engineer</h3>
+                    <p>Help us build the next generation of cloud-native hardware and software systems.</p>
+                    <span class="accent">Remote / Global</span>
+                </div>
+                <div class="service-card">
+                    <h3>Security Architect</h3>
+                    <p>Design Zero-Trust systems for our enterprise clients and push the boundaries of cybersecurity.</p>
+                    <span class="accent">New York / London</span>
+                </div>
+                <div class="service-card">
+                    <h3>Client Success Lead</h3>
+                    <p>Guide our partners through complex transformations and ensure they get the most from our platform.</p>
+                    <span class="accent">Singapore / Tokyo</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="logo-text">ANGC <span class="accent">Synapse</span></span>
+                <p>Enterprise Infrastructure. Redefined.</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><strong>Platform</strong></li>
+                    <li><a href="cloud.html">Cloud</a></li>
+                    <li><a href="security.html">Security</a></li>
+                    <li><a href="network.html">Network</a></li>
+                </ul>
+                <ul>
+                    <li><strong>Company</strong></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 ANGC Synapse IT Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

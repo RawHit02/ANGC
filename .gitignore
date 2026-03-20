@@ -1,0 +1,8 @@
+node_modules/
+server/node_modules/
+server/visitors.db
+.env
+.DS_Store
+dist/
+build/
+*.log
