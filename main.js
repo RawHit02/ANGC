@@ -218,12 +218,52 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
     
-    if (mobileBtn) {
+    if (mobileBtn && navLinks) {
         mobileBtn.addEventListener('click', () => {
             mobileBtn.classList.toggle('active');
             navLinks.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
     }
+
+    // Dynamic Auth Button Logic
+    function updateAuthButton() {
+        const authBtn = document.querySelector('header .nav-actions .btn-primary');
+        if (!authBtn) return;
+
+        const user = localStorage.getItem('user');
+        const isKnownUser = localStorage.getItem('isKnownUser');
+
+        if (user) {
+            // Logged In
+            const userData = JSON.parse(user);
+            authBtn.innerText = 'Logout';
+            authBtn.href = '#';
+            authBtn.classList.add('logout-btn');
+            authBtn.onclick = (e) => {
+                e.preventDefault();
+                localStorage.removeItem('user');
+                showToast('Logged out successfully', 'success');
+                setTimeout(() => window.location.reload(), 1000);
+            };
+        } else if (isKnownUser) {
+            // Known User but not logged in
+            authBtn.innerText = 'Login';
+            authBtn.href = 'auth.html';
+        } else {
+            // New User
+            authBtn.innerText = 'Signup';
+            authBtn.href = 'auth.html';
+        }
+    }
+
+    updateAuthButton();
 
     // Theme Toggle
     const themeBtn = document.getElementById('theme-toggle');
@@ -241,13 +281,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
 
-    // Close mobile menu on link click
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileBtn.classList.remove('active');
-            navLinks.classList.remove('active');
-        });
-    });
     // Search Suggestions Logic
     const searchInput = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
