@@ -187,11 +187,11 @@
             <form id="login-form" class="auth-form active" autocomplete="off">
                 <div class="form-group">
                     <label>Email Address</label>
-                    <input type="email" id="login-email" placeholder="example@company.com" required>
+                    <input type="email" id="login-email" placeholder="example@gmail.com" required autocomplete="new-password">
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" id="login-password" placeholder="••••••••••••" required>
+                    <input type="password" id="login-password" placeholder="********" required autocomplete="new-password">
                 </div>
                 <button type="submit" class="auth-btn btn-submit">Sign In</button>
             </form>
@@ -200,15 +200,15 @@
             <form id="signup-form" class="auth-form" autocomplete="off">
                 <div class="form-group">
                     <label>Username</label>
-                    <input type="text" id="signup-username" placeholder="Choose a username" required>
+                    <input type="text" id="signup-username" placeholder="rohit_123" required autocomplete="new-password">
                 </div>
                 <div class="form-group">
                     <label>Email Address</label>
-                    <input type="email" id="signup-email" placeholder="email@example.com" required>
+                    <input type="email" id="signup-email" placeholder="example@gmail.com" required autocomplete="new-password">
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" id="signup-password" placeholder="Min. 8 characters" required>
+                    <input type="password" id="signup-password" placeholder="Min. 8 characters" required autocomplete="new-password">
                 </div>
                 <button type="submit" class="auth-btn btn-submit">Create Account</button>
             </form>
@@ -292,6 +292,14 @@
             } finally {
                 btn.innerText = 'Sign In';
                 btn.disabled = false;
+            }
+        });
+        // Handle URL parameter for tab selection
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const mode = params.get('mode');
+            if (mode === 'signup' || mode === 'login') {
+                switchTab(mode);
             }
         });
     </script>

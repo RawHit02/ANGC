@@ -230,56 +230,70 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = '';
             }
         });
+
+        // Close menu when any nav link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileBtn.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
     }
 
-    // Dynamic Auth Button Logic
+    // Dynamic Auth Button Logic - update BOTH desktop and mobile buttons
     function updateAuthButton() {
-        const authBtn = document.querySelector('header .nav-actions .btn-primary');
-        if (!authBtn) return;
+        const desktopBtn = document.querySelector('.nav-actions .auth-nav-btn');
+        const mobileAuthBtn = document.querySelector('.mobile-auth-btn');
+        const mobileHeaderAuth = document.querySelector('.mobile-header-auth');
+        const allBtns = [desktopBtn, mobileAuthBtn, mobileHeaderAuth].filter(Boolean);
+        
+        if (allBtns.length === 0) return;
 
         const user = localStorage.getItem('user');
         const isKnownUser = localStorage.getItem('isKnownUser');
 
-        if (user) {
-            // Logged In
-            const userData = JSON.parse(user);
-            authBtn.innerText = 'Logout';
-            authBtn.href = '#';
-            authBtn.classList.add('logout-btn');
-            authBtn.onclick = (e) => {
-                e.preventDefault();
-                localStorage.removeItem('user');
-                showToast('Logged out successfully', 'success');
-                setTimeout(() => window.location.reload(), 1000);
-            };
-        } else if (isKnownUser) {
-            // Known User but not logged in
-            authBtn.innerText = 'Login';
-            authBtn.href = 'auth.html';
-        } else {
-            // New User
-            authBtn.innerText = 'Signup';
-            authBtn.href = 'auth.html';
-        }
+        allBtns.forEach(btn => {
+            if (user) {
+                btn.innerText = 'Logout';
+                btn.href = '#';
+                btn.onclick = (e) => {
+                    e.preventDefault();
+                    localStorage.removeItem('user');
+                    showToast('Logged out successfully', 'success');
+                    setTimeout(() => window.location.reload(), 1000);
+                };
+            } else if (isKnownUser) {
+                btn.innerText = 'Login';
+                btn.href = 'auth.html?mode=login';
+                btn.onclick = null;
+            } else {
+                btn.innerText = 'Signup';
+                btn.href = 'auth.html?mode=signup';
+                btn.onclick = null;
+            }
+        });
     }
 
     updateAuthButton();
 
-    // Theme Toggle
+    // Theme Toggle (default is light mode)
     const themeBtn = document.getElementById('theme-toggle');
     const body = document.body;
 
-    // Check for saved theme
+    // Check for saved dark preference
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        body.classList.add('light-mode');
+    if (savedTheme === 'dark') {
+        body.classList.remove('light-mode');
     }
 
-    themeBtn.addEventListener('click', () => {
-        body.classList.toggle('light-mode');
-        const isLight = body.classList.contains('light-mode');
-        localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    });
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            const isLight = body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+    }
 
     // Search Suggestions Logic
     const searchInput = document.getElementById('search-input');

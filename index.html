@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANGC Synapse | Premium IT Infrastructure</title>
-    <meta name="description" content="Scalable, enterprise-grade IT infrastructure for modern businesses. AI-driven cloud and network solutions.">
+    <title>ANGC Synapse</title>
+    <meta name="description"
+        content="Scalable, enterprise-grade IT infrastructure for modern businesses. AI-driven cloud and network solutions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-mode">
-    <script>(function(){const t=localStorage.getItem('theme');if(t==='light')document.body.classList.add('light-mode');})();</script>
+
+<body class="light-mode">
+    <script>(function(){const t=localStorage.getItem('theme');if(t==='dark'){document.body.classList.remove('light-mode');document.body.classList.add('dark-mode');}})();</script>
     <header id="main-header">
         <nav class="container header-grid">
             <div class="header-left">
                 <div class="logo">
                     <span class="logo-text">ANGC <span class="accent">Synapse</span></span>
                 </div>
-                <div class="search-bar">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
-                    <span class="search-key">⌘ K</span>
-                    <div id="search-results" class="search-results"></div>
-                </div>
             </div>
-            
+
             <div class="header-center">
                 <ul class="nav-links">
                     <li><a href="#hero" class="active">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#process">Process</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="mobile-auth-btn-wrapper"><a href="auth.html" class="btn btn-primary mobile-auth-btn">Join Us</a></li>
                 </ul>
             </div>
 
             <div class="header-right">
-                <div class="nav-actions">
-                    <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-                        <span class="icon-moon">🌙</span>
-                        <span class="icon-sun">☀️</span>
-                    </button>
-                    <a href="auth.html" class="btn btn-primary">Join Us</a>
-                    <div class="mobile-menu-btn" id="mobile-menu-btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                    <span class="icon-moon">🌙</span>
+                    <span class="icon-sun">☀️</span>
+                </button>
+                <a href="auth.html" class="btn btn-primary auth-nav-btn">Login</a>
+                <a href="auth.html" class="mobile-header-auth">Login</a>
+                <div class="mobile-menu-btn" id="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </nav>
@@ -56,8 +57,10 @@
         <!-- Hero Section -->
         <section id="hero" class="hero">
             <div class="container hero-content">
-                <h1 class="fade-in">Connecting Infrastructure.<br><span class="gradient-text">Powering Growth.</span></h1>
-                <p class="fade-in-delayed">Scalable, enterprise-grade AI-driven IT infrastructure for modern businesses that demand perfection.</p>
+                <h1 class="fade-in">Connecting Infrastructure.<br><span class="gradient-text">Powering Growth.</span>
+                </h1>
+                <p class="fade-in-delayed">Scalable, enterprise-grade AI-driven IT infrastructure for modern businesses
+                    that demand perfection.</p>
                 <div class="hero-ctas fade-in-delayed">
                     <a href="#services" class="btn btn-primary">Explore Solutions</a>
                     <a href="#contact" class="btn btn-secondary">Get a Consultation</a>
@@ -102,7 +105,8 @@
                     <div class="service-card reveal">
                         <div class="icon">📊</div>
                         <h3>Data Analytics</h3>
-                        <p>Transform raw infrastructure data into actionable business insights with our analytics engine.</p>
+                        <p>Transform raw infrastructure data into actionable business insights with our analytics
+                            engine.</p>
                     </div>
                 </div>
             </div>
@@ -113,7 +117,8 @@
             <div class="container dual-grid">
                 <div class="about-text reveal">
                     <h2>The Synapse Difference</h2>
-                    <p>At ANGC Synapse, we don't just build servers; we build the nervous system of your business. Our approach combines traditional reliability with AI-driven optimization.</p>
+                    <p>At ANGC Synapse, we don't just build servers; we build the nervous system of your business. Our
+                        approach combines traditional reliability with AI-driven optimization.</p>
                     <ul class="feature-list">
                         <li>99.99% Uptime SLA Guaranteed</li>
                         <li>Global Infrastructure Presence</li>
@@ -135,124 +140,131 @@
                     </div>
                 </div>
             </div>
-        <!-- Why Choose Us Section -->
-        <section id="why-us" class="why-us">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2>Engineering Excellence</h2>
-                    <p>Why enterprises trust ANGC Synapse for their core infrastructure.</p>
+            <!-- Why Choose Us Section -->
+            <section id="why-us" class="why-us">
+                <div class="container">
+                    <div class="section-header reveal">
+                        <h2>Engineering Excellence</h2>
+                        <p>Why enterprises trust ANGC Synapse for their core infrastructure.</p>
+                    </div>
+                    <div class="benefit-grid">
+                        <div class="benefit-item reveal">
+                            <span class="number">01</span>
+                            <h3>Security First</h3>
+                            <p>Our architectures are built on Zero-Trust principles, ensuring that security is never an
+                                afterthought.</p>
+                        </div>
+                        <div class="benefit-item reveal">
+                            <span class="number">02</span>
+                            <h3>Global Scale</h3>
+                            <p>With nodes in 25+ regions, we provide low-latency connectivity regardless of your users'
+                                location.</p>
+                        </div>
+                        <div class="benefit-item reveal">
+                            <span class="number">03</span>
+                            <h3>99.99% Uptime</h3>
+                            <p>Redundant systems and AI-driven failovers guarantee your business stays online 24/7/365.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="benefit-grid">
-                    <div class="benefit-item reveal">
-                        <span class="number">01</span>
-                        <h3>Security First</h3>
-                        <p>Our architectures are built on Zero-Trust principles, ensuring that security is never an afterthought.</p>
-                    </div>
-                    <div class="benefit-item reveal">
-                        <span class="number">02</span>
-                        <h3>Global Scale</h3>
-                        <p>With nodes in 25+ regions, we provide low-latency connectivity regardless of your users' location.</p>
-                    </div>
-                    <div class="benefit-item reveal">
-                        <span class="number">03</span>
-                        <h3>99.99% Uptime</h3>
-                        <p>Redundant systems and AI-driven failovers guarantee your business stays online 24/7/365.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Our Process Section -->
-        <section id="process" class="process">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2>Our Methodology</h2>
-                    <p>A streamlined approach to transforming your digital infrastructure.</p>
+            <!-- Our Process Section -->
+            <section id="process" class="process">
+                <div class="container">
+                    <div class="section-header reveal">
+                        <h2>Our Methodology</h2>
+                        <p>A streamlined approach to transforming your digital infrastructure.</p>
+                    </div>
+                    <div class="process-steps">
+                        <div class="step reveal">
+                            <div class="step-icon">🔍</div>
+                            <h3>Discovery</h3>
+                            <p>Deep audit of your current systems and future growth needs.</p>
+                        </div>
+                        <div class="step reveal">
+                            <div class="step-icon">📐</div>
+                            <h3>Blueprint</h3>
+                            <p>Custom infrastructure design focused on scale and security.</p>
+                        </div>
+                        <div class="step reveal">
+                            <div class="step-icon">🚀</div>
+                            <h3>Execution</h3>
+                            <p>Seamless migration and deployment with zero downtime.</p>
+                        </div>
+                        <div class="step reveal">
+                            <div class="step-icon">🛡️</div>
+                            <h3>Maintain</h3>
+                            <p>Proactive 24/7 monitoring and AI-driven optimization.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="process-steps">
-                    <div class="step reveal">
-                        <div class="step-icon">🔍</div>
-                        <h3>Discovery</h3>
-                        <p>Deep audit of your current systems and future growth needs.</p>
-                    </div>
-                    <div class="step reveal">
-                        <div class="step-icon">📐</div>
-                        <h3>Blueprint</h3>
-                        <p>Custom infrastructure design focused on scale and security.</p>
-                    </div>
-                    <div class="step reveal">
-                        <div class="step-icon">🚀</div>
-                        <h3>Execution</h3>
-                        <p>Seamless migration and deployment with zero downtime.</p>
-                    </div>
-                    <div class="step reveal">
-                        <div class="step-icon">🛡️</div>
-                        <h3>Maintain</h3>
-                        <p>Proactive 24/7 monitoring and AI-driven optimization.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- FAQ Section -->
-        <section id="faq" class="faq">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2>Common Questions</h2>
-                    <p>Everything you need to know about our services.</p>
+            <!-- FAQ Section -->
+            <section id="faq" class="faq">
+                <div class="container">
+                    <div class="section-header reveal">
+                        <h2>Common Questions</h2>
+                        <p>Everything you need to know about our services.</p>
+                    </div>
+                    <div class="faq-container">
+                        <div class="faq-item reveal">
+                            <div class="faq-question">
+                                <span>How long does a typical migration take?</span>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Migration timelines vary by complexity, but most enterprise transitions are completed
+                                    within 4-8 weeks with zero service interruption.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item reveal">
+                            <div class="faq-question">
+                                <span>Do you provide custom hardware solutions?</span>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, we offer custom-tailored on-premise and hybrid cloud hardware configurations for
+                                    specialized high-performance needs.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item reveal">
+                            <div class="faq-question">
+                                <span>Is your support team based locally?</span>
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Our core engineering support is distributed globally but managed locally to provide
+                                    24/7 coverage across all time zones.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="faq-container">
-                    <div class="faq-item reveal">
-                        <div class="faq-question">
-                            <span>How long does a typical migration take?</span>
-                            <span class="faq-toggle">+</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Migration timelines vary by complexity, but most enterprise transitions are completed within 4-8 weeks with zero service interruption.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item reveal">
-                        <div class="faq-question">
-                            <span>Do you provide custom hardware solutions?</span>
-                            <span class="faq-toggle">+</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Yes, we offer custom-tailored on-premise and hybrid cloud hardware configurations for specialized high-performance needs.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item reveal">
-                        <div class="faq-question">
-                            <span>Is your support team based locally?</span>
-                            <span class="faq-toggle">+</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Our core engineering support is distributed globally but managed locally to provide 24/7 coverage across all time zones.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="contact-card reveal">
-                    <div class="contact-header">
-                        <h2>Ready to scale?</h2>
-                        <p>Connect with our expert architects today.</p>
-                    </div>
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" placeholder="Name" required>
-                            <input type="email" id="email" placeholder="Business Email" required>
+            <!-- Contact Section -->
+            <section id="contact" class="contact">
+                <div class="container">
+                    <div class="contact-card reveal">
+                        <div class="contact-header">
+                            <h2>Ready to scale?</h2>
+                            <p>Connect with our expert architects today.</p>
                         </div>
-                        <input type="text" id="subject" placeholder="Subject" required>
-                        <textarea id="message" placeholder="Tell us about your infrastructure needs" rows="5" required></textarea>
-                        <button type="submit" class="btn btn-primary full-width">Send Message</button>
-                    </form>
+                        <form id="contact-form" autocomplete="off">
+                            <div class="form-group">
+                                <input type="text" id="name" placeholder="Full Name (e.g. Rohit Kumar)" required autocomplete="new-password">
+                                <input type="email" id="email" placeholder="Email (e.g. business@gmail.com)" required autocomplete="new-password">
+                            </div>
+                            <input type="text" id="subject" placeholder="Subject (e.g. Cloud Migration)" required autocomplete="new-password">
+                            <textarea id="message" placeholder="Tell us about your infrastructure needs..." rows="5"
+                                required></textarea>
+                            <button type="submit" class="btn btn-primary full-width">Send Message</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
     </main>
 
     <footer>
@@ -283,4 +295,5 @@
 
     <script src="main.js"></script>
 </body>
+
 </html>
