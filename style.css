@@ -817,6 +817,11 @@ footer {
     transition: var(--transition);
 }
 
+.faq-item:hover {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.05);
+}
+
 .faq-question {
     padding: 1.5rem 2.5rem;
     display: flex;
@@ -826,21 +831,34 @@ footer {
     font-weight: 600;
 }
 
-.faq-answer {
-    padding: 0 2.5rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+.faq-content {
+    padding: 0 2.5rem 1.5rem;
     color: var(--text-secondary);
 }
 
-.faq-item.active {
-    border-color: var(--accent);
+.faq-summary {
+    font-size: 1rem;
 }
 
-.faq-item.active .faq-answer {
-    max-height: 200px;
-    padding-bottom: 2rem;
+.faq-more {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-top: 0;
+}
+
+/* Reveal extra content on hover or faq-active (click) */
+.faq-item:hover .faq-more,
+.faq-item.faq-active .faq-more {
+    max-height: 300px;
+    margin-top: 1rem;
+}
+
+/* Handle toggle icon rotation on both hover or faq-active */
+.faq-item:hover .faq-toggle,
+.faq-item.faq-active .faq-toggle {
+    transform: rotate(45deg);
+    color: var(--accent);
 }
 
 .faq-toggle {
@@ -848,10 +866,6 @@ footer {
     transition: var(--transition);
 }
 
-.faq-item.active .faq-toggle {
-    transform: rotate(45deg);
-    color: var(--accent);
-}
 
 /* ===========================
    FORMS & CONTACT
