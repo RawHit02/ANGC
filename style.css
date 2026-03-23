@@ -9,6 +9,12 @@
     --accent-gradient: linear-gradient(135deg, #38bdf8, #818cf8);
     --border: rgba(255, 255, 255, 0.1);
     --glass: rgba(15, 23, 42, 0.7);
+    --hero-overlay: linear-gradient(to bottom, rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.9));
+    --page-bg-cloud: url('assets/images/cloud-bg.png');
+    --page-bg-security: url('assets/images/security-bg.png');
+    --page-bg-network: url('assets/images/network-bg.png');
+    --page-bg-about: url('assets/images/about-bg.png');
+    --page-bg-careers: url('assets/images/careers-bg.png');
     
     /* Spacing & Sizes */
     --container-max: 1240px;
@@ -17,13 +23,15 @@
 }
 
 body.light-mode {
-    --bg-dark: #fbfbfd;
+    --bg-dark: #f1f5f9;
     --bg-surface: #ffffff;
     --bg-card: #ffffff;
-    --text-primary: #1d1d1f;
-    --text-secondary: #86868b;
-    --border: rgba(0, 0, 0, 0.1);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --border: rgba(0, 0, 0, 0.05);
     --glass: rgba(255, 255, 255, 0.7);
+    --bg-color: #f8fafc;
+    --hero-overlay: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.8));
 }
 
 /* Base Styles */
@@ -243,6 +251,10 @@ body.light-mode .icon-moon { display: none; }
     padding-top: var(--nav-height);
     position: relative;
     overflow: hidden;
+    background: var(--hero-overlay), url('assets/images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .hero::before {
@@ -1086,3 +1098,30 @@ textarea:focus {
     0% { transform: translateX(0); opacity: 1; }
     100% { transform: translateX(100%); opacity: 0; }
 }
+
+.service-header-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-header-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent);
+    mask-image: linear-gradient(to bottom, black 50%, transparent);
+}
+
+.bg-cloud::before { background-image: var(--page-bg-cloud); }
+.bg-security::before { background-image: var(--page-bg-security); }
+.bg-network::before { background-image: var(--page-bg-network); }
+.bg-about::before { background-image: var(--page-bg-about); }
+.bg-careers::before { background-image: var(--page-bg-careers); }
