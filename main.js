@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dynamic Auth Button Logic - update BOTH desktop and mobile buttons
     function updateAuthButton() {
-        const desktopBtn = document.querySelector('.nav-actions .auth-nav-btn');
+        const desktopBtn = document.querySelector('.auth-nav-btn');
         const mobileAuthBtn = document.querySelector('.mobile-auth-btn');
         const mobileHeaderAuth = document.querySelector('.mobile-header-auth');
         const allBtns = [desktopBtn, mobileAuthBtn, mobileHeaderAuth].filter(Boolean);
