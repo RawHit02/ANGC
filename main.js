@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    window.showToast = function(message, type = 'success') {
+    window.showToast = function (message, type = 'success') {
         createToastContainer();
         const container = document.getElementById('toast-container');
         const toast = document.createElement('div');
@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Scroll Reveal Animation
     const reveals = document.querySelectorAll('.reveal');
-    
+
     const revealOnScroll = () => {
         const windowHeight = window.innerHeight;
         const revealPoint = 150;
-        
+
         reveals.forEach(reveal => {
             const revealTop = reveal.getBoundingClientRect().top;
             if (revealTop < windowHeight - revealPoint) {
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const btn = contactForm.querySelector('button');
             const originalText = btn.innerText;
-            
+
             btn.innerText = 'Sending...';
             btn.disabled = true;
 
@@ -75,15 +75,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 1. Abort Controller for Timeouts
             const controller = new AbortController();
-            const id = setTimeout(() => controller.abort(), 10000); 
+            const id = setTimeout(() => controller.abort(), 10000);
 
             try {
                 console.log('🚀 Form Submission Started...', new Date().toLocaleTimeString());
-                
+
                 // 2. Local Database Save (Background)
                 const localController = new AbortController();
                 const localId = setTimeout(() => localController.abort(), 1500);
-                
+
                 fetch('/api/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -95,17 +95,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     }),
                     signal: localController.signal
                 })
-                .then(r => r.ok ? console.log('✅ Local Log Success') : console.warn('⚠️ Local Server Error'))
-                .catch(() => console.warn('⚠️ Local Server Offline'))
-                .finally(() => clearTimeout(localId));
+                    .then(r => r.ok ? console.log('✅ Local Log Success') : console.warn('⚠️ Local Server Error'))
+                    .catch(() => console.warn('⚠️ Local Server Offline'))
+                    .finally(() => clearTimeout(localId));
 
                 // 3. Primary Email Send via FormSubmit.co
                 console.time('⌛ Email Delivery');
                 const emailResponse = await fetch('https://formsubmit.co/ajax/rohitroody47@gmail.com', {
                     method: 'POST',
-                    headers: { 
+                    headers: {
                         'Content-Type': 'application/json',
-                        'Accept': 'application/json' 
+                        'Accept': 'application/json'
                     },
                     body: JSON.stringify(formData),
                     signal: controller.signal
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (error) {
                 console.error('❌ Submission Error:', error);
                 const message = error.message || 'Unknown error occurred.';
-                
+
                 if (error.name === 'AbortError') {
                     showToast('Connection timeout. The server is taking too long to respond.', 'error');
                 } else if (message.includes('Failed to fetch')) {
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
-        
+
         // Add/remove scrolled class
         if (currentScrollY > 50) {
             header.classList.add('scrolled');
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Scrolling Up
             header.classList.remove('header-hidden');
         }
-        
+
         lastScrollY = currentScrollY;
     });
 
@@ -210,12 +210,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
-    
+
     if (mobileBtn && navLinks) {
         mobileBtn.addEventListener('click', () => {
             mobileBtn.classList.toggle('active');
             navLinks.classList.toggle('active');
-            
+
             // Prevent body scroll when menu is open
             if (navLinks.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const mobileAuthBtn = document.querySelector('.mobile-auth-btn');
         const mobileHeaderAuth = document.querySelector('.mobile-header-auth');
         const allBtns = [desktopBtn, mobileAuthBtn, mobileHeaderAuth].filter(Boolean);
-        
+
         if (allBtns.length === 0) return;
 
         const user = localStorage.getItem('user');
@@ -313,8 +313,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const filtered = searchIndex.filter(item => 
-                item.title.toLowerCase().includes(query) || 
+            const filtered = searchIndex.filter(item =>
+                item.title.toLowerCase().includes(query) ||
                 item.cat.toLowerCase().includes(query)
             );
 
@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         "developers": {
             "keywords": ["developer", "coder", "engineer", "rohit", "aman"],
-            "answer": "Our lead developers are <strong>Rohit Panwear</strong> and <strong>Aman Sharma</strong>."
+            "answer": "Our lead developers are <strong>Rohit Panwar</strong> and <strong>Aman Sharma</strong>."
         },
         "tech_head": {
             "keywords": ["technical head", "tech head", "jai"],
@@ -464,7 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         "team": {
             "keywords": ["team", "leadership", "staff", "who works here", "members"],
-            "answer": "<strong>Developers:</strong> Rohit Panwear, Aman Sharma<br><strong>Technical Head:</strong> Jai<br><strong>CEO:</strong> Akshat Aggarwal, Puneet Aggarwal"
+            "answer": "<strong>Developers:</strong> Rohit Panwar, Aman Sharma<br><strong>Technical Head:</strong> Jai<br><strong>CEO:</strong> Akshat Aggarwal, Puneet Aggarwal"
         },
         "about": {
             "keywords": ["who are you", "what is angc", "synapse", "about"],
@@ -505,7 +505,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
         document.body.insertAdjacentHTML('beforeend', chatbotHTML);
-        
+
         const toggle = document.getElementById('chatbot-toggle');
         const container = document.getElementById('chatbot-container');
         const closeBtn = document.getElementById('chatbot-close');
