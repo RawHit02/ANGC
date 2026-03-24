@@ -450,6 +450,22 @@ document.addEventListener('DOMContentLoaded', () => {
             "keywords": ["partner", "collaboration", "affiliate", "work together"],
             "answer": "We're always open to strategic partnerships! Please reach out to our team at jai616263@gmail.com to discuss how we can collaborate."
         },
+        "ceo": {
+            "keywords": ["ceo", "owner", "founder"],
+            "answer": "Our CEOs are <strong>Akshat Aggarwal</strong> and <strong>Puneet Aggarwal</strong>."
+        },
+        "developers": {
+            "keywords": ["developer", "coder", "engineer", "rohit", "aman"],
+            "answer": "Our lead developers are <strong>Rohit Panwear</strong> and <strong>Aman Sharma</strong>."
+        },
+        "tech_head": {
+            "keywords": ["technical head", "tech head", "jai"],
+            "answer": "Our Technical Head is <strong>Jai</strong>."
+        },
+        "team": {
+            "keywords": ["team", "leadership", "staff", "who works here", "members"],
+            "answer": "<strong>Developers:</strong> Rohit Panwear, Aman Sharma<br><strong>Technical Head:</strong> Jai<br><strong>CEO:</strong> Akshat Aggarwal, Puneet Aggarwal"
+        },
         "about": {
             "keywords": ["who are you", "what is angc", "synapse", "about"],
             "answer": "ANGC Synapse is a leader in enterprise-grade IT infrastructure. We specialize in AI-driven cloud solutions, cybersecurity, and global network architectures."
