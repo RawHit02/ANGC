@@ -358,12 +358,97 @@ document.addEventListener('DOMContentLoaded', () => {
             "answer": "I'm doing great, thank you! I'm here to help you navigate our enterprise-grade AI-driven IT solutions. How can I help you today?"
         },
         "plans": {
-            "keywords": ["plans", "pricing", "services", "offerings", "solutions"],
-            "answer": "We offer scalable cloud infrastructure, AI-driven cybersecurity, and zero-trust network architectures. Our solutions are tailored for Startups, SMEs, and Enterprises. You can explore more in our Services section!"
+            "keywords": ["plans", "pricing", "subscription", "cost", "charge"],
+            "answer": `
+                <div class="chat-card-container">
+                    <div class="plan-card silver">
+                        <div class="plan-header"><span class="plan-title">Silver Tier</span><span class="plan-price">$99/mo</span></div>
+                        <ul class="plan-features">
+                            <li>Essential Cloud Infrastructure</li>
+                            <li>Standard Security Patching</li>
+                            <li>9x5 Email Support</li>
+                        </ul>
+                    </div>
+                    <div class="plan-card gold">
+                        <div class="plan-header"><span class="plan-title">Gold Tier</span><span class="plan-price">$299/mo</span></div>
+                        <ul class="plan-features">
+                            <li>Advanced Multi-cloud Setup</li>
+                            <li>AI-driven Threat Detection</li>
+                            <li>24/7 Priority Support</li>
+                        </ul>
+                    </div>
+                    <div class="plan-card platinum">
+                        <div class="plan-header"><span class="plan-title">Platinum Tier</span><span class="plan-price">$999/mo</span></div>
+                        <ul class="plan-features">
+                            <li>Custom Global Architecture</li>
+                            <li>Zero-Trust Security Suite</li>
+                            <li>Dedicated Solutions Architect</li>
+                        </ul>
+                    </div>
+                </div>
+            `
         },
         "contact": {
             "keywords": ["contact", "email", "phone", "call", "reach", "support", "help"],
-            "answer": "You can reach us directly at jai616263@gmail.com or call our expert team at +91 9311161110. We're available 24/7 for our enterprise clients."
+            "answer": `
+                <div>Our expert architects are ready to help you scale. How would you like to connect?</div>
+                <div class="chat-btn-container">
+                    <a href="mailto:jai616263@gmail.com" class="chat-btn">Email Us</a>
+                    <a href="tel:9311161110" class="chat-btn secondary">Call Us</a>
+                </div>
+            `
+        },
+        "security": {
+            "keywords": ["security", "safe", "cybersecurity", "protection", "zero trust", "firewall"],
+            "answer": "Security is our core principle. We implement Zero-Trust architectures and AI-driven threat detection to ensure your infrastructure is protected 24/7/365."
+        },
+        "methodology": {
+            "keywords": ["methodology", "process", "steps", "how you work", "implementation"],
+            "answer": "Our 4-step methodology ensures seamless transformation: 1. Discovery (Audit), 2. Blueprint (Design), 3. Execution (Migration), and 4. Maintain (Optimization)."
+        },
+        "location": {
+            "keywords": ["location", "office", "where are you", "regions", "global"],
+            "answer": "ANGC Synapse has a global footprint with infrastructure nodes in 25+ regions, ensuring low-latency connectivity for your users worldwide."
+        },
+        "uptime": {
+            "keywords": ["uptime", "reliability", "sla", "guarantee"],
+            "answer": "We guarantee a 99.99% uptime SLA through redundant systems and AI-driven failover mechanisms."
+        },
+        "careers": {
+            "keywords": ["careers", "job", "hiring", "work at angc", "join the team"],
+            "answer": "We're always looking for talented architects and engineers! Check out our Careers page to see our open positions and learn about our culture."
+        },
+        "services_cloud": {
+            "keywords": ["cloud", "infrastructure", "migration", "multi-cloud"],
+            "answer": "We specialize in end-to-end cloud migration and multi-cloud orchestration for maximum scalability and uptime."
+        },
+        "services_ai": {
+            "keywords": ["ai", "machine learning", "automation", "integration"],
+            "answer": "Our AI Integration service leverages cutting-edge machine learning to automate and optimize your business workflows."
+        },
+        "values": {
+            "keywords": ["mission", "vision", "values", "philosophy", "goal"],
+            "answer": "Our mission is to redefine enterprise infrastructure through engineering excellence, security-first thinking, and AI-driven optimization."
+        },
+        "industries": {
+            "keywords": ["industries", "sectors", "fintech", "healthcare", "ecommerce", "who do you serve"],
+            "answer": "We serve a wide range of industries, including FinTech, Healthcare, E-commerce, and SaaS providers, delivering high-performance infrastructure tailored to their specific regulatory needs."
+        },
+        "compliance": {
+            "keywords": ["compliance", "gdpr", "soc2", "iso", "regulations", "standards"],
+            "answer": "We adhere to the highest industry standards, including GDPR, SOC2, and ISO 27001, ensuring your data and infrastructure meet global compliance requirements."
+        },
+        "history": {
+            "keywords": ["history", "founded", "story", "start", "background"],
+            "answer": "ANGC Synapse was founded with the vision of creating the 'nervous system' for modern digital businesses, combining traditional reliability with next-generation AI."
+        },
+        "support_hours": {
+            "keywords": ["hours", "open", "available", "support time"],
+            "answer": "Our core infrastructure monitoring and emergency support are available 24/7/365. Standard business support is available 9 AM - 6 PM (Local Time)."
+        },
+        "partnership": {
+            "keywords": ["partner", "collaboration", "affiliate", "work together"],
+            "answer": "We're always open to strategic partnerships! Please reach out to our team at jai616263@gmail.com to discuss how we can collaborate."
         },
         "about": {
             "keywords": ["who are you", "what is angc", "synapse", "about"],
@@ -378,7 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "answer": "Goodbye! Feel free to reach out if you have any more questions. Have a great day!"
         },
         "default": {
-            "answer": "I'm sorry, I didn't quite catch that. Could you please rephrase your question? Alternatively, you can contact us at jai616263@gmail.com for detailed inquiries."
+            "answer": "I'm sorry, I didn't quite catch that. Could you please rephrase your question? Alternatively, you can use the interactive options below."
         }
     };
 
@@ -426,7 +511,11 @@ document.addEventListener('DOMContentLoaded', () => {
         function addMessage(text, sender) {
             const msg = document.createElement('div');
             msg.className = `message ${sender}`;
-            msg.innerText = text;
+            if (sender === 'bot') {
+                msg.innerHTML = text; // Support HTML for bot messages
+            } else {
+                msg.innerText = text; // Keep text for user messages
+            }
             messagesDiv.appendChild(msg);
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
         }
