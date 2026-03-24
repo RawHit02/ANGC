@@ -537,14 +537,63 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function getBotResponse(userText) {
-            const text = userText.toLowerCase();
+            const text = userText.toLowerCase().trim();
+            const words = text.split(/\s+/);
+            
+            // 1. Try Exact/Includes Matching First
             for (const key in chatbotData) {
                 if (key === 'default') continue;
                 if (chatbotData[key].keywords.some(keyword => text.includes(keyword))) {
                     return chatbotData[key].answer;
                 }
             }
-            return chatbotData.default.answer;
+
+            // 2. Try Fuzzy Matching if no exact match
+            // Fuzzy Matching Helper: Levenshtein Distance
+            function calculateLevenshtein(a, b) {
+                if (a.length === 0) return b.length;
+                if (b.length === 0) return a.length;
+                const matrix = [];
+                for (let i = 0; i <= b.length; i++) matrix[i] = [i];
+                for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+                for (let i = 1; i <= b.length; i++) {
+                    for (let j = 1; j <= a.length; j++) {
+                        if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                            matrix[i][j] = matrix[i - 1][j - 1];
+                        } else {
+                            matrix[i][j] = Math.min(
+                                matrix[i - 1][j - 1] + 1,
+                                matrix[i][j - 1] + 1,
+                                matrix[i - 1][j] + 1
+                            );
+                        }
+                    }
+                }
+                return matrix[b.length][a.length];
+            }
+
+            let bestMatch = null;
+            let minDistance = 3; 
+
+            for (const key in chatbotData) {
+                if (key === 'default') continue;
+                for (const keyword of chatbotData[key].keywords) {
+                    for (const word of words) {
+                        if (word.length < 3) continue; 
+                        const distance = calculateLevenshtein(word.toLowerCase(), keyword.toLowerCase());
+                        
+                        // Dynamic threshold based on keyword length
+                        const threshold = keyword.length > 5 ? 2 : 1;
+                        
+                        if (distance <= threshold && (bestMatch === null || distance < minDistance)) {
+                            minDistance = distance;
+                            bestMatch = chatbotData[key].answer;
+                        }
+                    }
+                }
+            }
+
+            return bestMatch || chatbotData.default.answer;
         }
 
         function handleSend() {
