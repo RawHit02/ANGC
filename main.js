@@ -347,4 +347,127 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    // --- Chatbot System ---
+    const chatbotData = {
+        "greetings": {
+            "keywords": ["hi", "hello", "hey", "hola", "greetings"],
+            "answer": "Hello! Welcome to ANGC Synapse. How can I assist you with your IT infrastructure today?"
+        },
+        "whats_up": {
+            "keywords": ["whats up", "how are you", "how goes it"],
+            "answer": "I'm doing great, thank you! I'm here to help you navigate our enterprise-grade AI-driven IT solutions. How can I help you today?"
+        },
+        "plans": {
+            "keywords": ["plans", "pricing", "services", "offerings", "solutions"],
+            "answer": "We offer scalable cloud infrastructure, AI-driven cybersecurity, and zero-trust network architectures. Our solutions are tailored for Startups, SMEs, and Enterprises. You can explore more in our Services section!"
+        },
+        "contact": {
+            "keywords": ["contact", "email", "phone", "call", "reach", "support", "help"],
+            "answer": "You can reach us directly at jai616263@gmail.com or call our expert team at +91 9311161110. We're available 24/7 for our enterprise clients."
+        },
+        "about": {
+            "keywords": ["who are you", "what is angc", "synapse", "about"],
+            "answer": "ANGC Synapse is a leader in enterprise-grade IT infrastructure. We specialize in AI-driven cloud solutions, cybersecurity, and global network architectures."
+        },
+        "capabilities": {
+            "keywords": ["what can you do", "capabilities", "features"],
+            "answer": "We provide end-to-end cloud migration, AI threat detection, zero-trust networking, and 24/7 managed IT services."
+        },
+        "bye": {
+            "keywords": ["bye", "goodbye", "exit", "stop"],
+            "answer": "Goodbye! Feel free to reach out if you have any more questions. Have a great day!"
+        },
+        "default": {
+            "answer": "I'm sorry, I didn't quite catch that. Could you please rephrase your question? Alternatively, you can contact us at jai616263@gmail.com for detailed inquiries."
+        }
+    };
+
+    function injectChatbot() {
+        const chatbotHTML = `
+            <div class="chatbot-toggle" id="chatbot-toggle">
+                <span>💬</span>
+            </div>
+            <div class="chatbot-container" id="chatbot-container">
+                <div class="chatbot-header">
+                    <h3>ANGC Assistant</h3>
+                    <button class="chatbot-close" id="chatbot-close">&times;</button>
+                </div>
+                <div class="chatbot-messages" id="chatbot-messages">
+                    <div class="message bot">Hi there! I'm your ANGC AI assistant. How can I help you today?</div>
+                </div>
+                <div class="chatbot-input-area">
+                    <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Type a message...">
+                    <button class="chatbot-send" id="chatbot-send">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', chatbotHTML);
+        
+        const toggle = document.getElementById('chatbot-toggle');
+        const container = document.getElementById('chatbot-container');
+        const closeBtn = document.getElementById('chatbot-close');
+        const input = document.getElementById('chatbot-input');
+        const sendBtn = document.getElementById('chatbot-send');
+        const messagesDiv = document.getElementById('chatbot-messages');
+
+        toggle.addEventListener('click', () => {
+            container.classList.toggle('active');
+            if (container.classList.contains('active')) {
+                input.focus();
+            }
+        });
+
+        closeBtn.addEventListener('click', () => {
+            container.classList.remove('active');
+        });
+
+        function addMessage(text, sender) {
+            const msg = document.createElement('div');
+            msg.className = `message ${sender}`;
+            msg.innerText = text;
+            messagesDiv.appendChild(msg);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function getBotResponse(userText) {
+            const text = userText.toLowerCase();
+            for (const key in chatbotData) {
+                if (key === 'default') continue;
+                if (chatbotData[key].keywords.some(keyword => text.includes(keyword))) {
+                    return chatbotData[key].answer;
+                }
+            }
+            return chatbotData.default.answer;
+        }
+
+        function handleSend() {
+            const text = input.value.trim();
+            if (!text) return;
+
+            addMessage(text, 'user');
+            input.value = '';
+
+            // Bot response with delay
+            const typing = document.createElement('div');
+            typing.className = 'typing';
+            typing.innerText = 'Assistant is typing...';
+            messagesDiv.appendChild(typing);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            setTimeout(() => {
+                typing.remove();
+                const response = getBotResponse(text);
+                addMessage(response, 'bot');
+            }, 1000);
+        }
+
+        sendBtn.addEventListener('click', handleSend);
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleSend();
+        });
+    }
+
+    injectChatbot();
 });
