@@ -486,7 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function injectChatbot() {
         const chatbotHTML = `
             <div class="chatbot-toggle" id="chatbot-toggle">
-                <span>💬</span>
+                <div class="toggle-icon">💬</div>
             </div>
             <div class="chatbot-container" id="chatbot-container">
                 <div class="chatbot-header">
@@ -606,7 +606,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Bot response with delay
             const typing = document.createElement('div');
             typing.className = 'typing';
-            typing.innerText = 'Assistant is typing...';
+            typing.innerHTML = `
+                <div class="typing-spinner"></div>
+                <span class="typing-text">AI is thinking...</span>
+            `;
             messagesDiv.appendChild(typing);
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
