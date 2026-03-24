@@ -250,7 +250,7 @@ body.light-mode .icon-moon { display: none; }
     padding-top: var(--nav-height);
     position: relative;
     overflow: hidden;
-    background: var(--hero-overlay), url('assets/images/hero-bg.png');
+    background: var(--hero-overlay);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
