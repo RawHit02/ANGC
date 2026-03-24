@@ -1060,7 +1060,18 @@ textarea:focus {
     .dual-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
+        text-align: center;
     }
+
+    .about-visual {
+        margin: 0 auto;
+    }
+
+    .feature-list {
+        display: inline-block;
+        text-align: left;
+    }
+
     .form-group {
         grid-template-columns: 1fr;
     }
@@ -1068,6 +1079,11 @@ textarea:focus {
 
 /* ---- <= 768px: Small screens ---- */
 @media (max-width: 768px) {
+    .hero { 
+        height: auto; 
+        min-height: 70vh; 
+        padding: 6rem 0; 
+    }
     .hero h1 { font-size: 2.2rem; }
     .hero p { font-size: 1rem; }
     .hero-ctas { flex-direction: column; align-items: center; }
@@ -1076,10 +1092,10 @@ textarea:focus {
     .footer-content { flex-direction: column; gap: 3rem; }
     .footer-links { gap: 2rem; flex-wrap: wrap; }
     .container { padding: 0 1rem; }
-    .why-us, .process, .faq { padding: 5rem 0; }
-    .services { padding: 5rem 0; }
-    .about { padding: 5rem 0; }
-    .contact { padding: 5rem 0; }
+    .why-us, .process, .faq { padding: 3rem 0; }
+    .services { padding: 3rem 0; }
+    .about { padding: 3rem 0; }
+    .contact { padding: 3rem 0; }
     .faq-question { padding: 1.2rem 1.5rem; font-size: 0.95rem; }
     .faq-answer { padding: 0 1.5rem; }
 }
