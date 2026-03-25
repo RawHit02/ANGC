@@ -48,19 +48,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==================== HERO CARD ROTATION ====================
     const cardsTrack = document.getElementById('hero-cards-track');
     const heroCards = document.querySelectorAll('.hero-card');
+    const sliderContainer = document.querySelector('.hero-slider-container');
     let cardSet = 0; // Each set contains 2 cards
 
     if (cardsTrack && heroCards.length > 2) {
         setInterval(() => {
-            // Only rotate on desktop - prevents horizontal overflow on mobile
             if (window.innerWidth > 1024) {
                 cardSet = (cardSet + 1) % 3; // 3 sets of 2
                 // Calculate offset: (Card Width 400px + Gap 32px) * 2 cards per jump
                 const offset = cardSet * (432 * 2); 
                 cardsTrack.style.transform = `translateX(-${offset}px)`;
-            } else {
+            } else if (sliderContainer) {
                 // Reset transform on mobile resize
                 cardsTrack.style.transform = 'none';
+                
+                // Native smooth scroll for mobile auto-swapping
+                const singleCardJump = heroCards[0].offsetWidth + 24; // Card width + 1.5rem gap
+                
+                // If reached the end, smoothly scroll back to the beginning
+                if (sliderContainer.scrollLeft + sliderContainer.clientWidth >= sliderContainer.scrollWidth - 20) {
+                    sliderContainer.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    // Progress to the next card
+                    sliderContainer.scrollBy({ left: singleCardJump, behavior: 'smooth' });
+                }
             }
         }, 4000); // Swapping every 4 seconds
     }

@@ -368,8 +368,8 @@ ul {
 /* Shuffle Section (Overview) */
 .shuffle-section {
     padding: 8rem 0;
-    background: var(--secondary);
-    color: white;
+    background: #F0F4F8; /* Manager requested light blue shade */
+    color: var(--text-main);
     overflow: hidden;
 }
 
