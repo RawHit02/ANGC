@@ -52,11 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (cardsTrack && heroCards.length > 2) {
         setInterval(() => {
-            cardSet = (cardSet + 1) % 3; // 3 sets of 2
-            
-            // Calculate offset: (Card Width 400px + Gap 32px) * 2 cards per jump
-            const offset = cardSet * (432 * 2); 
-            cardsTrack.style.transform = `translateX(-${offset}px)`;
+            // Only rotate on desktop - prevents horizontal overflow on mobile
+            if (window.innerWidth > 1024) {
+                cardSet = (cardSet + 1) % 3; // 3 sets of 2
+                // Calculate offset: (Card Width 400px + Gap 32px) * 2 cards per jump
+                const offset = cardSet * (432 * 2); 
+                cardsTrack.style.transform = `translateX(-${offset}px)`;
+            } else {
+                // Reset transform on mobile resize
+                cardsTrack.style.transform = 'none';
+            }
         }, 4000); // Swapping every 4 seconds
     }
 
