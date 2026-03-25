@@ -89,11 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==================== MOBILE MENU ====================
-    const mobileBtn = document.getElementById('mobile-toggle');
+    const mobileBtn = document.querySelector('.mobile-btn');
     const navCenter = document.querySelector('.nav-center');
     const navItems = document.querySelectorAll('.nav-links > li.has-mega > a');
 
-    if (mobileBtn) {
+    if (mobileBtn && navCenter) {
         mobileBtn.addEventListener('click', () => {
             navCenter.classList.toggle('active');
         });

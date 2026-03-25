@@ -623,16 +623,17 @@ footer {
 .mobile-btn {
     display: none;
     flex-direction: column;
-    gap: 6px;
+    gap: 7px;
     cursor: pointer;
+    padding: 0.25rem;
 }
 
 .mobile-btn span {
-    width: 30px;
-    height: 3px;
+    width: 35px;
+    height: 4px;
     background: white;
     transition: 0.3s;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 header.scrolled .mobile-btn span {
@@ -646,6 +647,9 @@ header.scrolled .mobile-btn span {
 }
 
 @media (max-width: 1024px) {
+    /* Make Hamburger dark by default on mobile since header overlaps white space */
+    .mobile-btn span { background: var(--text-main) !important; }
+
     header#main-header .nav-center { display: none !important; }
     header#main-header .nav-center.active { display: block !important; }
     .mobile-btn { display: flex; }
@@ -674,11 +678,11 @@ header.scrolled .mobile-btn span {
     }
 
     .mega-menu {
-        position: static; transform: none; box-shadow: none; padding: 0 1.5rem 1rem;
-        grid-template-columns: 1fr; display: none; border-left: 3px solid var(--primary); margin: 0.5rem 0;
+        position: static !important; transform: none !important; box-shadow: none !important; padding: 0 1.5rem 1rem !important;
+        grid-template-columns: 1fr !important; display: none !important; border-left: 3px solid var(--primary); margin: 0.5rem 0;
     }
 
-    .nav-links > li.active .mega-menu { display: grid; }
+    .nav-links > li.active .mega-menu { display: grid !important; }
 
     /* Grids & Cards responsiveness */
     .method-grid, .service-grid, .capability-grid, .feature-grid, .hero-grid, .case-studies-grid, .talk-grid, .shuffle-grid, .expertise-grid {
@@ -829,12 +833,26 @@ header.scrolled .mobile-btn span {
     .hero p { font-size: 1.1rem; }
     .logo-text img { height: 35px !important; }
     
-    .hero-cards { 
-        flex-direction: column; 
-        width: 100% !important; 
-        gap: 1.5rem; 
+    .hero-slider-container {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 1rem;
+        scrollbar-width: none;
     }
-    .hero-card { width: 100% !important; }
+    .hero-slider-container::-webkit-scrollbar { display: none; }
+    
+    .hero-cards { 
+        flex-direction: row !important; 
+        width: max-content !important; 
+        gap: 1.5rem; 
+        padding-right: 1.5rem;
+    }
+    .hero-card { 
+        width: 80vw !important; 
+        max-width: 320px !important; 
+        scroll-snap-align: center; 
+    }
 
     .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
