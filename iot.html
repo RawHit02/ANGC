@@ -4,80 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers | ANGC Synapse</title>
+    <title>Internet of Things (IoT) | Engineering by ANGC Synapse</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        #main-header:not(.scrolled) {
-            background: var(--white);
+        .service-type {
+            color: #007bff;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        #main-header:not(.scrolled) .logo-text,
-        #main-header:not(.scrolled) .nav-links>li>a {
-            color: var(--text-main);
-        }
-
-        #main-header.scrolled {
-            box-shadow: var(--shadow-sm);
-        }
-
-        .sub-hero {
-            padding: 12rem 0 6rem;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('assets/images/bg_ai.png');
-            background-size: cover;
-            background-position: center;
+        .hero {
+            padding: 10rem 0 6rem;
             text-align: center;
-            color: white;
+            background: radial-gradient(circle at center right, rgba(0, 123, 255, 0.05), white);
         }
 
-        .sub-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .content-section {
-            padding: 6rem 0;
-        }
-
-        .careers-grid {
+        .iot-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 5rem;
         }
 
-        .job-card {
-            background: var(--white);
+        .iot-card {
+            padding: 3rem;
+            background: white;
             border: 1px solid var(--border);
-            padding: 2rem;
-            border-radius: 8px;
-            transition: var(--transition);
+            border-radius: 20px;
+            transition: 0.3s;
         }
 
-        .job-card:hover {
-            border-color: var(--primary);
+        .iot-card:hover {
+            border-color: #007bff;
             transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .job-card h3 {
-            margin-bottom: 1rem;
-            color: var(--text-main);
-        }
-
-        .job-card p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
         }
     </style>
 </head>
 
 <body>
-    <!-- ==================== HEADER ==================== -->
     <header id="main-header" class="scrolled force-stuck">
         <nav class="container header-grid">
             <div class="header-left">
@@ -92,7 +63,7 @@
                     <li><a href="what-we-do.html">What We Do</a></li>
                     <li><a href="how-we-do.html">How We Do</a></li>
                     <li class="has-mega">
-                        <a href="#">Technologies <span class="nav-arrow">▾</span></a>
+                        <a href="#" class="active">Technologies <span class="nav-arrow">▾</span></a>
                         <div class="mega-menu">
                             <div class="mega-col">
                                 <h4>AI Solutions</h4>
@@ -121,23 +92,23 @@
                         <div class="mega-menu" style="grid-template-columns: 200px;">
                             <div class="mega-col">
                                 <h4>Insights</h4>
-                                <a href="blogs.html">Blogs</a>
-                                <a href="white-papers.html">White Papers</a>
-                                <a href="guides.html">Guides</a>
-                                <a href="webinars.html">Webinars</a>
+                                <a href="#">Blogs</a>
+                                <a href="#">White Papers</a>
+                                <a href="#">Guides</a>
+                                <a href="#">Webinars</a>
                             </div>
                         </div>
                     </li>
                     <li class="has-mega">
-                        <a href="#" class="active">About Us <span class="nav-arrow">▾</span></a>
+                        <a href="#">About Us <span class="nav-arrow">▾</span></a>
                         <div class="mega-menu" style="grid-template-columns: 200px;">
                             <div class="mega-col">
                                 <h4>About Us</h4>
                                 <a href="about.html">Overview</a>
                                 <a href="about.html#team">Core Team</a>
                                 <a href="about.html#customers">Customers</a>
-                                <a href="recognitions.html">Recognitions</a>
-                                <a href="whats-new.html">What's New</a>
+                                <a href="#">Recognitions</a>
+                                <a href="#">What's New</a>
                                 <a href="about.html#locations">Locations</a>
                                 <a href="careers.html">Careers</a>
                             </div>
@@ -158,72 +129,47 @@
     </header>
 
     <main>
-        <section class="sub-hero">
-            <div class="container text-reveal">
-                <h1>Join Our Team <br><span style="color: var(--primary);">Shape the AI Future.</span></h1>
-                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">Build
-                    products that redefine industries. Join a culture of engineering excellence and innovation.</p>
+        <section class="hero">
+            <div class="container">
+                <span class="service-type">Edge Engineering</span>
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-top: 1rem;">Internet of <span
+                        style="color: #007bff;">Things.</span></h1>
+                <p
+                    style="max-width: 800px; margin: 2rem auto; font-size: 1.25rem; color: var(--text-muted); line-height: 1.8;">
+                    Connecting the physical and digital worlds. We build secure, scalable, and intelligent IoT
+                    ecosystems for industries 4.0 and beyond.</p>
             </div>
         </section>
 
-        <section class="content-section">
-            <div class="container">
-                <div class="careers-grid">
-                    <div class="job-card">
-                        <h3>AI/ML Engineer</h3>
-                        <p>Work on agentic AI and MLOPS to deliver transformative solutions.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Product Designer</h3>
-                        <p>Create intuitive UX/UI for complex enterprise applications.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Full Stack Developer</h3>
-                        <p>Build scalable web applications with React and Node.js.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Cloud Infra Engineer</h3>
-                        <p>Architecting resilient, scalable cloud systems on AWS/Azure/GCP.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Blockchain Developer</h3>
-                        <p>Designing decentralized protocols and smart contracts for Web3.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Data Scientist</h3>
-                        <p>Turning complex data into actionable insights through advanced modeling.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>MLOps Specialist</h3>
-                        <p>Automating the lifecycle of machine learning models at scale.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Cybersecurity Analyst</h3>
-                        <p>Proactively protecting our partners' digital assets and infrastructure.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Backend Engineer</h3>
-                        <p>Building high-performance, distributed systems using Go or Rust.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
+        <section class="container" style="padding-bottom: 8rem;">
+            <div class="iot-grid">
+                <div class="iot-card">
+                    <h3 style="margin-bottom: 1.5rem;">Edge Computing</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7;">Moving computational intelligence to the
+                        edge. Processing sensor data locally for faster response and reduced bandwidth costs.</p>
                 </div>
+                <div class="iot-card">
+                    <h3 style="margin-bottom: 1.5rem;">Device Management</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7;">Scalable OTA (Over-The-Air) updates,
+                        monitoring, and remote diagnostics for large-scale fleets of connected devices.</p>
+                </div>
+                <div class="iot-card">
+                    <h3 style="margin-bottom: 1.5rem;">Industrial IoT (IIoT)</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7;">Integrating legacy industrial systems with
+                        modern cloud architectures to enable predictive maintenance and real-time operations.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="margin-bottom: 6rem;">
+            <div style="background: #111; color: white; padding: 6rem; border-radius: 40px; text-align: center;">
+                <h2 style="color: white; margin-bottom: 1.5rem;">Smart is the new standard.</h2>
+                <p
+                    style="margin-bottom: 3.5rem; opacity: 0.8; font-size: 1.25rem; max-width: 600px; margin: 0 auto 3.5rem;">
+                    Transform your physical products into smart, connected experiences that drive value through
+                    intelligence.</p>
+                <a href="index.html#talk-to-us" class="btn btn-talk"
+                    style="background: #007bff; border: none; padding: 1.25rem 3.5rem;">Connect Your World</a>
             </div>
         </section>
     </main>

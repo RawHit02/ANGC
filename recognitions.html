@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers | ANGC Synapse</title>
+    <title>Recognitions & Awards | ANGC Synapse</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,66 +12,67 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        #main-header:not(.scrolled) {
-            background: var(--white);
-        }
-
-        #main-header:not(.scrolled) .logo-text,
-        #main-header:not(.scrolled) .nav-links>li>a {
-            color: var(--text-main);
-        }
-
-        #main-header.scrolled {
-            box-shadow: var(--shadow-sm);
-        }
-
-        .sub-hero {
-            padding: 12rem 0 6rem;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('assets/images/bg_ai.png');
-            background-size: cover;
-            background-position: center;
+        .awards-hero {
+            padding: 10rem 0 5rem;
+            background: var(--bg-offset);
             text-align: center;
-            color: white;
         }
 
-        .sub-hero h1 {
-            font-size: 3.5rem;
+        .awards-hero h1 {
+            font-size: 4rem;
             margin-bottom: 1.5rem;
+            font-family: 'Outfit';
         }
 
-        .content-section {
+        .awards-container {
             padding: 6rem 0;
         }
 
-        .careers-grid {
+        .awards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 3rem;
         }
 
-        .job-card {
+        .award-card {
             background: var(--white);
+            border-radius: 20px;
+            padding: 4rem 2rem;
             border: 1px solid var(--border);
-            padding: 2rem;
-            border-radius: 8px;
+            text-align: center;
             transition: var(--transition);
         }
 
-        .job-card:hover {
+        .award-card:hover {
             border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
             transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
         }
 
-        .job-card h3 {
+        .award-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .award-card h3 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--text-main);
+            font-family: 'Outfit';
         }
 
-        .job-card p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
+        .award-card p {
             font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .award-year {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 1.2rem;
+            display: block;
+            margin-top: 1.5rem;
         }
     </style>
 </head>
@@ -158,71 +159,43 @@
     </header>
 
     <main>
-        <section class="sub-hero">
+        <section class="awards-hero">
             <div class="container text-reveal">
-                <h1>Join Our Team <br><span style="color: var(--primary);">Shape the AI Future.</span></h1>
-                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">Build
-                    products that redefine industries. Join a culture of engineering excellence and innovation.</p>
+                <h1>Global <br><span style="color: var(--primary);">Recognitions.</span></h1>
+                <p style="max-width: 600px; margin: 0 auto; opacity: 0.7;">Celebrating the milestones and accolades that
+                    define our commitment to engineering excellence.</p>
             </div>
         </section>
 
-        <section class="content-section">
-            <div class="container">
-                <div class="careers-grid">
-                    <div class="job-card">
-                        <h3>AI/ML Engineer</h3>
-                        <p>Work on agentic AI and MLOPS to deliver transformative solutions.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Product Designer</h3>
-                        <p>Create intuitive UX/UI for complex enterprise applications.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Full Stack Developer</h3>
-                        <p>Build scalable web applications with React and Node.js.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Cloud Infra Engineer</h3>
-                        <p>Architecting resilient, scalable cloud systems on AWS/Azure/GCP.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Blockchain Developer</h3>
-                        <p>Designing decentralized protocols and smart contracts for Web3.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Data Scientist</h3>
-                        <p>Turning complex data into actionable insights through advanced modeling.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>MLOps Specialist</h3>
-                        <p>Automating the lifecycle of machine learning models at scale.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Cybersecurity Analyst</h3>
-                        <p>Proactively protecting our partners' digital assets and infrastructure.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Backend Engineer</h3>
-                        <p>Building high-performance, distributed systems using Go or Rust.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
+        <section class="awards-container container">
+            <div class="awards-grid">
+                <div class="award-card">
+                    <span class="award-icon">🏆</span>
+                    <h3>AI Innovation Award</h3>
+                    <p>Recognized for our pioneering work in Agentic AI and enterprise automation frameworks.</p>
+                    <span class="award-year">2026</span>
+                </div>
+
+                <div class="award-card">
+                    <span class="award-icon">🎖️</span>
+                    <h3>Deloitte Tech Fast 500</h3>
+                    <p>Listed as one of the fastest-growing engineering firms in the globe for three consecutive years.
+                    </p>
+                    <span class="award-year">2025</span>
+                </div>
+
+                <div class="award-card">
+                    <span class="award-icon">🌟</span>
+                    <h3>Product Excellence</h3>
+                    <p>Awarded for building transformative SaaS architectures for global fintech leaders.</p>
+                    <span class="award-year">2024</span>
+                </div>
+
+                <div class="award-card">
+                    <span class="award-icon">💼</span>
+                    <h3>Best Places to Work</h3>
+                    <p>Acknowledged for our culture of engineering excellence and continuous learning.</p>
+                    <span class="award-year">2023</span>
                 </div>
             </div>
         </section>
@@ -268,6 +241,7 @@
             </div>
         </div>
     </footer>
+
     <script src="main.js"></script>
 </body>
 

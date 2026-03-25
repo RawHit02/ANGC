@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers | ANGC Synapse</title>
+    <title>What's New | ANGC Synapse</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,66 +12,100 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        #main-header:not(.scrolled) {
-            background: var(--white);
-        }
-
-        #main-header:not(.scrolled) .logo-text,
-        #main-header:not(.scrolled) .nav-links>li>a {
-            color: var(--text-main);
-        }
-
-        #main-header.scrolled {
-            box-shadow: var(--shadow-sm);
-        }
-
-        .sub-hero {
-            padding: 12rem 0 6rem;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('assets/images/bg_ai.png');
-            background-size: cover;
-            background-position: center;
+        .news-hero {
+            padding: 10rem 0 5rem;
+            background: var(--bg-offset);
             text-align: center;
-            color: white;
         }
 
-        .sub-hero h1 {
-            font-size: 3.5rem;
+        .news-hero h1 {
+            font-size: 4rem;
             margin-bottom: 1.5rem;
+            font-family: 'Outfit';
         }
 
-        .content-section {
+        .news-container {
             padding: 6rem 0;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .careers-grid {
+        .news-item {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 150px 1fr;
+            gap: 3rem;
+            margin-bottom: 5rem;
+            position: relative;
         }
 
-        .job-card {
+        .news-item::after {
+            content: '';
+            position: absolute;
+            left: 75px;
+            top: 2rem;
+            bottom: -3rem;
+            width: 1px;
+            background: var(--border);
+            z-index: -1;
+        }
+
+        .news-item:last-child::after {
+            display: none;
+        }
+
+        .news-date {
+            text-align: right;
+            padding-top: 0.5rem;
+        }
+
+        .news-date h4 {
+            color: var(--primary);
+            font-family: 'Outfit';
+            font-size: 1.2rem;
+        }
+
+        .news-date p {
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        .news-content {
             background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
             border: 1px solid var(--border);
-            padding: 2rem;
-            border-radius: 8px;
             transition: var(--transition);
         }
 
-        .job-card:hover {
+        .news-content:hover {
             border-color: var(--primary);
-            transform: translateY(-5px);
             box-shadow: var(--shadow-md);
+            transform: translateX(10px);
         }
 
-        .job-card h3 {
-            margin-bottom: 1rem;
-            color: var(--text-main);
-        }
-
-        .job-card p {
-            color: var(--text-muted);
+        .news-content h3 {
+            font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+            font-family: 'Outfit';
+        }
+
+        .news-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .news-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: var(--bg-offset);
+            color: var(--text-main);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -115,7 +149,7 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="#">Our Work</a></li>
+                    <li><a href="case-studies.html">Our Work</a></li>
                     <li class="has-mega">
                         <a href="#">Insights <span class="nav-arrow">▾</span></a>
                         <div class="mega-menu" style="grid-template-columns: 200px;">
@@ -158,71 +192,57 @@
     </header>
 
     <main>
-        <section class="sub-hero">
+        <section class="news-hero">
             <div class="container text-reveal">
-                <h1>Join Our Team <br><span style="color: var(--primary);">Shape the AI Future.</span></h1>
-                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">Build
-                    products that redefine industries. Join a culture of engineering excellence and innovation.</p>
+                <h1>ANGC <br><span style="color: var(--primary);">Updates.</span></h1>
+                <p style="max-width: 600px; margin: 0 auto; opacity: 0.7;">Stay updated with the latest news, releases,
+                    and announcements from the lab.</p>
             </div>
         </section>
 
-        <section class="content-section">
-            <div class="container">
-                <div class="careers-grid">
-                    <div class="job-card">
-                        <h3>AI/ML Engineer</h3>
-                        <p>Work on agentic AI and MLOPS to deliver transformative solutions.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Product Designer</h3>
-                        <p>Create intuitive UX/UI for complex enterprise applications.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Full Stack Developer</h3>
-                        <p>Build scalable web applications with React and Node.js.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Cloud Infra Engineer</h3>
-                        <p>Architecting resilient, scalable cloud systems on AWS/Azure/GCP.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Blockchain Developer</h3>
-                        <p>Designing decentralized protocols and smart contracts for Web3.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Data Scientist</h3>
-                        <p>Turning complex data into actionable insights through advanced modeling.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>MLOps Specialist</h3>
-                        <p>Automating the lifecycle of machine learning models at scale.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Cybersecurity Analyst</h3>
-                        <p>Proactively protecting our partners' digital assets and infrastructure.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Backend Engineer</h3>
-                        <p>Building high-performance, distributed systems using Go or Rust.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
+        <section class="news-container container">
+            <!-- News 1 -->
+            <div class="news-item">
+                <div class="news-date">
+                    <h4>March 15</h4>
+                    <p>2026</p>
+                </div>
+                <div class="news-content">
+                    <span class="news-tag">Release</span>
+                    <h3>Launching Prefab v3.0</h3>
+                    <p>Our latest release of the MLOps prefab library focus on decentralized training and better GPU
+                        resource management. Faster, leaner, and ready for multi-agent workloads.</p>
+                    <a href="#" style="color: var(--primary); font-weight: 700;">Read Announcement →</a>
+                </div>
+            </div>
+
+            <!-- News 2 -->
+            <div class="news-item">
+                <div class="news-date">
+                    <h4>Feb 28</h4>
+                    <p>2026</p>
+                </div>
+                <div class="news-content">
+                    <span class="news-tag">Company</span>
+                    <h3>Expanding to Singapore</h3>
+                    <p>We are excited to announce the opening of our new engineering hub in Singapore, strengthening our
+                        presence in the APAC region and enabling 24/7 global support.</p>
+                    <a href="#" style="color: var(--primary); font-weight: 700;">Read More →</a>
+                </div>
+            </div>
+
+            <!-- News 3 -->
+            <div class="news-item">
+                <div class="news-date">
+                    <h4>Jan 10</h4>
+                    <p>2026</p>
+                </div>
+                <div class="news-content">
+                    <span class="news-tag">Partnership</span>
+                    <h3>Collaborating with OpenSource Leaders</h3>
+                    <p>ANGC Synapse is now a silver member of the Cloud Native Computing Foundation (CNCF), furthering
+                        our commitment to open-source excellence.</p>
+                    <a href="#" style="color: var(--primary); font-weight: 700;">Read Announcement →</a>
                 </div>
             </div>
         </section>
@@ -268,6 +288,7 @@
             </div>
         </div>
     </footer>
+
     <script src="main.js"></script>
 </body>
 

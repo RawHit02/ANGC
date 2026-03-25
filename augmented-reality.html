@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Network Solutions | ANGC Synapse</title>
+    <title>Augmented & Virtual Reality | ANGC Synapse</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,35 +12,42 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        #main-header:not(.scrolled) {
-            background: var(--white);
+        .page-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('assets/images/bg_ai.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
         }
 
-        #main-header:not(.scrolled) .logo-text,
-        #main-header:not(.scrolled) .nav-links>li>a {
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem;
+            transition: var(--transition);
+            margin-bottom: 3rem;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .service-card h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
             color: var(--text-main);
         }
 
-        #main-header.scrolled {
-            box-shadow: var(--shadow-sm);
-        }
-
-        .sub-hero {
-            padding: 8rem 0 4rem;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('assets/images/bg_cloud.png');
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            color: white;
-        }
-
-        .sub-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .content-section {
-            padding: 6rem 0;
+        .service-card p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 800px;
         }
     </style>
 </head>
@@ -61,7 +68,7 @@
                     <li><a href="what-we-do.html">What We Do</a></li>
                     <li><a href="how-we-do.html">How We Do</a></li>
                     <li class="has-mega">
-                        <a href="#">Technologies <span class="nav-arrow">▾</span></a>
+                        <a href="#" class="active">Technologies <span class="nav-arrow">▾</span></a>
                         <div class="mega-menu">
                             <div class="mega-col">
                                 <h4>AI Solutions</h4>
@@ -75,10 +82,10 @@
                             </div>
                             <div class="mega-col">
                                 <h4>Engineering</h4>
-                                <a href="#">UX/UI</a>
-                                <a href="#">DevOps</a>
-                                <a href="#">Big Data</a>
-                                <a href="#">Blockchain</a>
+                                <a href="ui-ux.html">UX/UI</a>
+                                <a href="devops-infra.html">DevOps</a>
+                                <a href="big-data.html">Big Data</a>
+                                <a href="blockchain.html">Blockchain</a>
                                 <a href="#">OpenSource</a>
                                 <a href="#">IoT</a>
                             </div>
@@ -127,9 +134,34 @@
     </header>
 
     <main>
-        <section class="sub-hero">
-            <div class="container text-reveal">
-                <h1>Next-Gen Networking <br><span style="color: var(--primary);">Seamless Connectivity.</span></h1>
+        <section class="page-hero">
+            <div class="container">
+                <h1 style="font-size: 4rem; margin-bottom: 1rem;">Augmented Reality</h1>
+                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">Immersive experiences
+                    that merge the digital and physical worlds using ARKit, ARCore, and Unity.</p>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: var(--bg-offset);">
+            <div class="container">
+                <div class="service-card">
+                    <h2>Immersive UX for AR</h2>
+                    <p>Designing for spatial computing is different. We build intuitive AR interfaces that allow users
+                        to interact with digital information in 3D space, ensuring comfort and high usability.</p>
+                </div>
+
+                <div class="service-card">
+                    <h2>Enterprise AR Training</h2>
+                    <p>Train your workforce with interactive simulations. We build AR training solutions that provide
+                        step-by-step guidance on complex machinery and procedures, reducing errors and training time.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h2>Consumer AR Experiences</h2>
+                    <p>Engage your customers like never before. From virtual try-ons to gamified marketing campaigns, we
+                        build high-impact AR applications that drive brand awareness and conversion.</p>
+                </div>
             </div>
         </section>
     </main>
@@ -138,9 +170,35 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <h2>ANGC <span style="color: var(--secondary);">Synapse</span></h2>
+                <p>Experience Matters! A track record of building complex products over the last decade.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Our Capabilities</h4>
+                <a href="software-development.html">Software Development</a>
+                <a href="ai-ml.html">AI & Machine Learning</a>
+                <a href="blockchain.html">Blockchain</a>
+                <a href="big-data.html">Big Data</a>
+            </div>
+            <div class="footer-col">
+                <h4>More</h4>
+                <a href="ui-ux.html">UI/UX Design</a>
+                <a href="devops-infra.html">DevOps & Infra</a>
+                <a href="mobile-wearables.html">Mobile & Wearables</a>
+                <a href="augmented-reality.html">Augmented Reality</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="careers.html">Careers</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="#">Sitemap</a>
             </div>
         </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2025 ANGC Synapse Pvt. Ltd. All rights reserved.</p>
+        </div>
     </footer>
+
     <script src="main.js"></script>
 </body>
 

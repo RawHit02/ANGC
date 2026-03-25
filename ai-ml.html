@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Machine Learning | ANGC Synapse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('assets/images/bg_ai.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem;
+            transition: var(--transition);
+            margin-bottom: 3rem;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .service-card h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .service-card p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ==================== HEADER ==================== -->
+    <header id="main-header" class="scrolled force-stuck">
+        <nav class="container header-grid">
+            <div class="header-left">
+                <a href="index.html" class="logo-text">
+                    <img src="assets/images/logo.png" alt="ANGC" style="height: 55px; width: auto; display: block;">
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="what-we-do.html">What We Do</a></li>
+                    <li><a href="how-we-do.html">How We Do</a></li>
+                    <li class="has-mega">
+                        <a href="#" class="active">Technologies <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu">
+                            <div class="mega-col">
+                                <h4>AI Solutions</h4>
+                                <a href="#">Agentic AI</a>
+                                <a href="#">AI Transformation</a>
+                                <a href="#">Data Engineering</a>
+                                <a href="#">GenAI</a>
+                                <a href="#">MLOPS</a>
+                                <a href="#" style="color: var(--primary); margin-top: 1rem;">PreFabs</a>
+                                <a href="#" style="color: var(--primary);">CVE Copilot</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Engineering</h4>
+                                <a href="ui-ux.html">UX/UI</a>
+                                <a href="devops-infra.html">DevOps</a>
+                                <a href="big-data.html">Big Data</a>
+                                <a href="blockchain.html">Blockchain</a>
+                                <a href="#">OpenSource</a>
+                                <a href="#">IoT</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="case-studies.html">Our Work</a></li>
+                    <li class="has-mega">
+                        <a href="#">Insights <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu" style="grid-template-columns: 200px;">
+                            <div class="mega-col">
+                                <h4>Insights</h4>
+                                <a href="blogs.html">Blogs</a>
+                                <a href="white-papers.html">White Papers</a>
+                                <a href="guides.html">Guides</a>
+                                <a href="webinars.html">Webinars</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-mega">
+                        <a href="#">About Us <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu" style="grid-template-columns: 200px;">
+                            <div class="mega-col">
+                                <h4>About Us</h4>
+                                <a href="about.html">Overview</a>
+                                <a href="about.html#team">Core Team</a>
+                                <a href="about.html#customers">Customers</a>
+                                <a href="recognitions.html">Recognitions</a>
+                                <a href="whats-new.html">What's New</a>
+                                <a href="about.html#locations">Locations</a>
+                                <a href="careers.html">Careers</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="header-right">
+                <a href="index.html#talk-to-us" class="btn btn-talk">Talk To Us</a>
+                <div class="mobile-btn" id="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1 style="font-size: 4rem; margin-bottom: 1rem;">AI & Machine Learning</h1>
+                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">Pioneering the future with AI-native solutions, from Generative AI to advanced MLOps.</p>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: var(--bg-offset);">
+            <div class="container">
+                <div class="service-card">
+                    <h2>Generative AI & LLMs</h2>
+                    <p>Unlock the power of fine-tuned Large Language Models. We build intelligent agents, chatbots, and content generation pipelines that integrate seamlessly with your business workflows.</p>
+                </div>
+
+                <div class="service-card">
+                    <h2>Predictive Analytics</h2>
+                    <p>Turn your data into foresight. Our ML models provide actionable insights, helping you predict market trends, customer behavior, and operational risks with high accuracy.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h2>MLOps & Lifecycle Management</h2>
+                    <p>Move your models from notebooks to production. We implement robust MLOps pipelines for automated training, deployment, and monitoring, ensuring your AI stays reliable and scalable.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2>ANGC <span style="color: var(--secondary);">Synapse</span></h2>
+                <p>Experience Matters! A track record of building complex products over the last decade.</p>
+                <div class="social-links" style="margin-top: 2rem; display: flex; gap: 1rem;">
+                    <a href="#" style="opacity: 0.6;">LinkedIn</a>
+                    <a href="#" style="opacity: 0.6;">Twitter</a>
+                    <a href="#" style="opacity: 0.6;">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Our Capabilities</h4>
+                <a href="software-development.html">Software Development</a>
+                <a href="ai-ml.html">AI & Machine Learning</a>
+                <a href="blockchain.html">Blockchain</a>
+                <a href="big-data.html">Big Data</a>
+            </div>
+            <div class="footer-col">
+                <h4>More</h4>
+                <a href="ui-ux.html">UI/UX Design</a>
+                <a href="devops-infra.html">DevOps & Infra</a>
+                <a href="mobile-wearables.html">Mobile & Wearables</a>
+                <a href="augmented-reality.html">Augmented Reality</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="careers.html">Careers</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2025 ANGC Synapse Pvt. Ltd. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
+

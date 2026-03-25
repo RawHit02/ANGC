@@ -4,49 +4,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Infrastructure | ANGC Synapse</title>
+    <title>Cloud Solutions | ANGC Synapse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        #main-header:not(.scrolled) {
+            background: var(--white);
+        }
+
+        #main-header:not(.scrolled) .logo-text,
+        #main-header:not(.scrolled) .nav-links>li>a {
+            color: var(--text-main);
+        }
+
+        #main-header.scrolled {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sub-hero {
+            padding: 12rem 0 6rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('assets/images/bg_cloud.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+        }
+
+        .sub-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section {
+            padding: 6rem 0;
+        }
+
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+    </style>
 </head>
 
-<body class="light-mode">
-    <script>(function () { const t = localStorage.getItem('theme'); if (t === 'dark') { document.body.classList.remove('light-mode'); document.body.classList.add('dark-mode'); } })();</script>
+<body>
+    <!-- ==================== HEADER ==================== -->
     <header id="main-header" class="scrolled">
         <nav class="container header-grid">
             <div class="header-left">
-                <div class="logo">
-                    <a href="index.html" class="logo-text">ANGC <span class="accent">Synapse</span></a>
-                </div>
-                <div class="search-bar">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
-                    <span class="search-key">⌘ </span>
-                    <div id="search-results" class="search-results"></div>
-                </div>
+                <a href="index.html" class="logo-text">
+                    <img src="assets/images/logo.svg" alt="ANGC Synapse" style="height: 35px;">
+                    <!-- ANGC <span style="color: var(--primary);">Synapse</span> -->
+                </a>
             </div>
 
-            <div class="header-center">
+            <div class="nav-center">
                 <ul class="nav-links">
-                    <li><a href="index.html#hero">Home</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#process">Process</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li class="mobile-auth-btn-wrapper"><a href="auth.html" class="btn btn-primary mobile-auth-btn">Join
-                            Us</a></li>
+                    <li><a href="what-we-do.html">What We Do</a></li>
+                    <li><a href="how-we-do.html">How We Do</a></li>
+                    <li class="has-mega">
+                        <a href="#">Technologies <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu">
+                            <div class="mega-col">
+                                <h4>AI Solutions</h4>
+                                <a href="#">Agentic AI</a>
+                                <a href="#">AI Transformation</a>
+                                <a href="#">Data Engineering</a>
+                                <a href="#">GenAI</a>
+                                <a href="#">MLOPS</a>
+                                <a href="#" style="color: var(--primary); margin-top: 1rem;">PreFabs</a>
+                                <a href="#" style="color: var(--primary);">CVE Copilot</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Engineering</h4>
+                                <a href="#">UX/UI</a>
+                                <a href="#">DevOps</a>
+                                <a href="#">Big Data</a>
+                                <a href="#">Blockchain</a>
+                                <a href="#">OpenSource</a>
+                                <a href="#">IoT</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#">Our Work</a></li>
+                    <li class="has-mega">
+                        <a href="#">Insights <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu" style="grid-template-columns: 200px;">
+                            <div class="mega-col">
+                                <h4>Insights</h4>
+                                <a href="#">Blogs</a>
+                                <a href="#">White Papers</a>
+                                <a href="#">Guides</a>
+                                <a href="#">Webinars</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-mega">
+                        <a href="#">About Us <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu" style="grid-template-columns: 200px;">
+                            <div class="mega-col">
+                                <h4>About Us</h4>
+                                <a href="about.html">Overview</a>
+                                <a href="about.html#team">Core Team</a>
+                                <a href="about.html#customers">Customers</a>
+                                <a href="#">Recognitions</a>
+                                <a href="#">What's New</a>
+                                <a href="about.html#locations">Locations</a>
+                                <a href="careers.html">Careers</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
 
             <div class="header-right">
-                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-                    <span class="icon-moon">🌙</span>
-                    <span class="icon-sun">☀️</span>
-                </button>
-                <a href="auth.html" class="btn btn-primary auth-nav-btn">Login</a>
-                <a href="auth.html" class="mobile-header-auth">Login</a>
-                <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <a href="index.html#talk-to-us" class="btn btn-talk">Talk To Us</a>
+                <div class="mobile-btn" id="mobile-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -55,67 +133,63 @@
         </nav>
     </header>
 
-
-    <main style="padding-top: 150px;">
-        <section class="container service-header-bg bg-cloud">
-            <div class="section-header">
-                <h1>Cloud <span class="gradient-text">Infrastructure</span></h1>
-                <p>Enterprise-grade cloud solutions designed for infinite scale and absolute reliability.</p>
+    <main>
+        <section class="sub-hero">
+            <div class="container text-reveal">
+                <h1>Cloud Modernization <br><span style="color: var(--primary);">Scale Infinitely.</span></h1>
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">Build
+                    cloud-native products with an AI-native approach for better scalability and performance.</p>
             </div>
+        </section>
 
-            <div class="services-grid" style="margin-top: 4rem;">
-                <div class="service-card">
-                    <div class="icon">☁️</div>
-                    <h3>Multi-Cloud Orchestration</h3>
-                    <p>Manage AWS, Azure, and Google Cloud from a single, unified interface with our proprietary
-                        synapse-bridge.</p>
+        <section class="content-section">
+            <div class="container">
+                <div class="service-features">
+                    <div>
+                        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">End-to-end Cloud Modernization.</h2>
+                        <p style="margin-bottom: 1.5rem;">We help startups and global firms successfully migrate and
+                            modernize their existing infrastructure with minimal downtime.</p>
+                        <ul style="list-style: disc; margin-left: 1.5rem; color: var(--text-muted);">
+                            <li>Infrastructure as Code (IaC)</li>
+                            <li>Serverless Architecture Design</li>
+                            <li>Automated CI/CD Pipelines</li>
+                            <li>FinOps & Cloud Cost Optimization</li>
+                        </ul>
+                    </div>
+                    <div style="background: var(--bg-offset); padding: 3rem; border-radius: 8px;">
+                        <h3 style="margin-bottom: 1.5rem;">Ready to Cloud?</h3>
+                        <p style="margin-bottom: 2.5rem;">Schedule a discovery call with our cloud experts to map out
+                            your digital roadmap.</p>
+                        <a href="index.html#talk-to-us" class="btn btn-talk">Schedule a Call</a>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="icon">⚡</div>
-                    <h3>Edge Computing</h3>
-                    <p>Deploy workloads closer to your users with our global edge network, reducing latency to sub-10ms.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">🔄</div>
-                    <h3>Auto-Scaling</h3>
-                    <p>AI-driven resource allocation that grows and shrinks with your traffic, optimizing costs
-                        automatically.</p>
-                </div>
-            </div>
-
-            <div style="margin-top: 8rem; text-align: center;">
-                <h2>Built for the <span class="accent">Next Generation</span></h2>
-                <p style="max-width: 800px; margin: 2rem auto; color: var(--text-secondary);">Our cloud infrastructure
-                    isn't just about storage; it's about intelligence. Every node is monitored by AI to predict failures
-                    before they happen.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container footer-content">
+        <div class="container footer-grid">
             <div class="footer-brand">
-                <span class="logo-text">ANGC <span class="accent">Synapse</span></span>
-                <p>Enterprise Infrastructure. Redefined.</p>
+                <h2>ANGC <span style="color: var(--secondary);">Synapse</span></h2>
+                <p>Experience Matters! A track record of building complex products over the last decade.</p>
             </div>
-            <div class="footer-links">
-                <ul>
-                    <li><strong>Platform</strong></li>
-                    <li><a href="cloud.html">Cloud</a></li>
-                    <li><a href="security.html">Security</a></li>
-                    <li><a href="network.html">Network</a></li>
-                </ul>
-                <ul>
-                    <li><strong>Company</strong></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    <li><a href="privacy.html">Privacy</a></li>
-                </ul>
+            <div class="footer-col">
+                <h4>Capabilities</h4>
+                <a href="#">AI & ML</a>
+                <a href="#">Cloud & Infra</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="about.html">About Us</a>
+                <a href="careers.html">Careers</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="privacy.html">Privacy Policy</a>
             </div>
         </div>
-        <div class="footer-bottom container">
-            <p>&copy; 2026 ANGC Synapse IT Solutions. All rights reserved.</p>
+        <div class="container footer-bottom">
+            <p>All rights reserved 2025. ANGC Synapse Pvt. Ltd.</p>
         </div>
     </footer>
     <script src="main.js"></script>

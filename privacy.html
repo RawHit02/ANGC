@@ -5,50 +5,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | ANGC Synapse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        #main-header:not(.scrolled) {
+            background: var(--white);
+        }
+
+        #main-header:not(.scrolled) .logo-text,
+        #main-header:not(.scrolled) .nav-links>li>a {
+            color: var(--text-main);
+        }
+
+        #main-header.scrolled {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sub-hero {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('assets/images/bg_software.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+        }
+
+        .sub-hero h1 {
+            font-size: 3rem;
+        }
+
+        .content-section {
+            padding: 6rem 0;
+        }
+
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .privacy-content h2 {
+            margin: 2rem 0 1rem;
+            color: var(--text-main);
+        }
+    </style>
 </head>
 
-<body class="light-mode">
-    <script>(function () { const t = localStorage.getItem('theme'); if (t === 'dark') { document.body.classList.remove('light-mode'); document.body.classList.add('dark-mode'); } })();</script>
-    <header id="main-header" class="scrolled">
+<body>
+    <!-- ==================== HEADER ==================== -->
+    <header id="main-header" class="scrolled force-stuck">
         <nav class="container header-grid">
             <div class="header-left">
-                <div class="logo">
-                    <a href="index.html" class="logo-text">ANGC <span class="accent">Synapse</span></a>
-                </div>
-                <div class="search-bar">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
-                    <span class="search-key">⌘ </span>
-                    <div id="search-results" class="search-results"></div>
-                </div>
+                <a href="index.html" class="logo-text">
+                    <img src="assets/images/logo.svg" alt="ANGC Synapse" style="height: 35px;">
+                    <!-- ANGC <span style="color: var(--primary);">Synapse</span> -->
+                </a>
             </div>
 
-            <div class="header-center">
+            <div class="nav-center">
                 <ul class="nav-links">
-                    <li><a href="index.html#hero">Home</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#process">Process</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li class="mobile-auth-btn-wrapper"><a href="auth.html" class="btn btn-primary mobile-auth-btn">Join
-                            Us</a></li>
+                    <li><a href="what-we-do.html">What We Do</a></li>
+                    <li><a href="how-we-do.html">How We Do</a></li>
+                    <li class="has-mega">
+                        <a href="#">Technologies <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu">
+                            <div class="mega-col">
+                                <h4>AI Solutions</h4>
+                                <a href="agentic-ai.html">Agentic AI</a>
+                                <a href="ai-transformation.html">AI Transformation</a>
+                                <a href="data-engineering.html">Data Engineering</a>
+                                <a href="genai.html">GenAI</a>
+                                <a href="mlops.html">MLOPS</a>
+                                <a href="prefabs.html" style="color: var(--primary); margin-top: 1rem;">PreFabs</a>
+                                <a href="cve-copilot.html" style="color: var(--primary);">CVE Copilot</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Engineering</h4>
+                                <a href="ui-ux.html">UX/UI</a>
+                                <a href="devops-infra.html">DevOps</a>
+                                <a href="big-data.html">Big Data</a>
+                                <a href="blockchain.html">Blockchain</a>
+                                <a href="opensource.html">OpenSource</a>
+                                <a href="iot.html">IoT</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#">Our Work</a></li>
+                    <li class="has-mega">
+                        <a href="#">Insights <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu" style="grid-template-columns: 200px;">
+                            <div class="mega-col">
+                                <h4>Insights</h4>
+                                <a href="#">Blogs</a>
+                                <a href="#">White Papers</a>
+                                <a href="#">Guides</a>
+                                <a href="#">Webinars</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-mega">
+                        <a href="#">About Us <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu" style="grid-template-columns: 200px;">
+                            <div class="mega-col">
+                                <h4>About Us</h4>
+                                <a href="about.html">Overview</a>
+                                <a href="about.html#team">Core Team</a>
+                                <a href="about.html#customers">Customers</a>
+                                <a href="#">Recognitions</a>
+                                <a href="#">What's New</a>
+                                <a href="about.html#locations">Locations</a>
+                                <a href="careers.html">Careers</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
 
             <div class="header-right">
-                <div class="nav-actions">
-                    <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-                        <span class="icon-moon">🌙</span>
-                        <span class="icon-sun">☀️</span>
-                    </button>
-                    <a href="auth.html" class="btn btn-primary auth-nav-btn">Join Us</a>
-                </div>
-                <a href="auth.html" class="mobile-header-auth">Join Us</a>
-                <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <a href="index.html#talk-to-us" class="btn btn-talk">Talk To Us</a>
+                <div class="mobile-btn" id="mobile-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -57,52 +136,157 @@
         </nav>
     </header>
 
-
-    <main style="padding-top: 150px;">
-        <section class="container">
-            <div class="section-header">
-                <h1>Privacy <span class="gradient-text">Policy</span></h1>
-                <p>How we protect your data at ANGC Synapse.</p>
+    <main>
+        <section class="sub-hero">
+            <div class="container">
+                <h1>Privacy Policy</h1>
+                <p>Last Updated: March 20, 2025</p>
             </div>
+        </section>
 
-            <div style="max-width: 800px; margin: 4rem auto; color: var(--text-secondary); line-height: 1.8;">
-                <h3>1. Information We Collect</h3>
-                <p>We collect basic visitor information like IP addresses and browser types to improve our website
-                    experience. We do not sell this data to third parties.</p>
-                <br>
-                <h3>2. How We Use Data</h3>
-                <p>Data is used exclusively for internal analytics and to respond to your inquiries via the contact
-                    form.</p>
-                <br>
-                <h3>3. Security</h3>
-                <p>We use enterprise-grade encryption to protect all data stored on our servers.</p>
+        <section class="content-section">
+            <div class="container">
+                <div class="privacy-content">
+                    <p>At ANGC Synapse, we are committed to protecting your privacy. This Privacy Policy explains how we
+                        collect, use, disclose, and safeguard your information when you visit our website or use our
+                        services. We value your trust and strive to maintain the highest standards of data protection
+                        and transparency.</p>
+
+                    <h2>1. Information We Collect</h2>
+                    <p>We may collect information about you in several ways, depending on how you interact with our
+                        website and services:</p>
+
+                    <h3>Personal Data</h3>
+                    <p>Personally identifiable information, such as your name, corporate address, email address, and
+                        telephone number, that you voluntarily provide to us when you fill out contact forms, subscribe
+                        to our newsletter, or register for our events. This also includes any professional information
+                        such as job titles, company names, and industry sectors that help us tailor our communications
+                        to your needs.</p>
+
+                    <h3>Technical and Derivative Data</h3>
+                    <p>Information our servers automatically collect when you access the Site, such as your IP address,
+                        your browser type, your operating system, your access times, and the pages you have viewed
+                        directly before and after accessing the Site. We use this data to analyze trends, administer the
+                        site, and gather broad demographic information for aggregate use.</p>
+
+                    <h3>Cookies and Similar Technologies</h3>
+                    <p>We use cookies, web beacons, tracking pixels, and other tracking technologies on the Site to help
+                        customize the Site and improve your experience. Most browsers are set to accept cookies by
+                        default. You can remove or reject cookies through your browser settings, but be aware that such
+                        action could affect the availability and functionality of the Site.</p>
+
+                    <h2>2. How We Use Your Information</h2>
+                    <p>Having accurate information about you permits us to provide you with a smooth, efficient, and
+                        customized experience. Specifically, we may use information collected about you via the Site to:
+                    </p>
+                    <ul>
+                        <li>Deliver personalized content and services tailored to your professional interests.</li>
+                        <li>Communicate with you regarding your inquiries, service requests, and technical updates.</li>
+                        <li>Send professional insights, white papers, and promotional newsletters (subject to your
+                            opt-in consent).</li>
+                        <li>Improve our website's performance, layout, and user experience through data analysis.</li>
+                        <li>Maintain the security and integrity of our systems and prevent fraudulent activity.</li>
+                        <li>Comply with legal obligations and enforce our terms and conditions.</li>
+                        <li>Analyze the effectiveness of our marketing campaigns and lead generation efforts.</li>
+                    </ul>
+
+                    <h2>3. Data Sharing and Disclosure</h2>
+                    <p>We do not sell, rent, or lease your personal data to third parties. However, we may share
+                        information with trusted partners and in specific legal situations:</p>
+
+                    <h3>Service Providers</h3>
+                    <p>We may share your information with third-party vendors who provide services for us, such as cloud
+                        hosting, CRM management, email delivery, and analytics toolsets. These providers are bound by
+                        strict confidentiality agreements and are prohibited from using your data for any other purpose.
+                    </p>
+
+                    <h3>Legal Requirements</h3>
+                    <p>If we believe the release of information about you is necessary to respond to legal processes, to
+                        investigate potential violations of our policies, or to protect the rights, property, and safety
+                        of others, we may share your information as required by applicable laws.</p>
+
+                    <h3>Business Transfers</h3>
+                    <p>In the event of a merger, acquisition, or sale of company assets, your personal information may
+                        be transferred as part of the business assets, ensuring that your privacy rights continue to be
+                        protected under the terms of the acquiring entity's policy.</p>
+
+                    <h2>4. Your Rights and Choices</h2>
+                    <p>Depending on your location, you may have rights under data protection laws such as GDPR (General
+                        Data Protection Regulation) or CCPA (California Consumer Privacy Act). These may include:</p>
+                    <ul>
+                        <li><strong>Access:</strong> The right to request copies of your personal data.</li>
+                        <li><strong>Rectification:</strong> The right to request that we correct any information you
+                            believe is inaccurate.</li>
+                        <li><strong>Erasure:</strong> The right to request that we erase your personal data under
+                            certain conditions.</li>
+                        <li><strong>Restriction:</strong> The right to request that we restrict the processing of your
+                            data.</li>
+                        <li><strong>Data Portability:</strong> The right to request the transfer of your data to another
+                            organization.</li>
+                    </ul>
+                    <p>To exercise any of these rights, please contact our Data Protection Officer at the details
+                        provided below.</p>
+
+                    <h2>5. Data Security</h2>
+                    <p>We implement a variety of security measures to maintain the safety of your personal information.
+                        We use administrative, technical, and physical security protocols including encryption (SSL),
+                        firewalls, and secure access controls. While we strive to protect your data, no method of
+                        transmission over the internet is 100% secure.</p>
+
+                    <h2>6. Contact Us</h2>
+                    <p>If you have questions or comments about this Privacy Policy, or if you wish to update or remove
+                        your information from our database, please contact us at:</p>
+                    <div
+                        style="background: var(--bg-offset); padding: 2rem; border-radius: 15px; border: 1px solid var(--border); margin-top: 1.5rem;">
+                        <p><strong>ANGC Synapse Pvt. Ltd.</strong><br>
+                            <strong>Email:</strong> privacy@angcsynapse.com<br>
+                            <strong>Address:</strong> Global Operations Center, Bengaluru, Karnataka, India<br>
+                            <strong>Phone:</strong> +91 (XXX) XXX-XXXX
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container footer-content">
+        <div class="container footer-grid">
             <div class="footer-brand">
-                <span class="logo-text">ANGC <span class="accent">Synapse</span></span>
-                <p>Enterprise Infrastructure. Redefined.</p>
+                <h2>ANGC <span style="color: var(--secondary);">Synapse</span></h2>
+                <p>Experience Matters! A track record of building complex products over the last decade.</p>
+                <div class="social-links" style="margin-top: 2rem; display: flex; gap: 1rem;">
+                    <a href="#" style="opacity: 0.6;">LinkedIn</a>
+                    <a href="#" style="opacity: 0.6;">Twitter</a>
+                    <a href="#" style="opacity: 0.6;">GitHub</a>
+                </div>
             </div>
-            <div class="footer-links">
-                <ul>
-                    <li><strong>Platform</strong></li>
-                    <li><a href="cloud.html">Cloud</a></li>
-                    <li><a href="security.html">Security</a></li>
-                    <li><a href="network.html">Network</a></li>
-                </ul>
-                <ul>
-                    <li><strong>Company</strong></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    <li><a href="privacy.html">Privacy</a></li>
-                </ul>
+            <div class="footer-col">
+                <h4>Our Capabilities</h4>
+                <a href="software-development.html">Software Development</a>
+                <a href="ai-ml.html">AI & Machine Learning</a>
+                <a href="blockchain.html">Blockchain</a>
+                <a href="big-data.html">Big Data</a>
+            </div>
+            <div class="footer-col">
+                <h4>More</h4>
+                <a href="ui-ux.html">UI/UX Design</a>
+                <a href="devops-infra.html">DevOps & Infra</a>
+                <a href="mobile-wearables.html">Mobile & Wearables</a>
+                <a href="augmented-reality.html">Augmented Reality</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="careers.html">Careers</a>
+                <a href="sitemap.html">Sitemap</a>
             </div>
         </div>
-        <div class="footer-bottom container">
-            <p>&copy; 2026 ANGC Synapse IT Solutions. All rights reserved.</p>
+        <div class="container footer-bottom">
+            <p>&copy; 2025 ANGC Synapse Pvt. Ltd. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
         </div>
     </footer>
     <script src="main.js"></script>

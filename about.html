@@ -5,48 +5,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | ANGC Synapse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Sub-page Specific: Solid header by default or dark hero */
+        #main-header:not(.scrolled) {
+            background: var(--white);
+        }
+        #main-header:not(.scrolled) .logo-text,
+        #main-header:not(.scrolled) .nav-links > li > a {
+            color: var(--text-main);
+        }
+        #main-header.scrolled {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sub-hero {
+            padding: 12rem 0 6rem;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('assets/images/bg_software.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+        }
+
+        .sub-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section {
+            padding: 6rem 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+    </style>
 </head>
 
-<body class="light-mode">
-    <script>(function () { const t = localStorage.getItem('theme'); if (t === 'dark') { document.body.classList.remove('light-mode'); document.body.classList.add('dark-mode'); } })();</script>
-    <header id="main-header" class="scrolled">
+<body>
+    <!-- ==================== HEADER ==================== -->
+    <header id="main-header" class="scrolled force-stuck">
         <nav class="container header-grid">
             <div class="header-left">
-                <div class="logo">
-                    <a href="index.html" class="logo-text">ANGC <span class="accent">Synapse</span></a>
-                </div>
-                <div class="search-bar">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
-                    <span class="search-key">⌘ </span>
-                    <div id="search-results" class="search-results"></div>
-                </div>
+                <a href="index.html" class="logo-text">
+                    <img src="assets/images/logo.svg" alt="ANGC" style="height: 55px; width: auto; display: block;">
+                </a>
             </div>
 
-            <div class="header-center">
+            <div class="nav-center">
                 <ul class="nav-links">
-                    <li><a href="index.html#hero">Home</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#process">Process</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li class="mobile-auth-btn-wrapper"><a href="auth.html" class="btn btn-primary mobile-auth-btn">Join
-                            Us</a></li>
+                    <li><a href="what-we-do.html">What We Do</a></li>
+                    <li><a href="how-we-do.html">How We Do</a></li>
+                    <li class="has-mega">
+                        <a href="#">Technologies <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu">
+                            <div class="mega-col">
+                                <h4>AI Solutions</h4>
+                                <a href="agentic-ai.html">Agentic AI</a>
+                                <a href="ai-transformation.html">AI Transformation</a>
+                                <a href="data-engineering.html">Data Engineering</a>
+                                <a href="genai.html">GenAI</a>
+                                <a href="mlops.html">MLOPS</a>
+                                <a href="prefabs.html" style="color: var(--primary); margin-top: 1rem;">PreFabs</a>
+                                <a href="cve-copilot.html" style="color: var(--primary);">CVE Copilot</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Engineering</h4>
+                                <a href="ui-ux.html">UX/UI</a>
+                                <a href="devops-infra.html">DevOps</a>
+                                <a href="big-data.html">Big Data</a>
+                                <a href="blockchain.html">Blockchain</a>
+                                <a href="opensource.html">OpenSource</a>
+                                <a href="iot.html">IoT</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="case-studies.html">Our Work</a></li>
+                    <li class="has-mega">
+                        <a href="#">Insights <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu" style="grid-template-columns: 200px;">
+                            <div class="mega-col">
+                                <h4>Insights</h4>
+                                <a href="blogs.html">Blogs</a>
+                                <a href="white-papers.html">White Papers</a>
+                                <a href="guides.html">Guides</a>
+                                <a href="webinars.html">Webinars</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-mega">
+                        <a href="#" class="active">About Us <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu" style="grid-template-columns: 200px;">
+                            <div class="mega-col">
+                                <h4>About Us</h4>
+                                <a href="about.html">Overview</a>
+                                <a href="about.html#team">Core Team</a>
+                                <a href="about.html#customers">Customers</a>
+                                <a href="recognitions.html">Recognitions</a>
+                                <a href="whats-new.html">What's New</a>
+                                <a href="about.html#locations">Locations</a>
+                                <a href="careers.html">Careers</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
 
             <div class="header-right">
-                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-                    <span class="icon-moon">🌙</span>
-                    <span class="icon-sun">☀️</span>
-                </button>
-                <a href="auth.html" class="btn btn-primary auth-nav-btn">Login</a>
-                <a href="auth.html" class="mobile-header-auth">Login</a>
-                <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <a href="index.html#talk-to-us" class="btn btn-talk">Talk To Us</a>
+                <div class="mobile-btn" id="mobile-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -55,48 +131,194 @@
         </nav>
     </header>
 
-
-    <main style="padding-top: 150px;">
-        <section class="container service-header-bg bg-about">
-            <div class="section-header">
-                <h1>Our <span class="gradient-text">Mission</span></h1>
-                <p>Building the nervous system of the digital world.</p>
-            </div>
-
-            <div style="max-width: 800px; margin: 4rem auto; line-height: 2;">
-                <p>Founded in 2020, ANGC Synapse was created with a single vision: To bridge the gap between traditional
-                    IT reliability and the rapid innovation of cloud-native technologies.</p>
-                <p>We believe that infrastructure should be invisible, autonomous, and incredibly secure. Our team of
-                    global architects works around the clock to ensure that your business never skips a beat.</p>
+    <main>
+        <section class="sub-hero">
+            <div class="container text-reveal">
+                <h1>Our Mission <br><span style="color: var(--primary);">Built on Experience.</span></h1>
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">We combine a product mindset with AI-native engineering to build transformative technology for global leaders.</p>
             </div>
         </section>
+
+        <section class="content-section">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <h2 style="font-size: 3rem; margin-bottom: 2rem;">Engineering Excellence <br><span style="color: var(--primary);">At Our Core.</span></h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 1.5rem; line-height: 1.8;">For over a decade, ANGC Synapse has been at the forefront of digital transformation. We don't just build software; we architect products that scale, evolve, and redefine markets.</p>
+                    <p style="font-size: 1.1rem; opacity: 0.8;">Our approach integrates cutting-edge AI, robust infrastructure, and human-centric design to deliver outcomes that go beyond technology. We partner with visionaries to turn complex challenges into competitive advantages.</p>
+                </div>
+                <div class="about-stats" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div style="background: var(--bg-offset); padding: 3rem; border-radius: 20px; border: 1px solid var(--border);">
+                        <h3 style="font-size: 3.5rem; color: var(--primary); font-family: 'Outfit';">200+</h3>
+                        <p style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Products Built</p>
+                    </div>
+                    <div style="background: var(--bg-offset); padding: 3rem; border-radius: 20px; border: 1px solid var(--border);">
+                        <h3 style="font-size: 3.5rem; color: var(--primary); font-family: 'Outfit';">500+</h3>
+                        <p style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Experts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values -->
+        <section class="content-section" style="background: var(--bg-offset);">
+            <div class="container">
+                <div class="section-head text-center" style="margin-bottom: 5rem;">
+                    <h2 style="font-size: 3rem;">Driven By <span style="color: var(--primary);">Values.</span></h2>
+                    <p style="max-width: 700px; margin: 0 auto;">Our culture is built on transparency, innovation, and an unwavering commitment to quality.</p>
+                </div>
+                <div class="about-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+                    <div style="text-align: center; padding: 2rem;">
+                        <span style="font-size: 3rem; display: block; margin-bottom: 2rem;">🚀</span>
+                        <h3>Innovation First</h3>
+                        <p style="opacity: 0.7; margin-top: 1rem;">We push the boundaries of what's possible, always looking for the next breakthrough in AI and Engineering.</p>
+                    </div>
+                    <div style="text-align: center; padding: 2rem;">
+                        <span style="font-size: 3rem; display: block; margin-bottom: 2rem;">🤝</span>
+                        <h3>Partner Success</h3>
+                        <p style="opacity: 0.7; margin-top: 1rem;">Your goals are our goals. We act as an extension of your team, dedicated to your long-term success.</p>
+                    </div>
+                    <div style="text-align: center; padding: 2rem;">
+                        <span style="font-size: 3rem; display: block; margin-bottom: 2rem;">🛡️</span>
+                        <h3>Integrity & Trust</h3>
+                        <p style="opacity: 0.7; margin-top: 1rem;">Transparency is the bedrock of our relationships. We build trust through honest collaboration and excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Leadership -->
+        <section class="content-section" id="team">
+            <div class="container">
+                <div class="section-head text-center" style="margin-bottom: 5rem;">
+                    <h2 style="font-size: 3rem;">The <span style="color: var(--primary);">Leadership.</span></h2>
+                    <p style="max-width: 700px; margin: 0 auto;">Meet the visionaries guiding ANGC Synapse toward the future of technology.</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem;">
+                    <div class="team-card" style="text-align: center;">
+                        <div style="width: 200px; height: 200px; background: #eee; border-radius: 50%; margin: 0 auto 2rem; overflow: hidden; border: 4px solid var(--primary);">
+                            <!-- Placeholder for avatar -->
+                            <img src="https://ui-avatars.com/api/?name=CEO+ANGC&background=00d293&color=fff&size=200" alt="Avatar">
+                        </div>
+                        <h3>The Visionary</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">CEO & Founder</p>
+                        <p style="opacity: 0.7;">Leading the charge in AI-native product engineering with over 15 years of industry experience.</p>
+                    </div>
+                    <div class="team-card" style="text-align: center;">
+                        <div style="width: 200px; height: 200px; background: #eee; border-radius: 50%; margin: 0 auto 2rem; overflow: hidden; border: 4px solid var(--primary);">
+                            <img src="https://ui-avatars.com/api/?name=CTO+ANGC&background=111&color=fff&size=200" alt="Avatar">
+                        </div>
+                        <h3>The Architect</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Chief Technology Officer</p>
+                        <p style="opacity: 0.7;">Designing complex distributed systems and pioneering our agentic AI stack.</p>
+                    </div>
+                    <div class="team-card" style="text-align: center;">
+                        <div style="width: 200px; height: 200px; background: #eee; border-radius: 50%; margin: 0 auto 2rem; overflow: hidden; border: 4px solid var(--primary);">
+                            <img src="https://ui-avatars.com/api/?name=COO+ANGC&background=00d293&color=fff&size=200" alt="Avatar">
+                        </div>
+                        <h3>The Strategist</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Chief Operating Officer</p>
+                        <p style="opacity: 0.7;">Ensuring operational excellence and scaling our delivery capabilities across the globe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Partners/Customers -->
+        <section class="content-section" id="customers" style="background: var(--bg-offset);">
+            <div class="container">
+                <div class="section-head text-center" style="margin-bottom: 5rem;">
+                    <h2 style="font-size: 3rem;">Global <span style="color: var(--primary);">Partners.</span></h2>
+                    <p style="max-width: 700px; margin: 0 auto; opacity: 0.7;">We help industry leaders across continents achieve their engineering goals.</p>
+                </div>
+                <!-- Customer Logo Grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; opacity: 0.6; filter: grayscale(1);">
+                    <div style="display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; font-family: 'Outfit';">FORTUNE 500</div>
+                    <div style="display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; font-family: 'Outfit';">FINTECH GIANTS</div>
+                    <div style="display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; font-family: 'Outfit';">WEB3 LEADERS</div>
+                    <div style="display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; font-family: 'Outfit';">AI STARTUPS</div>
+                </div>
+                <p style="text-align: center; margin-top: 4rem; opacity: 0.5; font-size: 0.9rem;">+ Over 200+ global brands delivered since 2015.</p>
+            </div>
+        </section>
+
+        <!-- Locations -->
+        <section class="content-section" id="locations" style="background: var(--text-main); color: white;">
+            <div class="container about-grid">
+                <div class="location-text">
+                    <h2 style="font-size: 3rem; color: white; margin-bottom: 2rem;">Global <span style="color: var(--primary);">Reach.</span></h2>
+                    <p style="margin-bottom: 3rem; opacity: 0.8; font-size: 1.2rem;">Strategically located to serve our partners across continents with 24/7 engineering support.</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                        <div>
+                            <h4 style="color: var(--primary); margin-bottom: 1rem;">North America</h4>
+                            <p style="opacity: 0.7;">Silicon Valley, CA <br>New York, NY</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary); margin-bottom: 1rem;">Asia-Pacific</h4>
+                            <p style="opacity: 0.7;">Singapore <br>Mumbai, India</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary); margin-bottom: 1rem;">Europe</h4>
+                            <p style="opacity: 0.7;">London, UK <br>Berlin, Germany</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary); margin-bottom: 1rem;">Middle East</h4>
+                            <p style="opacity: 0.7;">Dubai, UAE</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Visual Map Placeholder -->
+                <div style="position: relative; height: 400px; background: rgba(255,255,255,0.05); border-radius: 40px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <span style="font-size: 5rem; opacity: 0.1;">🌍</span>
+                        <p style="opacity: 0.5;">Interactive Map Coming Soon</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer>
-        <div class="container footer-content">
+        <div class="container footer-grid">
             <div class="footer-brand">
-                <span class="logo-text">ANGC <span class="accent">Synapse</span></span>
-                <p>Enterprise Infrastructure. Redefined.</p>
+                <h2>ANGC <span style="color: var(--secondary);">Synapse</span></h2>
+                <p>Experience Matters! A track record of building complex products over the last decade.</p>
+                <div class="social-links" style="margin-top: 2rem; display: flex; gap: 1rem;">
+                    <a href="#" style="opacity: 0.6;">LinkedIn</a>
+                    <a href="#" style="opacity: 0.6;">Twitter</a>
+                    <a href="#" style="opacity: 0.6;">GitHub</a>
+                </div>
             </div>
-            <div class="footer-links">
-                <ul>
-                    <li><strong>Platform</strong></li>
-                    <li><a href="cloud.html">Cloud</a></li>
-                    <li><a href="security.html">Security</a></li>
-                    <li><a href="network.html">Network</a></li>
-                </ul>
-                <ul>
-                    <li><strong>Company</strong></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    <li><a href="privacy.html">Privacy</a></li>
-                </ul>
+            <div class="footer-col">
+                <h4>Our Capabilities</h4>
+                <a href="software-development.html">Software Development</a>
+                <a href="ai-ml.html">AI & Machine Learning</a>
+                <a href="blockchain.html">Blockchain</a>
+                <a href="big-data.html">Big Data</a>
+            </div>
+            <div class="footer-col">
+                <h4>More</h4>
+                <a href="ui-ux.html">UI/UX Design</a>
+                <a href="devops-infra.html">DevOps & Infra</a>
+                <a href="mobile-wearables.html">Mobile & Wearables</a>
+                <a href="augmented-reality.html">Augmented Reality</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="careers.html">Careers</a>
+                <a href="sitemap.html">Sitemap</a>
             </div>
         </div>
-        <div class="footer-bottom container">
-            <p>&copy; 2026 ANGC Synapse IT Solutions. All rights reserved.</p>
+        <div class="container footer-bottom">
+            <p>&copy; 2025 ANGC Synapse Pvt. Ltd. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
         </div>
     </footer>
+
     <script src="main.js"></script>
 </body>
 

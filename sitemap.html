@@ -4,76 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers | ANGC Synapse</title>
+    <title>Sitemap | ANGC Synapse</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        #main-header:not(.scrolled) {
-            background: var(--white);
-        }
-
-        #main-header:not(.scrolled) .logo-text,
-        #main-header:not(.scrolled) .nav-links>li>a {
-            color: var(--text-main);
-        }
-
-        #main-header.scrolled {
-            box-shadow: var(--shadow-sm);
-        }
-
-        .sub-hero {
-            padding: 12rem 0 6rem;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('assets/images/bg_ai.png');
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            color: white;
-        }
-
-        .sub-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .content-section {
-            padding: 6rem 0;
-        }
-
-        .careers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .job-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: 2rem;
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-
-        .job-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .job-card h3 {
-            margin-bottom: 1rem;
-            color: var(--text-main);
-        }
-
-        .job-card p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-    </style>
 </head>
 
 <body>
@@ -129,7 +66,7 @@
                         </div>
                     </li>
                     <li class="has-mega">
-                        <a href="#" class="active">About Us <span class="nav-arrow">▾</span></a>
+                        <a href="#">About Us <span class="nav-arrow">▾</span></a>
                         <div class="mega-menu" style="grid-template-columns: 200px;">
                             <div class="mega-col">
                                 <h4>About Us</h4>
@@ -158,70 +95,59 @@
     </header>
 
     <main>
-        <section class="sub-hero">
-            <div class="container text-reveal">
-                <h1>Join Our Team <br><span style="color: var(--primary);">Shape the AI Future.</span></h1>
-                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">Build
-                    products that redefine industries. Join a culture of engineering excellence and innovation.</p>
+        <section class="page-hero"
+            style="height: 40vh; background: var(--bg-offset); display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="container">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Site Map</h1>
+                <p style="color: var(--text-muted);">A bird's-eye view of everything we offer.</p>
             </div>
         </section>
 
         <section class="content-section">
-            <div class="container">
-                <div class="careers-grid">
-                    <div class="job-card">
-                        <h3>AI/ML Engineer</h3>
-                        <p>Work on agentic AI and MLOPS to deliver transformative solutions.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
+            <div class="container" style="max-width: 900px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem;">
+                    <div>
+                        <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Main Pages</h4>
+                        <ul style="list-style: none; padding: 0; line-height: 2;">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="what-we-do.html">What We Do</a></li>
+                            <li><a href="how-we-do.html">How We Do</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                        </ul>
                     </div>
-                    <div class="job-card">
-                        <h3>Product Designer</h3>
-                        <p>Create intuitive UX/UI for complex enterprise applications.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
+                    <div>
+                        <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Our Capabilities</h4>
+                        <ul style="list-style: none; padding: 0; line-height: 2;">
+                            <li><a href="software-development.html">Software Development</a></li>
+                            <li><a href="ai-ml.html">AI & Machine Learning</a></li>
+                            <li><a href="blockchain.html">Blockchain</a></li>
+                            <li><a href="big-data.html">Big Data</a></li>
+                            <li><a href="ui-ux.html">UI/UX Design</a></li>
+                            <li><a href="devops-infra.html">DevOps & Infra</a></li>
+                            <li><a href="mobile-wearables.html">Mobile & Wearables</a></li>
+                            <li><a href="augmented-reality.html">Augmented Reality</a></li>
+                        </ul>
                     </div>
-                    <div class="job-card">
-                        <h3>Full Stack Developer</h3>
-                        <p>Build scalable web applications with React and Node.js.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
+                    <div>
+                        <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Insights</h4>
+                        <ul style="list-style: none; padding: 0; line-height: 2;">
+                            <li><a href="blogs.html">Blogs</a></li>
+                            <li><a href="white-papers.html">White Papers</a></li>
+                            <li><a href="guides.html">Guides</a></li>
+                            <li><a href="webinars.html">Webinars</a></li>
+                        </ul>
                     </div>
-                    <div class="job-card">
-                        <h3>Cloud Infra Engineer</h3>
-                        <p>Architecting resilient, scalable cloud systems on AWS/Azure/GCP.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Blockchain Developer</h3>
-                        <p>Designing decentralized protocols and smart contracts for Web3.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Data Scientist</h3>
-                        <p>Turning complex data into actionable insights through advanced modeling.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>MLOps Specialist</h3>
-                        <p>Automating the lifecycle of machine learning models at scale.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Cybersecurity Analyst</h3>
-                        <p>Proactively protecting our partners' digital assets and infrastructure.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Backend Engineer</h3>
-                        <p>Building high-performance, distributed systems using Go or Rust.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
+                    <div>
+                        <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Company</h4>
+                        <ul style="list-style: none; padding: 0; line-height: 2;">
+                            <li><a href="about.html">About Overview</a></li>
+                            <li><a href="recognitions.html">Recognitions</a></li>
+                            <li><a href="whats-new.html">What's New</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="index.html#talk-to-us">Contact Us</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -268,6 +194,7 @@
             </div>
         </div>
     </footer>
+
     <script src="main.js"></script>
 </body>
 

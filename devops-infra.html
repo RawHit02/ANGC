@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps & Infrastructure | Engineering by ANGC Synapse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="scrolled">
+    <header id="main-header" class="scrolled force-stuck">
+        <nav class="container header-grid">
+            <div class="header-left">
+                <a href="index.html" class="logo-text">
+                    <img src="assets/images/logo.svg" alt="ANGC Synapse" style="height: 35px;">
+                    <!-- ANGC <span style="color: var(--primary);">Synapse</span> -->
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="what-we-do.html">What We Do</a></li>
+                    <li><a href="how-we-do.html">How We Do</a></li>
+                    <li class="has-mega">
+                        <a href="#" class="active">Technologies <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu">
+                            <div class="mega-col">
+                                <h4>AI Solutions</h4>
+                                <a href="agentic-ai.html">Agentic AI</a>
+                                <a href="ai-transformation.html">AI Transformation</a>
+                                <a href="data-engineering.html">Data Engineering</a>
+                                <a href="genai.html">GenAI</a>
+                                <a href="mlops.html">MLOPS</a>
+                                <a href="prefabs.html" style="color: var(--primary); margin-top: 1rem;">PreFabs</a>
+                                <a href="cve-copilot.html" style="color: var(--primary);">CVE Copilot</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Engineering</h4>
+                                <a href="ui-ux.html">UX/UI</a>
+                                <a href="devops-infra.html">DevOps</a>
+                                <a href="big-data.html">Big Data</a>
+                                <a href="blockchain.html">Blockchain</a>
+                                <a href="opensource.html">OpenSource</a>
+                                <a href="iot.html">IoT</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#">Our Work</a></li>
+                    <li class="has-mega">
+                        <a href="#">Insights <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu" style="grid-template-columns: 200px;">
+                            <div class="mega-col">
+                                <h4>Insights</h4>
+                                <a href="#">Blogs</a>
+                                <a href="#">White Papers</a>
+                                <a href="#">Guides</a>
+                                <a href="#">Webinars</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-mega">
+                        <a href="#">About Us <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu" style="grid-template-columns: 200px;">
+                            <div class="mega-col">
+                                <h4>About Us</h4>
+                                <a href="about.html">Overview</a>
+                                <a href="about.html#team">Core Team</a>
+                                <a href="about.html#customers">Customers</a>
+                                <a href="#">Recognitions</a>
+                                <a href="#">What's New</a>
+                                <a href="about.html#locations">Locations</a>
+                                <a href="careers.html">Careers</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="header-right">
+                <a href="index.html#talk-to-us" class="btn btn-talk">Talk To Us</a>
+                <div class="mobile-btn" id="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero"
+            style="padding: 10rem 0 6rem; text-align: center; background: radial-gradient(circle at top right, rgba(0, 242, 180, 0.05), white);">
+            <div class="container">
+                <span
+                    style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">Cloud
+                    Excellence</span>
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-top: 1rem;">DevOps & <span
+                        style="color: var(--primary);">Infrastructure.</span></h1>
+                <p
+                    style="max-width: 800px; margin: 2rem auto; font-size: 1.25rem; color: var(--text-muted); line-height: 1.8;">
+                    Automate everything. We build secure, scalable, and self-healing cloud architectures that allow your
+                    developers to ship faster with confidence.</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding-bottom: 8rem;">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-top: 5rem;">
+                <div style="padding: 3rem; border: 1px solid var(--border); border-radius: 20px; background: white;">
+                    <h3>Cloud-Native Arch</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-top: 1.5rem;">Designing robust
+                        architectures on AWS, Azure, and GCP using Kubernetes, Docker, and serverless technologies.</p>
+                </div>
+                <div style="padding: 3rem; border: 1px solid var(--border); border-radius: 20px; background: white;">
+                    <h3>Infrastructure as Code</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-top: 1.5rem;">Leveraging Terraform and
+                        Pulumi to manage your entire global stack through version-controlled code for reliability and
+                        auditability.</p>
+                </div>
+                <div style="padding: 3rem; border: 1px solid var(--border); border-radius: 20px; background: white;">
+                    <h3>Zero-Trust Security</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-top: 1.5rem;">Integrating security into
+                        every layer of your infrastructure with automated scanning, identity management, and encrypted
+                        communication.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="margin-bottom: 6rem; text-align: center;">
+            <div style="background: var(--text-main); color: white; padding: 6rem; border-radius: 30px;">
+                <h2 style="color: white; margin-bottom: 2rem;">Ready for absolute scale?</h2>
+                <p
+                    style="margin-bottom: 3rem; opacity: 0.8; font-size: 1.25rem; max-width: 600px; margin: 0 auto 3rem;">
+                    Build the foundation your enterprise deserves. Let's modernize your infrastructure.</p>
+                <a href="index.html#talk-to-us" class="btn btn-talk"
+                    style="background: var(--primary); padding: 1.25rem 3.5rem; color: var(--text-main); border: none;">Consult
+                    Our Cloud Experts</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2>ANGC <span style="color: var(--secondary);">Synapse</span></h2>
+                <p>Experience Matters! A track record of building complex products over the last decade.</p>
+                <div class="social-links" style="margin-top: 2rem; display: flex; gap: 1rem;">
+                    <a href="#" style="opacity: 0.6;">LinkedIn</a>
+                    <a href="#" style="opacity: 0.6;">Twitter</a>
+                    <a href="#" style="opacity: 0.6;">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Our Capabilities</h4>
+                <a href="software-development.html">Software Development</a>
+                <a href="ai-ml.html">AI & Machine Learning</a>
+                <a href="blockchain.html">Blockchain</a>
+                <a href="big-data.html">Big Data</a>
+            </div>
+            <div class="footer-col">
+                <h4>More</h4>
+                <a href="ui-ux.html">UI/UX Design</a>
+                <a href="devops-infra.html">DevOps & Infra</a>
+                <a href="mobile-wearables.html">Mobile & Wearables</a>
+                <a href="augmented-reality.html">Augmented Reality</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="careers.html">Careers</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2025 ANGC Synapse Pvt. Ltd. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>

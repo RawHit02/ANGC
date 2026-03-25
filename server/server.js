@@ -12,8 +12,11 @@ app.use(cors());
 app.use(express.json());
 
 // Database Setup (PostgreSQL)
+let dbUrl = process.env.DATABASE_URL || '';
+dbUrl = dbUrl.replace(/[&?]channel_binding=[^&]*/g, '');
+
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: dbUrl,
     ssl: {
         rejectUnauthorized: false
     }
@@ -32,8 +35,14 @@ async function initDB() {
         
         await pool.query(`CREATE TABLE IF NOT EXISTS contacts (
             id SERIAL PRIMARY KEY,
-            name TEXT,
+            first_name TEXT,
+            last_name TEXT,
             email TEXT,
+            phone TEXT,
+            company TEXT,
+            country TEXT,
+            college TEXT,
+            study_field TEXT,
             subject TEXT,
             message TEXT,
             timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -47,6 +56,14 @@ async function initDB() {
             timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )`);
         
+        await pool.query('ALTER TABLE contacts ADD COLUMN IF NOT EXISTS first_name TEXT');
+        await pool.query('ALTER TABLE contacts ADD COLUMN IF NOT EXISTS last_name TEXT');
+        await pool.query('ALTER TABLE contacts ADD COLUMN IF NOT EXISTS phone TEXT');
+        await pool.query('ALTER TABLE contacts ADD COLUMN IF NOT EXISTS company TEXT');
+        await pool.query('ALTER TABLE contacts ADD COLUMN IF NOT EXISTS country TEXT');
+        await pool.query('ALTER TABLE contacts ADD COLUMN IF NOT EXISTS college TEXT');
+        await pool.query('ALTER TABLE contacts ADD COLUMN IF NOT EXISTS study_field TEXT');
+
         console.log('Connected to the Neon PostgreSQL database and tables initialized.');
     } catch (err) {
         console.error('Database initialization error:', err.message);
@@ -122,18 +139,47 @@ app.post('/api/log-visit', async (req, res) => {
 
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {
-    const { name, email, subject, message } = req.body;
+    const { firstName, lastName, email, phone, company, country, college, studyField, subject, message } = req.body;
     
     console.log('\n--- 📩 New Contact Message ---');
     console.log(`Time:    ${new Date().toLocaleString()}`);
-    console.log(`Name:    ${name}`);
-    console.log(`Email:   ${email}`);
+    console.log(`From:    ${firstName} ${lastName} (${email})`);
     console.log(`Subject: ${subject || 'N/A'}`);
-    console.log(`Message: ${message}`);
     console.log('-----------------------------\n');
 
     try {
-        const result = await pool.query('INSERT INTO contacts (name, email, subject, message) VALUES ($1, $2, $3, $4) RETURNING id', [name, email, subject, message]);
+        // 1. Store in Neon DB
+        const result = await pool.query(
+            'INSERT INTO contacts (first_name, last_name, email, phone, company, country, college, study_field, subject, message) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING id',
+            [firstName, lastName, email, phone, company, country, college, studyField, subject, message]
+        );
+        
+        // 2. Forward to FormSubmit.co for email notification
+        try {
+            const mailResponse = await fetch('https://formsubmit.co/ajax/rohitroody47@gmail.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    _subject: `New ${subject || 'Inquiry'}: ${firstName} ${lastName}`,
+                    name: `${firstName} ${lastName}`,
+                    email,
+                    phone,
+                    company,
+                    country,
+                    college,
+                    studyField,
+                    message,
+                    _template: 'table',
+                    _captcha: 'false'
+                })
+            });
+            const mailResult = await mailResponse.json();
+            console.log('✅ Email forward status:', mailResult.success ? 'Success' : 'Failed');
+            if (mailResult.message) console.log('💬 FormSubmit message:', mailResult.message);
+        } catch (mailErr) {
+            console.error('⚠️ Email forwarding failed:', mailErr.message);
+        }
+
         res.json({ status: 'success', id: result.rows[0].id });
     } catch (err) {
         console.error('❌ Database Error:', err.message);

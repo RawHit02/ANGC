@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers | ANGC Synapse</title>
+    <title>AI Transformation | ANGC Synapse</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,72 +12,95 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        #main-header:not(.scrolled) {
-            background: var(--white);
+        .service-hero {
+            padding: 10rem 0 6rem;
+            background: radial-gradient(circle at bottom left, rgba(0, 242, 180, 0.05), transparent), var(--white);
+            border-bottom: 1px solid var(--border);
         }
 
-        #main-header:not(.scrolled) .logo-text,
-        #main-header:not(.scrolled) .nav-links>li>a {
-            color: var(--text-main);
-        }
-
-        #main-header.scrolled {
-            box-shadow: var(--shadow-sm);
-        }
-
-        .sub-hero {
-            padding: 12rem 0 6rem;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('assets/images/bg_ai.png');
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            color: white;
-        }
-
-        .sub-hero h1 {
-            font-size: 3.5rem;
+        .service-type {
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 800;
+            font-size: 0.85rem;
             margin-bottom: 1.5rem;
+            display: block;
         }
 
-        .content-section {
-            padding: 6rem 0;
+        .service-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            max-width: 800px;
         }
 
-        .careers-grid {
+        .service-hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .feature-section {
+            padding: 8rem 0;
+        }
+
+        .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
 
-        .job-card {
+        .feature-card {
+            padding: 3rem;
             background: var(--white);
             border: 1px solid var(--border);
-            padding: 2rem;
-            border-radius: 8px;
+            border-radius: 20px;
             transition: var(--transition);
         }
 
-        .job-card:hover {
+        .feature-card:hover {
+            transform: translateY(-10px);
             border-color: var(--primary);
-            transform: translateY(-5px);
             box-shadow: var(--shadow-md);
         }
 
-        .job-card h3 {
+        .feature-card h3 {
             margin-bottom: 1rem;
-            color: var(--text-main);
+            font-size: 1.5rem;
         }
 
-        .job-card p {
+        .feature-card p {
             color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .transformation-path {
+            padding: 6rem 0;
+            background: var(--text-main);
+            color: var(--white);
+            border-radius: 40px;
+            margin: 4rem auto;
+            max-width: 1200px;
+        }
+
+        .path-step {
+            flex: 1;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .path-step h4 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
 
 <body>
-    <!-- ==================== HEADER ==================== -->
     <header id="main-header" class="scrolled force-stuck">
         <nav class="container header-grid">
             <div class="header-left">
@@ -92,7 +115,7 @@
                     <li><a href="what-we-do.html">What We Do</a></li>
                     <li><a href="how-we-do.html">How We Do</a></li>
                     <li class="has-mega">
-                        <a href="#">Technologies <span class="nav-arrow">▾</span></a>
+                        <a href="#" class="active">Technologies <span class="nav-arrow">▾</span></a>
                         <div class="mega-menu">
                             <div class="mega-col">
                                 <h4>AI Solutions</h4>
@@ -115,29 +138,29 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="#">Our Work</a></li>
+                    <li><a href="case-studies.html">Our Work</a></li>
                     <li class="has-mega">
                         <a href="#">Insights <span class="nav-arrow">▾</span></a>
                         <div class="mega-menu" style="grid-template-columns: 200px;">
                             <div class="mega-col">
                                 <h4>Insights</h4>
-                                <a href="blogs.html">Blogs</a>
-                                <a href="white-papers.html">White Papers</a>
-                                <a href="guides.html">Guides</a>
-                                <a href="webinars.html">Webinars</a>
+                                <a href="#">Blogs</a>
+                                <a href="#">White Papers</a>
+                                <a href="#">Guides</a>
+                                <a href="#">Webinars</a>
                             </div>
                         </div>
                     </li>
                     <li class="has-mega">
-                        <a href="#" class="active">About Us <span class="nav-arrow">▾</span></a>
+                        <a href="#">About Us <span class="nav-arrow">▾</span></a>
                         <div class="mega-menu" style="grid-template-columns: 200px;">
                             <div class="mega-col">
                                 <h4>About Us</h4>
                                 <a href="about.html">Overview</a>
                                 <a href="about.html#team">Core Team</a>
                                 <a href="about.html#customers">Customers</a>
-                                <a href="recognitions.html">Recognitions</a>
-                                <a href="whats-new.html">What's New</a>
+                                <a href="#">Recognitions</a>
+                                <a href="#">What's New</a>
                                 <a href="about.html#locations">Locations</a>
                                 <a href="careers.html">Careers</a>
                             </div>
@@ -158,72 +181,73 @@
     </header>
 
     <main>
-        <section class="sub-hero">
-            <div class="container text-reveal">
-                <h1>Join Our Team <br><span style="color: var(--primary);">Shape the AI Future.</span></h1>
-                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">Build
-                    products that redefine industries. Join a culture of engineering excellence and innovation.</p>
+        <section class="service-hero">
+            <div class="container">
+                <span class="service-type">AI Solutions</span>
+                <h1>End-to-End AI <span style="color: var(--primary);">Transformation.</span></h1>
+                <p>We help enterprises evolve from legacy workflows to AI-first architectures. It's not just about
+                    adding AI; it's about redefining your business processes.</p>
             </div>
         </section>
 
-        <section class="content-section">
+        <section class="feature-section">
             <div class="container">
-                <div class="careers-grid">
-                    <div class="job-card">
-                        <h3>AI/ML Engineer</h3>
-                        <p>Work on agentic AI and MLOPS to deliver transformative solutions.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
+                <div class="section-head text-center">
+                    <h2 style="margin-bottom: 1.5rem;">Strategic Transformation</h2>
+                    <p style="max-width: 700px; margin: 0 auto;">Our multi-phase approach ensures that your AI
+                        investment delivers measurable ROI and sustainable competitive advantage.</p>
+                </div>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Infrastructure Readiness</h3>
+                        <p>Modernizing your data pipelines and cloud infrastructure to handle the heavy computational
+                            demands of deep learning and LLMs.</p>
                     </div>
-                    <div class="job-card">
-                        <h3>Product Designer</h3>
-                        <p>Create intuitive UX/UI for complex enterprise applications.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
+                    <div class="feature-card">
+                        <h3>Workflow Automation</h3>
+                        <p>Identifying high-impact opportunities for automation and redesigning processes to integrate
+                            AI seamlessly into employee workflows.</p>
                     </div>
-                    <div class="job-card">
-                        <h3>Full Stack Developer</h3>
-                        <p>Build scalable web applications with React and Node.js.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Cloud Infra Engineer</h3>
-                        <p>Architecting resilient, scalable cloud systems on AWS/Azure/GCP.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Blockchain Developer</h3>
-                        <p>Designing decentralized protocols and smart contracts for Web3.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Data Scientist</h3>
-                        <p>Turning complex data into actionable insights through advanced modeling.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>MLOps Specialist</h3>
-                        <p>Automating the lifecycle of machine learning models at scale.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Cybersecurity Analyst</h3>
-                        <p>Proactively protecting our partners' digital assets and infrastructure.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Backend Engineer</h3>
-                        <p>Building high-performance, distributed systems using Go or Rust.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
+                    <div class="feature-card">
+                        <h3>Cultural Adoption</h3>
+                        <p>Training and change management to ensure your teams are equipped to leverage new AI tools
+                            effectively and ethically.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="transformation-path">
+            <div class="container">
+                <h2 style="text-align: center; color: white; margin-bottom: 4rem;">The Transformation Journey</h2>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <div class="path-step">
+                        <h4>01. Audit</h4>
+                        <p>Evaluate current stack & identify AI gaps.</p>
+                    </div>
+                    <div class="path-step">
+                        <h4>02. Strategy</h4>
+                        <p>Define high-ROI use cases & architecture.</p>
+                    </div>
+                    <div class="path-step">
+                        <h4>03. Build</h4>
+                        <p>Agile development of AI sub-systems.</p>
+                    </div>
+                    <div class="path-step">
+                        <h4>04. Scale</h4>
+                        <p>Global deployment & continuous MLOps.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="margin: 8rem auto; text-align: center;">
+            <div style="background: var(--bg-offset); padding: 5rem; border-radius: 30px;">
+                <h2 style="margin-bottom: 2rem;">Future-Proof Your Business</h2>
+                <p style="margin-bottom: 3rem; max-width: 600px; margin: 0 auto 3rem;">Don't get left behind in the AI
+                    revolution. Partner with ANGC Synapse for a strategic transformation.</p>
+                <a href="index.html#talk-to-us" class="btn btn-talk">Consult Our Experts</a>
             </div>
         </section>
     </main>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers | ANGC Synapse</title>
+    <title>Insights & Blogs | ANGC Synapse</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,66 +12,121 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        #main-header:not(.scrolled) {
-            background: var(--white);
-        }
-
-        #main-header:not(.scrolled) .logo-text,
-        #main-header:not(.scrolled) .nav-links>li>a {
-            color: var(--text-main);
-        }
-
-        #main-header.scrolled {
-            box-shadow: var(--shadow-sm);
-        }
-
-        .sub-hero {
-            padding: 12rem 0 6rem;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('assets/images/bg_ai.png');
-            background-size: cover;
-            background-position: center;
+        .blog-hero {
+            padding: 10rem 0 5rem;
+            background: var(--bg-offset);
             text-align: center;
-            color: white;
         }
 
-        .sub-hero h1 {
-            font-size: 3.5rem;
+        .blog-hero h1 {
+            font-size: 4rem;
             margin-bottom: 1.5rem;
+            font-family: 'Outfit';
         }
 
-        .content-section {
+        .blog-container {
             padding: 6rem 0;
         }
 
-        .careers-grid {
+        .featured-blog {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .job-card {
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
             background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
             border: 1px solid var(--border);
-            padding: 2rem;
-            border-radius: 8px;
+            margin-bottom: 6rem;
             transition: var(--transition);
         }
 
-        .job-card:hover {
+        .featured-blog:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .featured-img {
+            height: 450px;
+            background: #111;
+            position: relative;
+        }
+
+        .featured-content {
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .blog-tag {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            background: rgba(0, 210, 147, 0.1);
+            color: var(--primary);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
             border-color: var(--primary);
             transform: translateY(-5px);
             box-shadow: var(--shadow-md);
         }
 
-        .job-card h3 {
-            margin-bottom: 1rem;
-            color: var(--text-main);
+        .card-img {
+            height: 240px;
+            background: #eee;
         }
 
-        .job-card p {
+        .card-content {
+            padding: 2.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .card-content p {
+            font-size: 1rem;
             color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .blog-meta {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
         }
     </style>
 </head>
@@ -117,7 +172,7 @@
                     </li>
                     <li><a href="#">Our Work</a></li>
                     <li class="has-mega">
-                        <a href="#">Insights <span class="nav-arrow">▾</span></a>
+                        <a href="#" class="active">Insights <span class="nav-arrow">▾</span></a>
                         <div class="mega-menu" style="grid-template-columns: 200px;">
                             <div class="mega-col">
                                 <h4>Insights</h4>
@@ -129,7 +184,7 @@
                         </div>
                     </li>
                     <li class="has-mega">
-                        <a href="#" class="active">About Us <span class="nav-arrow">▾</span></a>
+                        <a href="#">About Us <span class="nav-arrow">▾</span></a>
                         <div class="mega-menu" style="grid-template-columns: 200px;">
                             <div class="mega-col">
                                 <h4>About Us</h4>
@@ -158,70 +213,80 @@
     </header>
 
     <main>
-        <section class="sub-hero">
+        <section class="blog-hero">
             <div class="container text-reveal">
-                <h1>Join Our Team <br><span style="color: var(--primary);">Shape the AI Future.</span></h1>
-                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">Build
-                    products that redefine industries. Join a culture of engineering excellence and innovation.</p>
+                <span class="blog-tag">Our Thoughts</span>
+                <h1>Engineering <br><span style="color: var(--primary);">Insights.</span></h1>
+                <p style="max-width: 600px; margin: 0 auto; opacity: 0.7;">Deep dives into AI, cloud architecture, and
+                    the future of product engineering.</p>
             </div>
         </section>
 
-        <section class="content-section">
-            <div class="container">
-                <div class="careers-grid">
-                    <div class="job-card">
-                        <h3>AI/ML Engineer</h3>
-                        <p>Work on agentic AI and MLOPS to deliver transformative solutions.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
+        <section class="blog-container container">
+            <!-- Featured -->
+            <div class="featured-blog">
+                <div class="featured-img"
+                    style="background: url('assets/images/hero_data_intelligence_1774350143339.png'); background-size: cover; background-position: center;">
+                </div>
+                <div class="featured-content">
+                    <span class="blog-tag">Agentic AI</span>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-family: 'Outfit';">The Rise of Agentic AI:
+                        From Chatbots to Autonomous Systems</h2>
+                    <p style="margin-bottom: 2rem; opacity: 0.8; font-size: 1.1rem;">How the shift from prompt-based
+                        interactions to goal-oriented agents is redefining enterprise automation in 2026.</p>
+                    <div class="blog-meta">
+                        <span>By Tech Lead | 12 Min Read</span>
+                        <a href="#" style="color: var(--primary); font-weight: 600;">Read More →</a>
                     </div>
-                    <div class="job-card">
-                        <h3>Product Designer</h3>
-                        <p>Create intuitive UX/UI for complex enterprise applications.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="card-img"
+                        style="background: url('assets/images/bg_ai.png'); background-size: cover; background-position: center;">
                     </div>
-                    <div class="job-card">
-                        <h3>Full Stack Developer</h3>
-                        <p>Build scalable web applications with React and Node.js.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
+                    <div class="card-content">
+                        <span class="blog-tag">Engineering</span>
+                        <h3>Legacy to Cloud-Native: A Roadmap for Fortune 500s</h3>
+                        <p>Strategies for refactoring monolithic architectures into resilient microservices without
+                            downtime.</p>
+                        <div class="blog-meta">
+                            <span>8 Min Read</span>
+                            <a href="#" style="color: var(--primary);">Read →</a>
+                        </div>
                     </div>
-                    <div class="job-card">
-                        <h3>Cloud Infra Engineer</h3>
-                        <p>Architecting resilient, scalable cloud systems on AWS/Azure/GCP.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
+                </div>
+
+                <div class="blog-card">
+                    <div class="card-img"
+                        style="background: url('assets/images/bg_cloud.png'); background-size: cover; background-position: center;">
                     </div>
-                    <div class="job-card">
-                        <h3>Blockchain Developer</h3>
-                        <p>Designing decentralized protocols and smart contracts for Web3.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
+                    <div class="card-content">
+                        <span class="blog-tag">MLOps</span>
+                        <h3>Standardizing AI Pipelines with our MLOps Prefabs</h3>
+                        <p>How we reduced deployment time from weeks to hours using our proprietary automation stack.
+                        </p>
+                        <div class="blog-meta">
+                            <span>10 Min Read</span>
+                            <a href="#" style="color: var(--primary);">Read →</a>
+                        </div>
                     </div>
-                    <div class="job-card">
-                        <h3>Data Scientist</h3>
-                        <p>Turning complex data into actionable insights through advanced modeling.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
+                </div>
+
+                <div class="blog-card">
+                    <div class="card-img"
+                        style="background: url('assets/images/bg_software.png'); background-size: cover; background-position: center;">
                     </div>
-                    <div class="job-card">
-                        <h3>MLOps Specialist</h3>
-                        <p>Automating the lifecycle of machine learning models at scale.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Cybersecurity Analyst</h3>
-                        <p>Proactively protecting our partners' digital assets and infrastructure.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <h3>Backend Engineer</h3>
-                        <p>Building high-performance, distributed systems using Go or Rust.</p>
-                        <a href="index.html#talk-to-us" class="btn btn-talk"
-                            style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply Now</a>
+                    <div class="card-content">
+                        <span class="blog-tag">DevOps</span>
+                        <h3>Infrastructure as Code: Best Practices for AI Workloads</h3>
+                        <p>Optimizing GPU resource allocation and scaling in high-demand AI training environments.</p>
+                        <div class="blog-meta">
+                            <span>15 Min Read</span>
+                            <a href="#" style="color: var(--primary);">Read →</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -268,6 +333,7 @@
             </div>
         </div>
     </footer>
+
     <script src="main.js"></script>
 </body>
 

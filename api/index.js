@@ -45,8 +45,14 @@ async function initDB() {
         
         await pool.query(`CREATE TABLE IF NOT EXISTS contacts (
             id SERIAL PRIMARY KEY,
-            name TEXT,
+            first_name TEXT,
+            last_name TEXT,
             email TEXT,
+            phone TEXT,
+            company TEXT,
+            country TEXT,
+            college TEXT,
+            study_field TEXT,
             subject TEXT,
             message TEXT,
             timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -60,6 +66,14 @@ async function initDB() {
             timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )`);
         
+        await pool.query('ALTER TABLE contacts ADD COLUMN IF NOT EXISTS first_name TEXT');
+        await pool.query('ALTER TABLE contacts ADD COLUMN IF NOT EXISTS last_name TEXT');
+        await pool.query('ALTER TABLE contacts ADD COLUMN IF NOT EXISTS phone TEXT');
+        await pool.query('ALTER TABLE contacts ADD COLUMN IF NOT EXISTS company TEXT');
+        await pool.query('ALTER TABLE contacts ADD COLUMN IF NOT EXISTS country TEXT');
+        await pool.query('ALTER TABLE contacts ADD COLUMN IF NOT EXISTS college TEXT');
+        await pool.query('ALTER TABLE contacts ADD COLUMN IF NOT EXISTS study_field TEXT');
+
         dbInitialized = true;
         console.log('Neon DB tables initialized.');
     } catch (err) {
@@ -131,13 +145,44 @@ app.post('/api/log-visit', async (req, res) => {
 
 app.post('/api/contact', async (req, res) => {
     await initDB();
-    const { name, email, subject, message } = req.body;
+    const { firstName, lastName, email, phone, company, country, college, studyField, subject, message } = req.body;
 
     try {
-        const result = await pool.query('INSERT INTO contacts (name, email, subject, message) VALUES ($1, $2, $3, $4) RETURNING id', [name, email, subject, message]);
+        // 1. Store in Neon DB
+        const result = await pool.query(
+            'INSERT INTO contacts (first_name, last_name, email, phone, company, country, college, study_field, subject, message) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING id',
+            [firstName, lastName, email, phone, company, country, college, studyField, subject, message]
+        );
+        
+        // 2. Forward to FormSubmit.co for email notification
+        try {
+            const mailResponse = await fetch('https://formsubmit.co/ajax/rohitroody47@gmail.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    _subject: `New ${subject || 'Inquiry'}: ${firstName} ${lastName}`,
+                    name: `${firstName} ${lastName}`,
+                    email,
+                    phone,
+                    company,
+                    country,
+                    college,
+                    studyField,
+                    message,
+                    _template: 'table',
+                    _captcha: 'false'
+                })
+            });
+            const mailResult = await mailResponse.json();
+            console.log('✅ Email forward status:', mailResult.success ? 'Success' : 'Failed');
+            if (mailResult.message) console.log('💬 FormSubmit message:', mailResult.message);
+        } catch (mailErr) {
+            console.error('⚠️ Email forwarding failed:', mailErr.message);
+        }
+
         res.json({ status: 'success', id: result.rows[0].id });
     } catch (err) {
-        console.error('DB Error:', err.message);
+        console.error('Error handling contact form:', err.message);
         res.status(500).json({ error: err.message });
     }
 });

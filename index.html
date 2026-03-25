@@ -4,54 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANGC Synapse</title>
+    <title>ANGC Synapse | Building Products The AI-Native Way</title>
     <meta name="description"
-        content="Scalable, enterprise-grade IT infrastructure for modern businesses. AI-driven cloud and network solutions.">
+        content="ANGC Synapse is a premium product engineering company helping tech firms build innovative solutions with an AI-native approach.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="light-mode">
-    <script>(function () { const t = localStorage.getItem('theme'); if (t === 'dark') { document.body.classList.remove('light-mode'); document.body.classList.add('dark-mode'); } })();</script>
+<body>
+    <!-- ==================== HEADER ==================== -->
     <header id="main-header">
         <nav class="container header-grid">
             <div class="header-left">
-                <div class="logo">
-                    <a href="index.html" class="logo-text">ANGC <span class="accent">Synapse</span></a>
-                </div>
-                <div class="search-bar">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
-                    <span class="search-key">⌘ </span>
-                    <div id="search-results" class="search-results"></div>
-                </div>
+                <a href="index.html" class="logo-text">
+                    <img src="assets/images/logo.svg" alt="ANGC" style="height: 55px; width: auto; display: block;">
+                </a>
             </div>
 
-            <div class="header-center">
+            <div class="nav-center">
                 <ul class="nav-links">
-                    <li><a href="#hero" class="active">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#process">Process</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li class="mobile-auth-btn-wrapper"><a href="auth.html" class="btn btn-primary mobile-auth-btn">Join
-                            Us</a></li>
+                    <li><a href="what-we-do.html">What We Do</a></li>
+                    <li><a href="how-we-do.html">How We Do</a></li>
+                    <li class="has-mega">
+                        <a href="#">Technologies <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu">
+                            <div class="mega-col">
+                                <h4>AI Solutions</h4>
+                                <a href="agentic-ai.html">Agentic AI</a>
+                                <a href="ai-transformation.html">AI Transformation</a>
+                                <a href="data-engineering.html">Data Engineering</a>
+                                <a href="genai.html">GenAI</a>
+                                <a href="mlops.html">MLOPS</a>
+                                <a href="prefabs.html" style="color: var(--primary); margin-top: 1rem;">PreFabs</a>
+                                <a href="cve-copilot.html" style="color: var(--primary);">CVE Copilot</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Engineering</h4>
+                                <a href="ui-ux.html">UX/UI</a>
+                                <a href="devops-infra.html">DevOps</a>
+                                <a href="big-data.html">Big Data</a>
+                                <a href="blockchain.html">Blockchain</a>
+                                <a href="opensource.html">OpenSource</a>
+                                <a href="iot.html">IoT</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="case-studies.html">Our Work</a></li>
+                    <li class="has-mega">
+                        <a href="#">Insights <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu" style="grid-template-columns: 200px;">
+                            <div class="mega-col">
+                                <h4>Insights</h4>
+                                <a href="blogs.html">Blogs</a>
+                                <a href="white-papers.html">White Papers</a>
+                                <a href="guides.html">Guides</a>
+                                <a href="webinars.html">Webinars</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-mega">
+                        <a href="#">About Us <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu" style="grid-template-columns: 200px;">
+                            <div class="mega-col">
+                                <h4>About Us</h4>
+                                <a href="about.html">Overview</a>
+                                <a href="about.html#team">Core Team</a>
+                                <a href="about.html#customers">Customers</a>
+                                <a href="recognitions.html">Recognitions</a>
+                                <a href="whats-new.html">What's New</a>
+                                <a href="about.html#locations">Locations</a>
+                                <a href="careers.html">Careers</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
 
             <div class="header-right">
-                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-                    <span class="icon-moon">🌙</span>
-                    <span class="icon-sun">☀️</span>
-                </button>
-                <a href="auth.html" class="btn btn-primary auth-nav-btn">Login</a>
-                <a href="auth.html" class="mobile-header-auth">Login</a>
-                <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <a href="#talk-to-us" class="btn btn-talk">Talk To Us</a>
+                <div class="mobile-btn" id="mobile-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -61,257 +96,426 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero">
-            <div class="container hero-content">
-                <h1 class="fade-in">Connecting Infrastructure.<br><span class="gradient-text">Powering Growth.</span>
-                </h1>
-                <p class="fade-in-delayed">Scalable, enterprise-grade AI-driven IT infrastructure for modern businesses
-                    that demand perfection.</p>
-                <div class="hero-ctas fade-in-delayed">
-                    <a href="#services" class="btn btn-primary">Explore Solutions</a>
-                    <a href="#contact" class="btn btn-secondary">Get a Consultation</a>
+        <!-- ==================== HERO ==================== -->
+        <section class="hero">
+        <div class="hero-bg-container">
+            <div class="hero-bg-layer active" style="background-image: url('assets/images/hero_data_intelligence_1774350143339.png');"></div>
+            <div class="hero-bg-layer" style="background-image: url('assets/images/bg_cloud.png');"></div>
+        </div>
+        <div class="container hero-content">
+                <h1>Building Products <br>The AI-Native Way</h1>
+                <p>Whether you are launching a new AI product or upgrading an existing one, our AI-native product engineering delivers outcomes 50% faster.</p>
+                
+                <div class="hero-slider-container">
+                    <div class="hero-cards" id="hero-cards-track">
+                        <div class="hero-card">
+                            <img src="assets/images/icon_webinar.png" alt="Webinar" style="width: 50px; height: 50px; border-radius: 4px;">
+                            <div class="card-info">
+                                <h4>Webinar</h4>
+                                <p>From AI Tools to AI-Native Engineering: Reducing Cycle Time at Scale</p>
+                            </div>
+                        </div>
+                        <div class="hero-card">
+                            <img src="assets/images/icon_prediction.png" alt="Prediction" style="width: 50px; height: 50px; border-radius: 4px;">
+                            <div class="card-info">
+                                <h4>Prediction</h4>
+                                <p>Data in 2026: Interchangeable Models, Clouds, and Specialization</p>
+                            </div>
+                        </div>
+                        <div class="hero-card">
+                            <img src="assets/images/icon_insight.png" alt="Insight" style="width: 50px; height: 50px; border-radius: 4px;">
+                            <div class="card-info">
+                                <h4>Technical Insight</h4>
+                                <p>Zero Trust Security: Protecting Your Data in an Interconnected World</p>
+                            </div>
+                        </div>
+                        <div class="hero-card">
+                            <img src="assets/images/icon_case_study.png" alt="Case Study" style="width: 50px; height: 50px; border-radius: 4px;">
+                            <div class="card-info">
+                                <h4>Case Study</h4>
+                                <p>Revolutionizing Supply Chain with Blockchain: A Success Story</p>
+                            </div>
+                        </div>
+                        <div class="hero-card">
+                            <img src="assets/images/icon_transformation.png" alt="Transformation" style="width: 50px; height: 50px; border-radius: 4px;">
+                            <div class="card-info">
+                                <h4>AI Transformation</h4>
+                                <p>Migrating Monoliths into Modern AI-Native Microservices</p>
+                            </div>
+                        </div>
+                        <div class="hero-card">
+                            <img src="assets/images/icon_whitepaper.png" alt="Whitepaper" style="width: 50px; height: 50px; border-radius: 4px;">
+                            <div class="card-info">
+                                <h4>Whitepaper</h4>
+                                <p>The Future of Scalable Blockchain: Layer 2 Solutions in 2026</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="hero-vignette"></div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="services">
+    <!-- Expertise Section -->
+    <section class="expertise-section">
+        <div class="container">
+            <div class="section-head">
+                <h2>Software Excellence <br><span style="color: var(--primary);">At Scale.</span></h2>
+                <p>We combine deep domain expertise with a product engineering mindset to build software that leads markets.</p>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <h3>Enterprise SaaS</h3>
+                    <p>Building scalable, multi-tenant architectures that power global business operations.</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>AI-Native Products</h3>
+                    <p>Integrating agentic AI and GenAI directly into your product core for unmatched automation.</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Data Intelligence</h3>
+                    <p>Turning raw data into actionable insights through advanced pipelines and analytics.</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Cloud Modernization</h3>
+                    <p>Migrating legacy systems to cloud-native architectures for infinite scalability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shuffle Section (Company Overview) -->
+    <section class="shuffle-section">
+        <div class="container shuffle-grid">
+            <div class="shuffle-text">
+                <h2 style="font-size: 3rem; margin-bottom: 2rem;">Why ANGC Synapse?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">We are not just a service provider; we are your engineering partners. Our track record spans over a decade of building complex products for global leaders.</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1rem;">✓ 200+ Products Delivered</li>
+                    <li style="margin-bottom: 1rem;">✓ 500+ Engineering Experts</li>
+                    <li style="margin-bottom: 1rem;">✓ 98% Client Satisfaction</li>
+                </ul>
+            </div>
+            <div class="shuffle-cards-container">
+                <div class="shuffle-card">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">Innovation First</h4>
+                    <p>We push the boundaries of what's possible with AI and Cloud technology.</p>
+                </div>
+                <div class="shuffle-card">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">User Centric</h4>
+                    <p>Every line of code we write is focused on the end-user experience.</p>
+                </div>
+                <div class="shuffle-card">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem;">Scale Ready</h4>
+                    <p>Our solutions are built to handle tomorrow's traffic, today.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-head">
+                <h2>Our Engineering <br><span style="color: var(--primary);">Lifecycle.</span></h2>
+                <p>A rigorous, transparent, and iterative approach to product development.</p>
+            </div>
+            <div class="process-stepper">
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <h4>Discover</h4>
+                    <p>Deep dive into your business goals and market needs.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <h4>Design</h4>
+                    <p>Prototyping and UX engineering to validate ideas.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <h4>Build</h4>
+                    <p>Agile development with AI-native tools and practices.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">04</div>
+                    <h4>Scale</h4>
+                    <p>Optimizing for performance and global deployment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="content-section" style="background: var(--bg-offset);">
+        <div class="container text-center">
+            <div class="section-head" style="margin-bottom: 4rem;">
+                <h6 style="color: var(--primary); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 1rem;">Toolbox</h6>
+                <h2>Our Technology <br><span style="color: var(--primary);">Ecosystem.</span></h2>
+            </div>
+            
+            <div class="tech-slider-container">
+                <div class="tech-track" id="tech-track">
+                    <!-- Slide 1: Cloud & Infra -->
+                    <div class="tech-slide">
+                        <h4 class="tech-category">Cloud & Infra</h4>
+                        <div class="tools-grid">
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"><span>AWS</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure"><span>Azure</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP"><span>GCP</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes"><span>K8s</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"><span>Docker</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform"><span>Terraform</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="NGINX"><span>NGINX</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"><span>Linux</span></div>
+                        </div>
+                    </div>
+                    <!-- Slide 2: Frontend & Mobile -->
+                    <div class="tech-slide">
+                        <h4 class="tech-category">Frontend & Mobile</h4>
+                        <div class="tools-grid">
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span>React</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"><span>Next.js</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind"><span>Tailwind</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter"><span>Flutter</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift"><span>Swift</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"><span>TypeScript</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GraphQL"><span>GraphQL</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="Redux"><span>Redux</span></div>
+                        </div>
+                    </div>
+                    <!-- Slide 3: AI & Data -->
+                    <div class="tech-slide">
+                        <h4 class="tech-category">AI & Data</h4>
+                        <div class="tools-grid">
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch"><span>PyTorch</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"><span>TensorFlow</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"><span>Pandas</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" alt="Kafka"><span>Kafka</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter"><span>Jupyter</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Spark"><span>Spark</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"><span>NumPy</span></div>
+                        </div>
+                    </div>
+                    <!-- Slide 4: Backend & Core -->
+                    <div class="tech-slide">
+                        <h4 class="tech-category">Backend & Core</h4>
+                        <div class="tools-grid">
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" alt="Rust"><span>Rust</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go"><span>Go</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="Postgres"><span>Postgres</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis"><span>Redis</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite"><span>SQLite</span></div>
+                        </div>
+                    </div>
+                    <!-- Slide 5: Security & DevOps -->
+                    <div class="tech-slide">
+                        <h4 class="tech-category">Security & DevOps</h4>
+                        <div class="tools-grid">
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><span>Actions</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab"><span>GitLab</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash"><span>Bash</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins"><span>Jenkins</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg" alt="Cloudflare"><span>Security</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" alt="Prometheus"><span>Monitor</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana"><span>Grafana</span></div>
+                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="Slack"><span>Ops</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-dots" id="tech-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+        <!-- ==================== TALK TO US ==================== -->
+        <section id="talk-to-us" class="talk-section">
             <div class="container">
-                <div class="section-header">
-                    <h2>Our Specializations</h2>
-                    <p>Comprehensive IT solutions designed for scale and security.</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card reveal">
-                        <div class="icon">☁️</div>
-                        <h3>Cloud Infrastructure</h3>
-                        <p>End-to-end cloud migration and multi-cloud orchestration for maximum uptime.</p>
+                <div class="talk-grid">
+                    <div class="talk-info">
+                        <h2 style="font-size: 3rem; margin-bottom: 2rem;">Let's Build <br><span style="color: var(--primary);">Something Great.</span></h2>
+                        
+                        <div style="margin-top: 4rem;">
+                            <h4 style="margin-bottom: 1rem;">Our Presence</h4>
+                            <p><strong>Gurugram Office</strong><br>
+                            Sector 37, Udyog Vihar,<br>
+                            Gurugram, Haryana 122016<br>
+                            T: +91 124 400 0000</p>
+                            <a href="#" style="color: var(--primary); font-weight: 600; display: block; margin-top: 1rem;">Get Direction</a>
+                        </div>
                     </div>
-                    <div class="service-card reveal">
-                        <div class="icon">🛡️</div>
-                        <h3>Cybersecurity</h3>
-                        <p>AI-driven threat detection and enterprise-grade firewall architectures.</p>
-                    </div>
-                    <div class="service-card reveal">
-                        <div class="icon">🕸️</div>
-                        <h3>Network Architecture</h3>
-                        <p>Zero-trust LAN/WAN networking built for the future of connectivity.</p>
-                    </div>
-                    <div class="service-card reveal">
-                        <div class="icon">⚙️</div>
-                        <h3>Managed IT</h3>
-                        <p>24/7 proactive monitoring and expert support for your core systems.</p>
-                    </div>
-                    <div class="service-card reveal">
-                        <div class="icon">🧠</div>
-                        <h3>AI Integration</h3>
-                        <p>Leverage cutting-edge machine learning to automate and optimize your workflows.</p>
-                    </div>
-                    <div class="service-card reveal">
-                        <div class="icon">📊</div>
-                        <h3>Data Analytics</h3>
-                        <p>Transform raw infrastructure data into actionable business insights with our analytics
-                            engine.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="container dual-grid">
-                <div class="about-text reveal">
-                    <h2>The Synapse Difference</h2>
-                    <p>At ANGC Synapse, we don't just build servers; we build the nervous system of your business. Our
-                        approach combines traditional reliability with AI-driven optimization.</p>
-                    <ul class="feature-list">
-                        <li>99.99% Uptime SLA Guaranteed</li>
-                        <li>Global Infrastructure Presence</li>
-                        <li>Advanced Security-first Engineering</li>
-                    </ul>
-                </div>
-                <div class="about-visual reveal">
-                    <div class="glass-box">
-                        <div class="stats">
-                            <div class="stat-item">
-                                <span class="stat-num">500+</span>
-                                <span class="stat-label">Clients</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-num">24/7</span>
-                                <span class="stat-label">Support</span>
-                            </div>
+                    <div class="talk-form-container">
+                        <div class="talk-tabs">
+                            <div class="talk-tab active" data-tab="business">Business</div>
+                            <div class="talk-tab" data-tab="careers">Careers</div>
+                            <div class="talk-tab" data-tab="others">Others</div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Why Choose Us Section -->
-            <section id="why-us" class="why-us">
-                <div class="container">
-                    <div class="section-header reveal">
-                        <h2>Engineering Excellence</h2>
-                        <p>Why enterprises trust ANGC Synapse for their core infrastructure.</p>
-                    </div>
-                    <div class="benefit-grid">
-                        <div class="benefit-item reveal">
-                            <span class="number">01</span>
-                            <h3>Security First</h3>
-                            <p>Our architectures are built on Zero-Trust principles, ensuring that security is never an
-                                afterthought.</p>
-                        </div>
-                        <div class="benefit-item reveal">
-                            <span class="number">02</span>
-                            <h3>Global Scale</h3>
-                            <p>With nodes in 25+ regions, we provide low-latency connectivity regardless of your users'
-                                location.</p>
-                        </div>
-                        <div class="benefit-item reveal">
-                            <span class="number">03</span>
-                            <h3>99.99% Uptime</h3>
-                            <p>Redundant systems and AI-driven failovers guarantee your business stays online 24/7/365.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            <!-- Our Process Section -->
-            <section id="process" class="process">
-                <div class="container">
-                    <div class="section-header reveal">
-                        <h2>Our Methodology</h2>
-                        <p>A streamlined approach to transforming your digital infrastructure.</p>
-                    </div>
-                    <div class="process-steps">
-                        <div class="step reveal">
-                            <div class="step-icon">🔍</div>
-                            <h3>Discovery</h3>
-                            <p>Deep audit of your current systems and future growth needs.</p>
-                        </div>
-                        <div class="step reveal">
-                            <div class="step-icon">📐</div>
-                            <h3>Blueprint</h3>
-                            <p>Custom infrastructure design focused on scale and security.</p>
-                        </div>
-                        <div class="step reveal">
-                            <div class="step-icon">🚀</div>
-                            <h3>Execution</h3>
-                            <p>Seamless migration and deployment with zero downtime.</p>
-                        </div>
-                        <div class="step reveal">
-                            <div class="step-icon">🛡️</div>
-                            <h3>Maintain</h3>
-                            <p>Proactive 24/7 monitoring and AI-driven optimization.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- FAQ Section -->
-            <section id="faq" class="faq">
-                <div class="container">
-                    <div class="section-header reveal">
-                        <h2>Common Questions</h2>
-                        <p>Everything you need to know about our services.</p>
-                    </div>
-                    <div class="faq-container">
-                        <div class="faq-item reveal">
-                            <div class="faq-question">
-                                <span>How long does a typical migration take?</span>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-content">
-                                <p class="faq-summary">Migration timelines vary by complexity, but most enterprise
-                                    transitions are completed within 4-8 weeks with zero service interruption.</p>
-                                <div class="faq-more">
-                                    <p>This includes a full infrastructure audit, parallel architecture deployment, and
-                                        a staged cut-over to ensure seamless business continuity.</p>
+                        <!-- Business Form -->
+                        <form id="form-business" class="talk-form">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" name="firstName" placeholder="Your first name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" name="lastName" placeholder="Your last name">
                                 </div>
                             </div>
-                        </div>
-                        <div class="faq-item reveal">
-                            <div class="faq-question">
-                                <span>Do you provide custom hardware solutions?</span>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-content">
-                                <p class="faq-summary">Yes, we offer custom-tailored on-premise and hybrid cloud
-                                    hardware configurations for specialized high-performance needs.</p>
-                                <div class="faq-more">
-                                    <p>Our team handles specification, procurement, and physical hardware installation,
-                                        integrated with our Synapse software layer for global management.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="faq-item reveal">
-                            <div class="faq-question">
-                                <span>Is your support team based locally?</span>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-content">
-                                <p class="faq-summary">Our core engineering support is distributed globally but managed
-                                    locally to provide 24/7 coverage across all time zones.</p>
-                                <div class="faq-more">
-                                    <p>We offer specialized localized support for enterprise accounts with dedicated
-                                        solution architects to provide expert guidance on your specific stack.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact" class="contact">
-                <div class="container">
-                    <div class="contact-card reveal">
-                        <div class="contact-header">
-                            <h2>Ready to scale?</h2>
-                            <p>Connect with our expert architects today.</p>
-                        </div>
-                        <form id="contact-form" autocomplete="off">
                             <div class="form-group">
-                                <input type="text" id="name" placeholder="Full Name (e.g. Rohit Kumar)" required
-                                    autocomplete="new-password">
-                                <input type="email" id="email" placeholder="Email (e.g. business@gmail.com)" required
-                                    autocomplete="new-password">
+                                <label>Company Name</label>
+                                <input type="text" name="companyName" placeholder="Company name">
                             </div>
-                            <input type="text" id="subject" placeholder="Subject (e.g. Cloud Migration)" required
-                                autocomplete="new-password">
-                            <textarea id="message" placeholder="Tell us about your infrastructure needs..." rows="5"
-                                required></textarea>
-                            <button type="submit" class="btn btn-primary full-width">Send Message</button>
+                            <div class="form-group">
+                                <label>Email*</label>
+                                <input type="email" name="email" placeholder="email@company.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number*</label>
+                                <input type="tel" name="phone" placeholder="+91 00000 00000" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Country*</label>
+                                <select name="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="IN">India (+91)</option>
+                                    <option value="US">United States (+1)</option>
+                                    <option value="UK">United Kingdom (+44)</option>
+                                    <option value="AF">Afghanistan</option>
+                                    <!-- Simplified for brevity -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>How We Can Help You</label>
+                                <textarea name="message" rows="4" placeholder="Briefly describe your requirements"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-talk" style="width: 100%;">Send Message</button>
+                        </form>
+
+                        <!-- Careers Form -->
+                        <form id="form-careers" class="talk-form" style="display: none;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label>First Name*</label>
+                                    <input type="text" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name*</label>
+                                    <input type="text" name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email ID*</label>
+                                <input type="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone*</label>
+                                <input type="tel" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label>College – Where did you study?*</label>
+                                <input type="text" name="college" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Field of Study (Graduation)*</label>
+                                <input type="text" name="studyField" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Upload CV*</label>
+                                <input type="file" name="cv" required>
+                            </div>
+                            <div class="form-group" style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                                <input type="checkbox" required style="width: auto; margin-top: 0.3rem;">
+                                <label style="font-weight: 500; font-size: 0.8rem;">Yes, I would like ANGC Synapse to contact me. Click here to read our full <a href="privacy.html" style="color: var(--primary);">Privacy Policy</a>.</label>
+                            </div>
+                            <button type="submit" class="btn btn-talk" style="width: 100%;">Submit Application</button>
+                        </form>
+
+                        <!-- Others Form -->
+                        <form id="form-others" class="talk-form" style="display: none;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label>First Name*</label>
+                                    <input type="text" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name*</label>
+                                    <input type="text" name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email ID*</label>
+                                <input type="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone*</label>
+                                <input type="tel" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea name="message" rows="4" placeholder="How can we help?"></textarea>
+                            </div>
+                            <div class="form-group" style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                                <input type="checkbox" required style="width: auto; margin-top: 0.3rem;">
+                                <label style="font-weight: 500; font-size: 0.8rem;">Yes, I would like ANGC Synapse to contact me. Click here to read our full <a href="privacy.html" style="color: var(--primary);">Privacy Policy</a>.</label>
+                            </div>
+                            <button type="submit" class="btn btn-talk" style="width: 100%;">Send Query</button>
                         </form>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <div class="container footer-content">
+        <div class="container footer-grid">
             <div class="footer-brand">
-                <span class="logo-text">ANGC <span class="accent">Synapse</span></span>
-                <p>Enterprise Infrastructure. Redefined.</p>
+                <h2>ANGC <span style="color: var(--secondary);">Synapse</span></h2>
+                <p>Experience Matters! A track record of building complex products over the last decade.</p>
+                <div class="social-links" style="margin-top: 2rem; display: flex; gap: 1rem;">
+                    <a href="#" style="opacity: 0.6;">LinkedIn</a>
+                    <a href="#" style="opacity: 0.6;">Twitter</a>
+                    <a href="#" style="opacity: 0.6;">GitHub</a>
+                </div>
             </div>
-            <div class="footer-links">
-                <ul>
-                    <li><strong>Platform</strong></li>
-                    <li><a href="cloud.html">Cloud</a></li>
-                    <li><a href="security.html">Security</a></li>
-                    <li><a href="network.html">Network</a></li>
-                </ul>
-                <ul>
-                    <li><strong>Company</strong></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    <li><a href="privacy.html">Privacy</a></li>
-                </ul>
+            <div class="footer-col">
+                <h4>Our Capabilities</h4>
+                <a href="software-development.html">Software Development</a>
+                <a href="ai-ml.html">AI & Machine Learning</a>
+                <a href="blockchain.html">Blockchain</a>
+                <a href="big-data.html">Big Data</a>
+            </div>
+            <div class="footer-col">
+                <h4>More</h4>
+                <a href="ui-ux.html">UI/UX Design</a>
+                <a href="devops-infra.html">DevOps & Infra</a>
+                <a href="mobile-wearables.html">Mobile & Wearables</a>
+                <a href="augmented-reality.html">Augmented Reality</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="careers.html">Careers</a>
+                <a href="sitemap.html">Sitemap</a>
             </div>
         </div>
-        <div class="footer-bottom container">
-            <p>&copy; 2026 ANGC Synapse IT Solutions. All rights reserved.</p>
+        <div class="container footer-bottom">
+            <p>&copy; 2025 ANGC Synapse Pvt. Ltd. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
         </div>
     </footer>
 
