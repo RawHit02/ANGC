@@ -126,7 +126,16 @@ ul {
     gap: 0.4rem;
 }
 
-#main-header.scrolled .nav-links > li > a {
+#main-header.scrolled .nav-links > li > a,
+#main-header.dark-nav .nav-links > li > a {
+    color: var(--text-main);
+}
+
+#main-header.dark-nav .nav-links > li > a {
+    color: var(--text-main);
+}
+
+#main-header.dark-nav .logo-text {
     color: var(--text-main);
 }
 
@@ -212,7 +221,7 @@ ul {
     position: relative;
     display: flex;
     align-items: center;
-    color: white;
+    color: var(--text-main);
     padding-top: var(--nav-height);
     overflow: hidden;
 }
@@ -249,11 +258,14 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+    /* Removed dark gradient overlay per user feedback */
+    background: transparent;
 }
 
 .hero-content {
-    max-width: 900px;
+    max-width: 1240px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .hero h1 {
@@ -267,16 +279,19 @@ ul {
     font-size: 1.3rem;
     opacity: 0.9;
     max-width: 700px;
-    margin-bottom: 2.5rem;
+    margin: 0 auto 2.5rem auto;
+    position: relative;
+    left: 20px;
 }
 
 /* Floating Slider in Hero */
 .hero-slider-container {
     position: relative;
-    overflow: hidden;
-    margin-top: 4rem;
     width: 100%;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    margin-top: 4rem;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    overflow: hidden;
 }
 
 .hero-cards {
@@ -291,7 +306,7 @@ ul {
     color: var(--text-main);
     padding: 1.5rem;
     border-radius: 8px;
-    width: 400px; /* Fixed width for slider */
+    width: 520px; /* Fixed width for slider */
     flex-shrink: 0;
     display: flex;
     gap: 1.2rem;
@@ -380,31 +395,59 @@ ul {
     align-items: center;
 }
 
-.shuffle-cards-container {
+/* Global Content Spacing */
+.content-section {
+    padding: 8rem 0;
     position: relative;
-    height: 500px;
+}
+
+.shuffle-cards-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 2rem !important;
+    position: relative !important;
+    height: auto !important;
 }
 
 .shuffle-card {
-    position: absolute;
-    width: 320px;
+    position: relative !important;
+    width: 100% !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
     padding: 2.5rem;
     background: white;
     color: var(--text-main);
     border-radius: 12px;
-    box-shadow: var(--shadow-lg);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Softer more premium shadow */
+    border-top: 3px solid var(--primary); /* Accent border per user feedback */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.shuffle-card:nth-child(1) { z-index: 3; top: 0; left: 0; }
-.shuffle-card:nth-child(2) { z-index: 2; top: 40px; left: 60px; filter: grayscale(0.5); transform: scale(0.95); opacity: 0.8; }
-.shuffle-card:nth-child(3) { z-index: 1; top: 80px; left: 120px; filter: grayscale(1); transform: scale(0.9); opacity: 0.6; }
-
 .shuffle-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
     z-index: 10 !important;
-    transform: scale(1.05) translateX(20px) !important;
-    filter: none !important;
-    opacity: 1 !important;
+}
+
+/* Service Cards Global */
+.service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--primary); /* Vibrant accent */
+    border-radius: 12px;
+    padding: 3rem;
+    transition: var(--transition);
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.service-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
 }
 
 /* Process Section */
@@ -849,9 +892,10 @@ header.scrolled .mobile-btn span {
         padding-right: 1.5rem;
     }
     .hero-card { 
-        width: 80vw !important; 
-        max-width: 320px !important; 
+        width: calc(100vw - 40px) !important; 
+        max-width: none !important; 
         scroll-snap-align: center; 
+        margin: 0 auto;
     }
 
     .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }

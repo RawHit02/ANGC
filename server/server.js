@@ -156,7 +156,7 @@ app.post('/api/contact', async (req, res) => {
         
         // 2. Forward to FormSubmit.co for email notification
         try {
-            const mailResponse = await fetch('https://formsubmit.co/ajax/rohitroody47@gmail.com', {
+            const mailResponse = await fetch('https://formsubmit.co/ajax/jai616263@gmail.com', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

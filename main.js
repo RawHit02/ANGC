@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(() => {
             if (window.innerWidth > 1024) {
                 cardSet = (cardSet + 1) % 3; // 3 sets of 2
-                // Calculate offset: (Card Width 400px + Gap 32px) * 2 cards per jump
-                const offset = cardSet * (432 * 2); 
+                // Calculate offset: (Card Width 520px + Gap 32px) * 2 cards per jump
+                const offset = cardSet * (552 * 2); 
                 cardsTrack.style.transform = `translateX(-${offset}px)`;
             } else if (sliderContainer) {
                 // Reset transform on mobile resize
@@ -239,7 +239,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatbotData = {
         "greetings": {
             "keywords": ["hi", "hello", "hey", "hola", "greetings"],
-            "answer": "Hello! Welcome to ANGC Synapse. I'm your AI assistant. How can I help you today?"
+            "answer": `
+                <div>Hello! Welcome to ANGC Synapse. I'm your AI assistant. How can I help you today?</div>
+                <div class="chat-btn-container" style="margin-top: 15px; flex-wrap: wrap;">
+                    <a href="https://wa.me/919311161110" target="_blank" class="chat-btn" style="background: #25D366; color: white; border: none; box-shadow: 0 4px 10px rgba(37,211,102,0.3);">WhatsApp</a>
+                    <a href="tel:+919311161110" class="chat-btn secondary">Call Us</a>
+                    <a href="mailto:jai616263@gmail.com" class="chat-btn secondary">Email</a>
+                </div>
+            `
+
         },
         "plans": {
             "keywords": ["plans", "pricing", "subscription", "cost", "charge"],
@@ -273,16 +281,17 @@ document.addEventListener('DOMContentLoaded', () => {
             `
         },
         "contact": {
-            "keywords": ["contact", "email", "phone", "call", "reach", "support", "help"],
+            "keywords": ["contact", "email", "phone", "call", "reach", "support", "help", "whatsapp", "wa"],
             "answer": `
                 <div>Our engineering experts are ready to build your vision. Reach out to us:</div>
                 <div style="margin-top: 10px; font-size: 0.85rem; color: #475569;">
-                    📧 <strong>rohitroody47@gmail.com</strong><br>
+                    📧 <strong>jai616263@gmail.com</strong><br>
                     📞 <strong>+91 9311161110</strong>
                 </div>
-                <div class="chat-btn-container">
-                    <a href="mailto:rohitroody47@gmail.com" class="chat-btn">Email Us</a>
+                <div class="chat-btn-container" style="flex-wrap: wrap;">
+                    <a href="mailto:jai616263@gmail.com" class="chat-btn">Email Us</a>
                     <a href="tel:+919311161110" class="chat-btn secondary">Call Us</a>
+                    <a href="https://wa.me/919311161110" target="_blank" class="chat-btn" style="background: #25D366; color: white; border: none; box-shadow: 0 4px 10px rgba(37,211,102,0.3);">WhatsApp</a>
                 </div>
             `
         },

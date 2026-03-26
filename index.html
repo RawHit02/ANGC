@@ -12,12 +12,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 
 <body>
     <!-- ==================== HEADER ==================== -->
-    <header id="main-header">
+    <header id="main-header" class="dark-nav">
         <nav class="container header-grid">
             <div class="header-left">
                 <a href="index.html" class="logo-text">
@@ -75,7 +75,7 @@
                                 <a href="about.html#team">Core Team</a>
                                 <a href="about.html#customers">Customers</a>
                                 <a href="recognitions.html">Recognitions</a>
-                                <a href="whats-new.html">What's New</a>
+                                
                                 <a href="about.html#locations">Locations</a>
                                 <a href="careers.html">Careers</a>
                             </div>
@@ -99,8 +99,8 @@
         <!-- ==================== HERO ==================== -->
         <section class="hero">
         <div class="hero-bg-container">
-            <div class="hero-bg-layer active" style="background-image: url('assets/images/hero_data_intelligence_1774350143339.png');"></div>
-            <div class="hero-bg-layer" style="background-image: url('assets/images/bg_cloud.png');"></div>
+            <div class="hero-bg-layer active" style="background-image: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1)), url('assets/images/user_hero_1.jpg');"></div>
+            <div class="hero-bg-layer" style="background-image: url('assets/images/user_hero_2.jpg');"></div>
         </div>
         <div class="container hero-content">
                 <h1>Transforming Ideas Into <br>Digital Products</h1>
@@ -244,98 +244,7 @@
         </div>
     </section>
 
-    <!-- Tech Stack Section -->
-    <section class="content-section" style="background: var(--bg-offset);">
-        <div class="container text-center">
-            <div class="section-head" style="margin-bottom: 4rem;">
-                <h6 style="color: var(--primary); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 1rem;">Toolbox</h6>
-                <h2>Our Technology <br><span style="color: var(--primary);">Ecosystem.</span></h2>
-            </div>
-            
-            <div class="tech-slider-container">
-                <div class="tech-track" id="tech-track">
-                    <!-- Slide 1: Cloud & Infra -->
-                    <div class="tech-slide">
-                        <h4 class="tech-category">Cloud & Infra</h4>
-                        <div class="tools-grid">
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"><span>AWS</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure"><span>Azure</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP"><span>GCP</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes"><span>K8s</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"><span>Docker</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform"><span>Terraform</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="NGINX"><span>NGINX</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"><span>Linux</span></div>
-                        </div>
-                    </div>
-                    <!-- Slide 2: Frontend & Mobile -->
-                    <div class="tech-slide">
-                        <h4 class="tech-category">Frontend & Mobile</h4>
-                        <div class="tools-grid">
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span>React</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"><span>Next.js</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind"><span>Tailwind</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter"><span>Flutter</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift"><span>Swift</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"><span>TypeScript</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GraphQL"><span>GraphQL</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="Redux"><span>Redux</span></div>
-                        </div>
-                    </div>
-                    <!-- Slide 3: AI & Data -->
-                    <div class="tech-slide">
-                        <h4 class="tech-category">AI & Data</h4>
-                        <div class="tools-grid">
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch"><span>PyTorch</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"><span>TensorFlow</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"><span>Pandas</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" alt="Kafka"><span>Kafka</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter"><span>Jupyter</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Spark"><span>Spark</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"><span>NumPy</span></div>
-                        </div>
-                    </div>
-                    <!-- Slide 4: Backend & Core -->
-                    <div class="tech-slide">
-                        <h4 class="tech-category">Backend & Core</h4>
-                        <div class="tools-grid">
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" alt="Rust"><span>Rust</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go"><span>Go</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="Postgres"><span>Postgres</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis"><span>Redis</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite"><span>SQLite</span></div>
-                        </div>
-                    </div>
-                    <!-- Slide 5: Security & DevOps -->
-                    <div class="tech-slide">
-                        <h4 class="tech-category">Security & DevOps</h4>
-                        <div class="tools-grid">
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><span>Actions</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab"><span>GitLab</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash"><span>Bash</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins"><span>Jenkins</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg" alt="Cloudflare"><span>Security</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" alt="Prometheus"><span>Monitor</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana"><span>Grafana</span></div>
-                            <div class="tool-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="Slack"><span>Ops</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tech-dots" id="tech-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </div>
-    </section>
+    
 
         <!-- ==================== TALK TO US ==================== -->
         <section id="talk-to-us" class="talk-section">
@@ -357,7 +266,6 @@
                     <div class="talk-form-container">
                         <div class="talk-tabs">
                             <div class="talk-tab active" data-tab="business">Business</div>
-                            <div class="talk-tab" data-tab="careers">Careers</div>
                             <div class="talk-tab" data-tab="others">Others</div>
                         </div>
 
@@ -365,81 +273,27 @@
                         <form id="form-business" class="talk-form">
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                                 <div class="form-group">
-                                    <label>First Name</label>
-                                    <input type="text" name="firstName" placeholder="Your first name">
-                                </div>
-                                <div class="form-group">
-                                    <label>Last Name</label>
-                                    <input type="text" name="lastName" placeholder="Your last name">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Company Name</label>
-                                <input type="text" name="companyName" placeholder="Company name">
-                            </div>
-                            <div class="form-group">
-                                <label>Email*</label>
-                                <input type="email" name="email" placeholder="email@company.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Phone Number*</label>
-                                <input type="tel" name="phone" placeholder="+91 00000 00000" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Country*</label>
-                                <select name="country" required>
-                                    <option value="">Select Country</option>
-                                    <option value="IN">India (+91)</option>
-                                    <option value="US">United States (+1)</option>
-                                    <option value="UK">United Kingdom (+44)</option>
-                                    <option value="AF">Afghanistan</option>
-                                    <!-- Simplified for brevity -->
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>How We Can Help You</label>
-                                <textarea name="message" rows="4" placeholder="Briefly describe your requirements"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-talk" style="width: 100%;">Send Message</button>
-                        </form>
-
-                        <!-- Careers Form -->
-                        <form id="form-careers" class="talk-form" style="display: none;">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                                <div class="form-group">
                                     <label>First Name*</label>
-                                    <input type="text" name="firstName" required>
+                                    <input type="text" name="firstName" placeholder="Your first name" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Last Name*</label>
-                                    <input type="text" name="lastName" required>
+                                    <input type="text" name="lastName" placeholder="Your last name" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Email ID*</label>
-                                <input type="email" name="email" required>
+                                <label>Email*</label>
+                                <input type="email" name="email" placeholder="email@domain.com" required>
                             </div>
                             <div class="form-group">
                                 <label>Phone*</label>
-                                <input type="tel" name="phone" required>
+                                <input type="tel" name="phone" placeholder="+91 00000 00000" required>
                             </div>
                             <div class="form-group">
-                                <label>College – Where did you study?*</label>
-                                <input type="text" name="college" required>
+                                <label>Requirement*</label>
+                                <textarea name="message" rows="4" placeholder="Briefly describe your requirements" required></textarea>
                             </div>
-                            <div class="form-group">
-                                <label>Field of Study (Graduation)*</label>
-                                <input type="text" name="studyField" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Upload CV*</label>
-                                <input type="file" name="cv" required>
-                            </div>
-                            <div class="form-group" style="display: flex; gap: 0.5rem; align-items: flex-start;">
-                                <input type="checkbox" required style="width: auto; margin-top: 0.3rem;">
-                                <label style="font-weight: 500; font-size: 0.8rem;">Yes, I would like ANGC Synapse to contact me. Click here to read our full <a href="privacy.html" style="color: var(--primary);">Privacy Policy</a>.</label>
-                            </div>
-                            <button type="submit" class="btn btn-talk" style="width: 100%;">Submit Application</button>
+                            <button type="submit" class="btn btn-talk" style="width: 100%;">Send Message</button>
                         </form>
 
                         <!-- Others Form -->
