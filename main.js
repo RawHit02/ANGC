@@ -287,20 +287,25 @@ document.addEventListener('DOMContentLoaded', () => {
             `
         },
         "address": {
-            "keywords": ["address", "location", "where are you", "office", "gurgaon", "gurugram", "haryana"],
+            "keywords": ["address", "location", "where are you", "office", "gurgaon", "gurugram", "haryana", "registered"],
             "answer": `
-                <div><strong>Our Headquarters:</strong></div>
+                <div><strong>Operational HQ:</strong></div>
                 <div style="margin-top: 5px; font-size: 0.85rem; color: #475569;">
                     HCG, Khandsa Road, Sector 37,<br>
                     Gurgaon - 122004, Haryana, India
                 </div>
-                <div style="margin-top: 8px; font-size: 0.75rem; opacity: 0.7;">
-                    Lat: 28.438190 / Long: 77.003370
+                <div style="margin-top: 10px; font-size: 0.85rem; color: #475569;">
+                    <strong>Registered Address:</strong><br>
+                    310, SECTOR 15, PART 1, RADHA KRISHAN MANDIR,<br>Gurgaon, Haryana, India, 122001
                 </div>
                 <div class="chat-btn-container">
                     <a href="https://www.google.com/maps/search/?api=1&query=28.438190,77.003370" target="_blank" class="chat-btn">View on Maps</a>
                 </div>
             `
+        },
+        "profile": {
+            "keywords": ["cin", "registration", "company details", "authorized capital", "private limited", "details", "status", "akshat"],
+            "answer": "<strong>ANGC SYNAPSE PVT. LTD.</strong><br>CIN: U46512HR2025PTC136595<br>Incorporated: Sep 17, 2025<br>Type: Private Limited Company<br>Directors: Puneet Aggarwal, Akshat Aggarwal"
         },
         "about": {
             "keywords": ["who are you", "what is angc", "synapse", "about"],
