@@ -939,6 +939,66 @@ header.scrolled .mobile-btn span {
     box-shadow: 0 10px 25px rgba(0, 210, 147, 0.4);
     z-index: 2000;
     transition: var(--transition);
+    animation: botPulse 2s infinite;
+}
+
+@keyframes botPulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 210, 147, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(0, 210, 147, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 210, 147, 0); }
+}
+
+.chatbot-tooltip {
+    position: fixed;
+    bottom: 38px;
+    right: 90px;
+    background: var(--white);
+    color: var(--text-main);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid var(--border);
+    opacity: 0;
+    transform: translateX(10px);
+    pointer-events: none;
+    z-index: 2000;
+    animation: tooltipPulse 5s infinite 1s;
+}
+
+.chatbot-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 6px 0 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--white);
+}
+
+.chatbot-tooltip::before {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 7px 0 7px 7px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--border);
+    z-index: -1;
+}
+
+@keyframes tooltipPulse {
+    0%, 100% { opacity: 0; transform: translateX(10px); }
+    10%, 50% { opacity: 1; transform: translateX(0); }
+    60%, 90% { opacity: 0; transform: translateX(-10px); }
+}
+
+.chatbot-container.active ~ .chatbot-tooltip,
+.chatbot-tooltip.hidden {
+    display: none;
 }
 
 .chatbot-toggle:hover {

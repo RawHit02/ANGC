@@ -341,6 +341,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function injectChatbot() {
         const chatbotHTML = `
+            <div class="chatbot-tooltip" id="chatbot-tooltip">Hi! How can we help? 👋</div>
             <div class="chatbot-toggle" id="chatbot-toggle">
                 <span>💬</span>
             </div>
@@ -371,6 +372,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         toggle.addEventListener('click', () => {
             container.classList.toggle('active');
+            const tooltip = document.getElementById('chatbot-tooltip');
+            if(tooltip) tooltip.classList.add('hidden'); // Hide tooltip once interacted
             if (container.classList.contains('active')) {
                 input.focus();
             }
