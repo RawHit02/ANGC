@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatbotData = {
         "greetings": {
             "keywords": ["hi", "hello", "hey", "hola", "greetings"],
-            "answer": "Hello! Welcome to ANGC Synapse. How can I assist you with your digital transformation today?"
+            "answer": "Hello! Welcome to ANGC Synapse. I'm your AI assistant. How can I help you today?"
         },
         "plans": {
             "keywords": ["plans", "pricing", "subscription", "cost", "charge"],
@@ -275,19 +275,50 @@ document.addEventListener('DOMContentLoaded', () => {
         "contact": {
             "keywords": ["contact", "email", "phone", "call", "reach", "support", "help"],
             "answer": `
-                <div>Our engineering experts are ready to build your vision. How would you like to connect?</div>
+                <div>Our engineering experts are ready to build your vision. Reach out to us:</div>
+                <div style="margin-top: 10px; font-size: 0.85rem; color: #475569;">
+                    📧 <strong>rohitroody47@gmail.com</strong><br>
+                    📞 <strong>+91 9311161110</strong>
+                </div>
                 <div class="chat-btn-container">
                     <a href="mailto:rohitroody47@gmail.com" class="chat-btn">Email Us</a>
-                    <a href="tel:+911244000000" class="chat-btn secondary">Call Us</a>
+                    <a href="tel:+919311161110" class="chat-btn secondary">Call Us</a>
+                </div>
+            `
+        },
+        "address": {
+            "keywords": ["address", "location", "where are you", "office", "gurgaon", "gurugram", "haryana"],
+            "answer": `
+                <div><strong>Our Headquarters:</strong></div>
+                <div style="margin-top: 5px; font-size: 0.85rem; color: #475569;">
+                    HCG, Khandsa Road, Sector 37,<br>
+                    Gurgaon - 122004, Haryana, India
+                </div>
+                <div style="margin-top: 8px; font-size: 0.75rem; opacity: 0.7;">
+                    Lat: 28.438190 / Long: 77.003370
+                </div>
+                <div class="chat-btn-container">
+                    <a href="https://www.google.com/maps/search/?api=1&query=28.438190,77.003370" target="_blank" class="chat-btn">View on Maps</a>
                 </div>
             `
         },
         "about": {
             "keywords": ["who are you", "what is angc", "synapse", "about"],
-            "answer": "ANGC Synapse is your engineering partner for custom web applications and intelligent AI implementations. We turn visionary ideas into robust digital products."
+            "answer": "ANGC Synapse is your engineering partner for custom web applications and intelligent AI implementations. Led by our CEO <strong>Puneet Aggarwal</strong>, we turn visionary ideas into robust digital products."
+        },
+        "team": {
+            "keywords": ["team", "ceo", "developer", "manager", "who works here", "puneet", "rohit", "aman", "jai"],
+            "answer": `
+                <div style="font-size: 0.9rem;">
+                    <strong>Leadership & Team:</strong><br>
+                    👤 <strong>CEO:</strong> Puneet Aggarwal<br>
+                    💼 <strong>Manager:</strong> Jai Sharma<br>
+                    💻 <strong>Developers:</strong> Rohit & Aman
+                </div>
+            `
         },
         "default": {
-            "answer": "I'm sorry, I didn't quite catch that. Could you please rephrase your question? Or would you like to see our **pricing plans** or **contact** details?"
+            "answer": "I'm sorry, I didn't quite catch that. Could you please rephrase? You can ask about our **team**, **location**, **pricing plans**, or **contact** details."
         }
     };
 
