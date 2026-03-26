@@ -1280,3 +1280,26 @@ header.scrolled .mobile-btn span {
     color: var(--text-main);
 }
 
+/* Light CTA Section for Technology Pages */
+.cta-light {
+    background: #f0f7ff;
+    color: var(--text-main);
+    padding: 6rem;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.cta-light h2 {
+    color: var(--text-main) !important;
+    margin-bottom: 2rem;
+}
+
+.cta-light p {
+    color: var(--text-muted) !important;
+    opacity: 1 !important;
+    max-width: 600px;
+    margin: 0 auto 3rem !important;
+}
+
