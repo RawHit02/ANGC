@@ -234,4 +234,153 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
+
+    // ==================== CHATBOT SYSTEM ====================
+    const chatbotData = {
+        "greetings": {
+            "keywords": ["hi", "hello", "hey", "hola", "greetings"],
+            "answer": "Hello! Welcome to ANGC Synapse. How can I assist you with your digital transformation today?"
+        },
+        "plans": {
+            "keywords": ["plans", "pricing", "subscription", "cost", "charge"],
+            "answer": `
+                <div class="chat-card-container">
+                    <div class="plan-card silver">
+                        <div class="plan-header"><span class="plan-title">Silver Tier</span><span class="plan-price">$99/mo</span></div>
+                        <ul class="plan-features">
+                            <li>Essential Web App Development</li>
+                            <li>Standard Security Patching</li>
+                            <li>Email Support</li>
+                        </ul>
+                    </div>
+                    <div class="plan-card gold">
+                        <div class="plan-header"><span class="plan-title">Gold Tier</span><span class="plan-price">$299/mo</span></div>
+                        <ul class="plan-features">
+                            <li>Advanced AI Integration</li>
+                            <li>Prototyping & MVP Support</li>
+                            <li>24/7 Priority Support</li>
+                        </ul>
+                    </div>
+                    <div class="plan-card platinum">
+                        <div class="plan-header"><span class="plan-title">Platinum Tier</span><span class="plan-price">$999/mo</span></div>
+                        <ul class="plan-features">
+                            <li>Custom Global Architecture</li>
+                            <li>Zero-Trust Security Suite</li>
+                            <li>Dedicated Engineering Team</li>
+                        </ul>
+                    </div>
+                </div>
+            `
+        },
+        "contact": {
+            "keywords": ["contact", "email", "phone", "call", "reach", "support", "help"],
+            "answer": `
+                <div>Our engineering experts are ready to build your vision. How would you like to connect?</div>
+                <div class="chat-btn-container">
+                    <a href="mailto:rohitroody47@gmail.com" class="chat-btn">Email Us</a>
+                    <a href="tel:+911244000000" class="chat-btn secondary">Call Us</a>
+                </div>
+            `
+        },
+        "about": {
+            "keywords": ["who are you", "what is angc", "synapse", "about"],
+            "answer": "ANGC Synapse is your engineering partner for custom web applications and intelligent AI implementations. We turn visionary ideas into robust digital products."
+        },
+        "default": {
+            "answer": "I'm sorry, I didn't quite catch that. Could you please rephrase your question? Or would you like to see our **pricing plans** or **contact** details?"
+        }
+    };
+
+    function injectChatbot() {
+        const chatbotHTML = `
+            <div class="chatbot-toggle" id="chatbot-toggle">
+                <span>💬</span>
+            </div>
+            <div class="chatbot-container" id="chatbot-container">
+                <div class="chatbot-header">
+                    <h3>ANGC Assistant</h3>
+                    <button class="chatbot-close" id="chatbot-close">&times;</button>
+                </div>
+                <div class="chatbot-messages" id="chatbot-messages">
+                    <div class="message bot">Hi there! I'm your ANGC AI assistant. How can I help you today?</div>
+                </div>
+                <div class="chatbot-input-area">
+                    <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Type a message...">
+                    <button class="chatbot-send" id="chatbot-send">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', chatbotHTML);
+        
+        const toggle = document.getElementById('chatbot-toggle');
+        const container = document.getElementById('chatbot-container');
+        const closeBtn = document.getElementById('chatbot-close');
+        const input = document.getElementById('chatbot-input');
+        const sendBtn = document.getElementById('chatbot-send');
+        const messagesDiv = document.getElementById('chatbot-messages');
+
+        toggle.addEventListener('click', () => {
+            container.classList.toggle('active');
+            if (container.classList.contains('active')) {
+                input.focus();
+            }
+        });
+
+        closeBtn.addEventListener('click', () => {
+            container.classList.remove('active');
+        });
+
+        function addMessage(text, sender) {
+            const msg = document.createElement('div');
+            msg.className = `message ${sender}`;
+            if (sender === 'bot') {
+                msg.innerHTML = text; // Support HTML for bot messages
+            } else {
+                msg.innerText = text; // Keep text for user messages
+            }
+            messagesDiv.appendChild(msg);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function getBotResponse(userText) {
+            const text = userText.toLowerCase();
+            for (const key in chatbotData) {
+                if (key === 'default') continue;
+                if (chatbotData[key].keywords.some(keyword => text.includes(keyword))) {
+                    return chatbotData[key].answer;
+                }
+            }
+            return chatbotData.default.answer;
+        }
+
+        function handleSend() {
+            const text = input.value.trim();
+            if (!text) return;
+
+            addMessage(text, 'user');
+            input.value = '';
+
+            // Bot response with delay
+            const typing = document.createElement('div');
+            typing.className = 'typing';
+            typing.innerText = 'Assistant is typing...';
+            messagesDiv.appendChild(typing);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            setTimeout(() => {
+                typing.remove();
+                const response = getBotResponse(text);
+                addMessage(response, 'bot');
+            }, 1000);
+        }
+
+        sendBtn.addEventListener('click', handleSend);
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleSend();
+        });
+    }
+
+    injectChatbot();
 });
