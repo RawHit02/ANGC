@@ -306,11 +306,23 @@ document.addEventListener('DOMContentLoaded', () => {
             "keywords": ["who are you", "what is angc", "synapse", "about"],
             "answer": "ANGC Synapse is your engineering partner for custom web applications and intelligent AI implementations. Led by our CEO <strong>Puneet Aggarwal</strong>, we turn visionary ideas into robust digital products."
         },
+        "ceo": {
+            "keywords": ["ceo", "puneet", "aggarwal", "who is the boss", "founder"],
+            "answer": "Our CEO is <strong>Puneet Aggarwal</strong>. He leads ANGC Synapse with a vision for engineering excellence and AI-driven innovation."
+        },
+        "developers": {
+            "keywords": ["developer", "engineers", "who built this", "rohit", "aman"],
+            "answer": "Our core development team consists of <strong>Rohit</strong> and <strong>Aman</strong>. They specialize in building high-performance web applications and AI solutions."
+        },
+        "manager": {
+            "keywords": ["manager", "jai", "sharma", "who is the manager"],
+            "answer": "Our Manager is <strong>Jai Sharma</strong>. He oversees project delivery and ensures everything runs smoothly for our clients."
+        },
         "team": {
-            "keywords": ["team", "ceo", "developer", "manager", "who works here", "puneet", "rohit", "aman", "jai"],
+            "keywords": ["team", "who works here", "staff", "employees"],
             "answer": `
                 <div style="font-size: 0.9rem;">
-                    <strong>Leadership & Team:</strong><br>
+                    <strong>The ANGC Team:</strong><br>
                     👤 <strong>CEO:</strong> Puneet Aggarwal<br>
                     💼 <strong>Manager:</strong> Jai Sharma<br>
                     💻 <strong>Developers:</strong> Rohit & Aman
@@ -318,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `
         },
         "default": {
-            "answer": "I'm sorry, I didn't quite catch that. Could you please rephrase? You can ask about our **team**, **location**, **pricing plans**, or **contact** details."
+            "answer": "I'm sorry, I didn't quite catch that. Could you please rephrase? You can ask about our **CEO**, **developers**, **manager**, **location**, or **pricing plans**."
         }
     };
 
@@ -376,12 +388,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function getBotResponse(userText) {
-            const text = userText.toLowerCase();
+            const text = userText.toLowerCase().replace(/[^\w\s]/g, '');
+            const words = text.split(/\s+/);
+            
+            // Simple Fuzzy Match Function (Levenshtein-ish)
+            const isSimilar = (a, b) => {
+                if (a.includes(b) || b.includes(a)) return true;
+                if (a.length < 3 || b.length < 3) return a === b;
+                
+                let edits = 0;
+                for (let i = 0; i < Math.min(a.length, b.length); i++) {
+                    if (a[i] !== b[i]) edits++;
+                }
+                const diff = Math.abs(a.length - b.length) + edits;
+                return diff <= 1; // Allow 1 character difference
+            };
+
             for (const key in chatbotData) {
                 if (key === 'default') continue;
-                if (chatbotData[key].keywords.some(keyword => text.includes(keyword))) {
-                    return chatbotData[key].answer;
-                }
+                const entry = chatbotData[key];
+                
+                // Check if any keyword matches any word in user input fuzzily
+                const found = entry.keywords.some(keyword => {
+                    const kw = keyword.toLowerCase();
+                    if (text.includes(kw)) return true; // Direct substring match
+                    return words.some(word => isSimilar(word, kw)); // Fuzzy word match
+                });
+
+                if (found) return entry.answer;
             }
             return chatbotData.default.answer;
         }
