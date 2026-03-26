@@ -398,8 +398,12 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Simple Fuzzy Match Function (Levenshtein-ish)
             const isSimilar = (a, b) => {
+                if (a === b) return true;
+                
+                // Do not perform substring or fuzzy matches on very short words to avoid false positives (e.g., "of" matching "office")
+                if (a.length < 4 || b.length < 4) return false;
+                
                 if (a.includes(b) || b.includes(a)) return true;
-                if (a.length < 3 || b.length < 3) return a === b;
                 
                 let edits = 0;
                 for (let i = 0; i < Math.min(a.length, b.length); i++) {
