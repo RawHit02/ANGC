@@ -12,18 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        #main-header:not(.scrolled) {
-            background: var(--white);
-        }
-
-        #main-header:not(.scrolled) .logo-text,
-        #main-header:not(.scrolled) .nav-links>li>a {
-            color: var(--text-main);
-        }
-
-        #main-header.scrolled {
-            box-shadow: var(--shadow-sm);
-        }
+        
 
         .sub-hero {
             padding: 12rem 0 6rem;
@@ -54,12 +43,12 @@
 
 <body>
     <!-- ==================== HEADER ==================== -->
-    <header id="main-header" class="scrolled">
+    
+    <header id="main-header" class="scrolled force-stuck">
         <nav class="container header-grid">
             <div class="header-left">
                 <a href="index.html" class="logo-text">
-                    <img src="assets/images/logo.svg" alt="ANGC Synapse" style="height: 35px;">
-                    <!-- ANGC <span style="color: var(--primary);">Synapse</span> -->
+                    <img src="assets/images/logo.svg" alt="ANGC" style="height: 55px; width: auto; display: block;">
                 </a>
             </div>
 
@@ -72,26 +61,26 @@
                         <div class="mega-menu">
                             <div class="mega-col">
                                 <h4>AI Solutions</h4>
-                                <a href="#">Agentic AI</a>
-                                <a href="#">AI Transformation</a>
-                                <a href="#">Data Engineering</a>
-                                <a href="#">GenAI</a>
-                                <a href="#">MLOPS</a>
-                                <a href="#" style="color: var(--primary); margin-top: 1rem;">PreFabs</a>
-                                <a href="#" style="color: var(--primary);">CVE Copilot</a>
+                                <a href="agentic-ai.html">Agentic AI</a>
+                                <a href="ai-transformation.html">AI Transformation</a>
+                                <a href="data-engineering.html">Data Engineering</a>
+                                <a href="genai.html">GenAI</a>
+                                <a href="mlops.html">MLOPS</a>
+                                <a href="prefabs.html" style="color: var(--primary); margin-top: 1rem;">PreFabs</a>
+                                <a href="cve-copilot.html" style="color: var(--primary);">CVE Copilot</a>
                             </div>
                             <div class="mega-col">
                                 <h4>Engineering</h4>
-                                <a href="#">UX/UI</a>
-                                <a href="#">DevOps</a>
-                                <a href="#">Big Data</a>
-                                <a href="#">Blockchain</a>
-                                <a href="#">OpenSource</a>
-                                <a href="#">IoT</a>
+                                <a href="ui-ux.html">UX/UI</a>
+                                <a href="devops-infra.html">DevOps</a>
+                                <a href="big-data.html">Big Data</a>
+                                <a href="blockchain.html">Blockchain</a>
+                                <a href="opensource.html">OpenSource</a>
+                                <a href="iot.html">IoT</a>
                             </div>
                         </div>
                     </li>
-                    <li><a href="#">Our Work</a></li>
+                    <li><a href="case-studies.html">Our Work</a></li>
                     <li class="has-mega">
                         <a href="#">Insights <span class="nav-arrow">▾</span></a>
                         <div class="mega-menu" style="grid-template-columns: 200px;">
@@ -113,7 +102,7 @@
                                 <a href="about.html#team">Core Team</a>
                                 <a href="about.html#customers">Customers</a>
                                 <a href="recognitions.html">Recognitions</a>
-                                
+
                                 <a href="about.html#locations">Locations</a>
                                 <a href="careers.html">Careers</a>
                             </div>
@@ -132,6 +121,7 @@
             </div>
         </nav>
     </header>
+
 
     <main>
         <section class="sub-hero">
@@ -188,10 +178,15 @@
                 <a href="privacy.html">Privacy Policy</a>
             </div>
         </div>
+        
         <div class="container footer-bottom">
-            <p>All rights reserved 2025. ANGC Synapse Pvt. Ltd.</p>
+            <p>&copy; 2026 ANGC Synapse Pvt. Ltd. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
         </div>
-    </footer>
+</footer>
     <script src="main.js"></script>
 </body>
 

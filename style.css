@@ -40,6 +40,8 @@ body {
 h1, h2, h3, h4 {
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 a {
@@ -269,19 +271,18 @@ ul {
 }
 
 .hero h1 {
-    font-size: 4.5rem;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
     line-height: 1.1;
     margin-bottom: 1.5rem;
     font-weight: 800;
 }
 
 .hero p {
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 4vw, 1.3rem);
     opacity: 0.9;
     max-width: 700px;
     margin: 0 auto 2.5rem auto;
     position: relative;
-    left: 20px;
 }
 
 /* Floating Slider in Hero */
@@ -306,7 +307,8 @@ ul {
     color: var(--text-main);
     padding: 1.5rem;
     border-radius: 8px;
-    width: 520px; /* Fixed width for slider */
+    width: 520px; /* Base width */
+    max-width: 85vw; /* Responsive limit for mobile */
     flex-shrink: 0;
     display: flex;
     gap: 1.2rem;
@@ -602,6 +604,9 @@ footer {
 .footer-brand h2 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .footer-brand p {
@@ -702,10 +707,19 @@ header.scrolled .mobile-btn span {
         justify-content: space-between !important;
         align-items: center !important;
         width: 100% !important;
+        padding: 0 1rem !important; /* Added padding to prevent edge touching */
     }
 
-    .header-right { display: flex; align-items: center; gap: 0.8rem; }
-    .btn-talk { padding: 0.5rem 1rem !important; font-size: 0.8rem !important; }
+    .header-right { 
+        display: flex; 
+        align-items: center; 
+        gap: 1rem; /* More consistent gap */
+    }
+    .btn-talk { 
+        padding: 0.6rem 1.2rem !important; 
+        font-size: 0.85rem !important;
+        white-space: nowrap; 
+    }
 
     .nav-links {
         display: flex; position: fixed; top: var(--nav-height); left: 0; width: 100%;
@@ -728,10 +742,24 @@ header.scrolled .mobile-btn span {
     .nav-links > li.active .mega-menu { display: grid !important; }
 
     /* Grids & Cards responsiveness */
-    .method-grid, .service-grid, .capability-grid, .feature-grid, .hero-grid, .case-studies-grid, .talk-grid, .shuffle-grid, .expertise-grid {
+    .method-grid, .service-grid, .capability-grid, .feature-grid, .hero-grid, .case-studies-grid, .talk-grid, .shuffle-grid, .expertise-grid, .work-grid {
         grid-template-columns: 1fr !important;
-        gap: 2.5rem !important;
+        gap: 2rem !important;
         text-align: center;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
+    
+    .tool-item {
+        padding: 1rem !important;
+    }
+
+    .tool-item img {
+        width: 35px !important;
+        height: 35px !important;
     }
 
     /* Process Stepper Stacking */
@@ -743,8 +771,20 @@ header.scrolled .mobile-btn span {
 
     /* Fix header overlap */
     main { padding-top: var(--nav-height); }
-    .hero { padding-top: 4rem !important; min-height: auto !important; height: auto !important; padding-bottom: 4rem !important; }
-    .page-hero { padding: 10rem 0 4rem !important; height: auto !important; min-height: 50vh; }
+    .hero { 
+        padding-top: 2rem !important; 
+        min-height: auto !important; 
+        height: auto !important; 
+        padding-bottom: 4rem !important; 
+        overflow-x: hidden;
+    }
+    .hero-content {
+        padding: 0 1.5rem;
+    }
+    .hero h1 {
+        margin-top: 2rem;
+    }
+    .page-hero { padding: 8rem 0 4rem !important; height: auto !important; min-height: 40vh; }
 
     /* Fix shuffle cards overflow/overlap */
     .shuffle-cards-container {
@@ -780,6 +820,27 @@ header.scrolled .mobile-btn span {
 
     .method-section {
         padding: 4rem 0;
+    }
+
+    /* Prevent long titles from breaking layout */
+    h1, h2 {
+        font-size: clamp(2rem, 7vw, 3rem) !important;
+    }
+    
+    .hero h1 {
+        font-size: clamp(2.2rem, 9vw, 4.5rem) !important;
+    }
+
+    /* Sub-hero adjustment */
+    .sub-hero h1, .page-hero h1 {
+        font-size: clamp(2rem, 8vw, 3.5rem) !important;
+        padding: 0 1rem;
+    }
+    
+    /* Global scroll overflow fix */
+    .container {
+        width: 100% !important;
+        overflow-x: hidden;
     }
 }
 

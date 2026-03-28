@@ -75,27 +75,85 @@
 </head>
 
 <body class="dark-mode">
-    <header id="main-header" class="scrolled">
+    
+    <header id="main-header" class="scrolled force-stuck">
         <nav class="container header-grid">
             <div class="header-left">
-                <div class="logo">
-                    <a href="index.html" class="logo-text">ANGC <span class="accent">Admin</span></a>
-                </div>
-                <div class="search-bar">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
-                    <span class="search-key">⌘ </span>
-                    <div id="search-results" class="search-results"></div>
-                </div>
+                <a href="index.html" class="logo-text">
+                    <img src="assets/images/logo.svg" alt="ANGC" style="height: 55px; width: auto; display: block;">
+                </a>
             </div>
-            <div class="header-center">
+
+            <div class="nav-center">
                 <ul class="nav-links">
-                    <li><a href="index.html">Back to Site</a></li>
+                    <li><a href="what-we-do.html">What We Do</a></li>
+                    <li><a href="how-we-do.html">How We Do</a></li>
+                    <li class="has-mega">
+                        <a href="#">Technologies <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu">
+                            <div class="mega-col">
+                                <h4>AI Solutions</h4>
+                                <a href="agentic-ai.html">Agentic AI</a>
+                                <a href="ai-transformation.html">AI Transformation</a>
+                                <a href="data-engineering.html">Data Engineering</a>
+                                <a href="genai.html">GenAI</a>
+                                <a href="mlops.html">MLOPS</a>
+                                <a href="prefabs.html" style="color: var(--primary); margin-top: 1rem;">PreFabs</a>
+                                <a href="cve-copilot.html" style="color: var(--primary);">CVE Copilot</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Engineering</h4>
+                                <a href="ui-ux.html">UX/UI</a>
+                                <a href="devops-infra.html">DevOps</a>
+                                <a href="big-data.html">Big Data</a>
+                                <a href="blockchain.html">Blockchain</a>
+                                <a href="opensource.html">OpenSource</a>
+                                <a href="iot.html">IoT</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="case-studies.html">Our Work</a></li>
+                    <li class="has-mega">
+                        <a href="#">Insights <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu" style="grid-template-columns: 200px;">
+                            <div class="mega-col">
+                                <h4>Insights</h4>
+                                <a href="blogs.html">Blogs</a>
+                                <a href="white-papers.html">White Papers</a>
+                                <a href="guides.html">Guides</a>
+                                <a href="webinars.html">Webinars</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-mega">
+                        <a href="#">About Us <span class="nav-arrow">▾</span></a>
+                        <div class="mega-menu" style="grid-template-columns: 200px;">
+                            <div class="mega-col">
+                                <h4>About Us</h4>
+                                <a href="about.html">Overview</a>
+                                <a href="about.html#team">Core Team</a>
+                                <a href="about.html#customers">Customers</a>
+                                <a href="recognitions.html">Recognitions</a>
+
+                                <a href="about.html#locations">Locations</a>
+                                <a href="careers.html">Careers</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
-            <div class="header-right"><span class="badge">Live Monitoring</span></div>
+
+            <div class="header-right">
+                <a href="index.html#talk-to-us" class="btn btn-talk">Talk To Us</a>
+                <div class="mobile-btn" id="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </nav>
     </header>
+
 
     <main class="admin-main container">
         <div class="section-header">
